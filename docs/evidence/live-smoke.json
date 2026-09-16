@@ -1,0 +1,68 @@
+{
+  "target": "https://class-check---chld-adapt-ftnzzxvyvq-uc.a.run.app",
+  "startedAt": "2026-09-16T17:15:38.442Z",
+  "auth": {
+    "missingUiStatus": 401,
+    "wrongUiStatus": 401,
+    "wrongApiStatus": 401
+  },
+  "flows": [
+    {
+      "example": "reading",
+      "questionCount": 4,
+      "api": [
+        {
+          "path": "/api/plan",
+          "status": 200,
+          "model": "google/gemini-2.5-flash-lite",
+          "latencyMs": 1214,
+          "costUsd": 0.0000925
+        },
+        {
+          "path": "/api/adapt",
+          "status": 200,
+          "model": "google/gemini-2.5-flash-lite",
+          "latencyMs": 1188,
+          "costUsd": 0.0001605
+        }
+      ],
+      "pdf": {
+        "file": "output/live-reading.pdf",
+        "bytes": 12262,
+        "hashSame": true,
+        "sha256": "afd877704591a9c48d1ca4a8a22df1e6c75af4c68ecf2495c3a2021247570294"
+      }
+    },
+    {
+      "example": "mathematics",
+      "questionCount": 3,
+      "api": [
+        {
+          "path": "/api/plan",
+          "status": 200,
+          "model": "google/gemini-2.5-flash-lite",
+          "latencyMs": 1279,
+          "costUsd": 0.0001239
+        },
+        {
+          "path": "/api/adapt",
+          "status": 200,
+          "model": "google/gemini-2.5-flash-lite",
+          "latencyMs": 2274,
+          "costUsd": 0.0001615
+        }
+      ],
+      "pdf": {
+        "file": "output/live-mathematics.pdf",
+        "bytes": 12103,
+        "hashSame": true,
+        "sha256": "a622875eb008eb85eb2bd26d33485c792c20413111e17293ccdd6ad9a396f8a1"
+      }
+    }
+  ],
+  "staticScan": {
+    "checked": 30,
+    "leakedOpenRouterPrefix": false
+  },
+  "finishedAt": "2026-09-16T17:16:01.177Z"
+}

@@ -1,6 +1,6 @@
-# CHLD Adapt — proposed architecture
+# CHLD Adapt — architecture
 
-**Status:** build proposal, 16 September 2026. This describes software to build; it is not a record of an implemented or tested application.
+**Status:** MVP implemented, 16 September 2026; hosted reading and mathematics checks passed. Section 0 describes the implemented paste-only, one-group release. Later sections retain the broader target where explicitly marked as follow-up.
 
 Read alongside the [PRD](PRD.md), [design brief](DESIGN.md) and [project plan](project-plan.md). The PRD governs scope. The approved first release is the narrow class-demo subset below; the broader architecture remains recorded for subsequent work.
 
@@ -10,13 +10,14 @@ Build one pasted-text worksheet journey for one group: confirmed source → live
 
 - **Application:** Next.js/TypeScript, one browser-memory workflow state, one group and all eleven checklist options. No database, accounts or persistent browser storage.
 - **AI:** server-side `POST /api/plan` and `POST /api/adapt`, configured with `OPENROUTER_MODEL=google/gemini-2.5-flash-lite` after `qwen/qwen3.7-flash` repeatedly returned 429 responses and exhausted 384 reasoning tokens. Validate output and preserve source question references. Missing credentials are a configuration error, not permission to use simulated results. The small fallback probe returned valid JSON; it is not a full application quality, routing or pricing guarantee.
+- **Validation:** runtime schemas enforce complete question references and preserve every numeric value within each question. Plan cautions become teacher-review concerns rather than generation instructions. Educational suitability still requires teacher judgment.
 - **Source:** simple text-only worksheets with teacher-confirmed completeness. Retain stable question references through corrections and generation. Reject continuation when essential visual content is missing. Defer all upload readers, `/api/extract-photo`, source-image assets and multi-group handling.
 - **Review/export:** a fixed readable A4 template with adequate answer space. Render the actual PDF preview before approval, retain those exact bytes, and gate download on current approval. Keep revision/request IDs, concern review and all relevant approval resets from Sections 5–6. Defer extra font/layout controls and line-drawing templates.
 - **Deployment:** Cloud Run in `us-central1`, using the owner-selected project `vibecoda-499712` and account `trishan@lunr.studio`. Use the dedicated CHLD build/runtime identities in the [M0 setup record](setup.md); do not rely on the global CLI default. Store the OpenRouter key and class password in Secret Manager; inject them only on the server. Use HTTP Basic authentication over HTTPS for all application and AI routes, with a shared username `class` and the stored password. No unauthenticated route may trigger a paid call.
 - **Operating limits:** bounded input/output sizes, request timeouts and no unbounded retries. The owner waived the planned $5 OpenRouter key limit for this class demo on 16 September 2026; [the setup record](setup.md) confirms that no per-key cap is configured. Revisit the cap before wider use. Missing authentication configuration must fail closed. Keep source content, passwords and keys out of logs and client bundles.
 - **Done:** local and deployed reading/mathematics journeys pass, including errors, approval resets, late results, PDF layout and wrong-password checks. Model quality and classroom effectiveness remain unproven beyond recorded examples.
 
-The [M0 setup record](setup.md) tracks prepared infrastructure and outstanding Cloud Run runtime-injection verification; no application is deployed yet. The [project plan](project-plan.md) defines the current acceptance gates. The fuller components and two-session build sequence below apply only as their follow-up issues are scheduled.
+The [M0 setup record](setup.md) records successful Cloud Run runtime and secret-injection verification. Application commit `d1931fa` passed hosted checks as revision `chld-adapt-d1931fa`; see the [verification record](verification.md). The [project plan](project-plan.md) defines the current acceptance gates. The fuller components and two-session build sequence below apply only as their follow-up issues are scheduled.
 
 ## 1. The approach
 
@@ -77,7 +78,7 @@ The table includes the broader target. Source readers for DOCX/PDF/JPG are **not
 | Worksheet renderer | Fixed React PDF templates using `@react-pdf/renderer` | Produces consistent A4 pages from approved content |
 | Session storage | Browser memory only | Supports the agreed session without creating a saved library |
 
-These are proposed libraries, not installed dependencies. Official references: [Next.js route handlers](https://nextjs.org/docs/app/getting-started/route-handlers), [Mammoth](https://github.com/mwilliamson/mammoth.js), [PDF.js](https://mozilla.github.io/pdf.js/) and [React PDF](https://react-pdf.org/docs/v4/advanced).
+Next.js, Zod, React PDF and PDF.js are installed and used. PDF.js renders the generated PDF bytes for teacher review; source-file parsing and Mammoth remain follow-up work. Official references: [Next.js route handlers](https://nextjs.org/docs/app/getting-started/route-handlers), [Mammoth](https://github.com/mwilliamson/mammoth.js), [PDF.js](https://mozilla.github.io/pdf.js/) and [React PDF](https://react-pdf.org/docs/v4/advanced).
 
 Start with `POST /api/plan` and `POST /api/adapt`; add `POST /api/extract-photo` in the photo follow-up. Each adaptation request concerns one group. PDF rendering runs in the browser; later DOCX/PDF parsing can also run there. The server does not need to store files or generate downloads.
 

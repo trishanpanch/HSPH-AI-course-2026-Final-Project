@@ -1,17 +1,17 @@
 # CHLD Adapt — prototype design brief for Google Stitch
 
-**Status:** Stitch visual direction approved; implementation guidance revised 16 September 2026. The one-hour MVP scope below is approved. The application is not built yet.
+**Status:** Stitch visual direction approved; implementation guidance revised 16 September 2026. The class-demo MVP scope below is approved. M0–M4 are Done. The tested revision is live at [CHLD Adapt](https://chld-adapt-8642258683.us-central1.run.app); see the [verification record](docs/verification.md). The app uses `google/gemini-2.5-flash-lite` through OpenRouter for the current build, after the original Qwen candidate failed live probing.
 
 **Product owner / original idea:** Victoria Nolasco; class team: Victoria, Trishan Panch and the group.  
-**Requirements:** [PRD.md](PRD.md), derived from the [shared Google Doc](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit) with the later approved one-hour repository addendum. The Google Doc has not been updated with that addendum.
+**Requirements:** [PRD.md](PRD.md), derived from the [shared Google Doc](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit) with the later approved class-demo repository addendum. The Google Doc has not been updated with that addendum.
 
 The PRD defines what must work. The [selected Stitch export](stitch/README.md) supplies the approved visual direction. This brief translates that direction into the current release, correcting prototype copy and controls that conflict with the PRD. Approval of the appearance is not evidence of teacher testing or implemented behavior.
 
-## Approved one-hour MVP screen scope
+## Approved class-demo MVP screen scope
 
 Keep the warm paper surfaces, crimson actions, Playfair Display headings, Inter interface text and side-by-side source/adaptation review. Use the desktop intake and review screenshots as the principal layout references; the other exported screens guide the remaining steps. Preserve all original exports as references rather than editing them to represent implementation progress.
 
-| Step | One-hour release | Later release |
+| Step | Class-demo release | Later release |
 | --- | --- | --- |
 | Worksheet | Paste a simple text-only worksheet; goal, grade/age; editable source; confirm complete content and no omitted essential visual | DOCX/PDF/JPG intake, extracted-content and image review |
 | Groups | Group A only; all eleven labels/explanations; select 1–3 needs and optional context | Add/switch Groups B and C |
@@ -19,7 +19,7 @@ Keep the warm paper surfaces, crimson actions, Playfair Display headings, Inter 
 | Review | Original and editable adaptation; goal, change summary, concern decisions; actual A4 PDF preview and explicit approval | Source-image comparison and additional print/visual controls |
 | Download | One approved current PDF, with approval reset after relevant changes | Multiple independent group PDFs |
 
-Hide upload, extra-group and batch-download controls in the MVP. Missing essential visual content blocks use of that source; choose a complete text-only worksheet. A shared browser password prompt protects the hosted class demo; do not add an account or learner-profile interface. Follow [project-plan.md](project-plan.md) for milestone checks and the one-hour timebox.
+Hide upload, extra-group and batch-download controls in the MVP. Missing essential visual content blocks use of that source; choose a complete text-only worksheet. A shared browser password prompt protects the hosted class demo; do not add an account or learner-profile interface. Follow [project-plan.md](project-plan.md) for milestone checks and the current 45-minute hard deadline ending at 17:20:12 UTC.
 
 ### Corrections when implementing the selected screens
 
