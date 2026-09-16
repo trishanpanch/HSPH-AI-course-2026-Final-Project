@@ -1,0 +1,8 @@
+.gcloudignore
+.git
+.git/**
+#!include:.gitignore
+node_modules/
+.next/
+coverage/
+docs/

@@ -12,6 +12,8 @@ Use the [PRD's one-hour scope](PRD.md#0-approved-one-hour-mvp-scope), [approved 
 
 ## Before the clock starts
 
+**Selected target:** `vibecoda-499712` in the LUNR Studio organization, using `trishan@lunr.studio` in `us-central1`. See the [M0 setup record](setup.md) for verified infrastructure, secret locations and outstanding checks. M0 is in Ready at the owner's request and remains open; the clock has not started.
+
 Complete **M0** first. The owner needs to select the GCP project/deployment identity and supply the OpenRouter key and class password securely. Prepare billing, APIs, permissions and Secret Manager, verify a live model probe, and set the initial $5 OpenRouter key limit. Keep secret values out of this public project and repository. Use explicit project/account arguments rather than an unrelated CLI default.
 
 The default deployment region is `us-central1`; the model is `qwen/qwen3.7-flash`. Confirm actual availability and response behavior in M0. A change of model must be recorded. Missing credentials must show an honest configuration error rather than a simulated result.
@@ -34,7 +36,7 @@ Dependencies: **M0 → M1 → M2 → M3 → M4**. M4 also explicitly depends on 
 
 Start the clock after M0 passes. Stop implementation at 60 minutes and record elapsed time, the last passing milestone and the unfinished issue numbers. Leave incomplete issues open. Do not replace missing behavior with an unlabeled simulation to meet the deadline.
 
-Use the team's usual coding environment and coding assistant. Keep app code in this repository. Move issues through **Todo → In Progress → Done**; Done means their checks passed and evidence is linked. A screenshot of a screen is not sufficient evidence that the model or PDF path works. Explain completed behavior in plain language so Victoria and the group can review it.
+Use the team's usual coding environment and coding assistant. Keep app code in this repository. Use **Todo → Ready → In Progress → Done**; Ready marks selected work, while Done means its checks passed and evidence is linked. A screenshot of a screen is not sufficient evidence that the model or PDF path works. Explain completed behavior in plain language so Victoria and the group can review it.
 
 ## Decisions that keep the release small
 

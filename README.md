@@ -13,6 +13,7 @@ The approved first release handles one pasted text worksheet and one group, with
 | Document | Purpose |
 | --- | --- |
 | [Project plan](docs/project-plan.md) | Issue sequence, prerequisites, testable milestones, one-hour budget and follow-up work. |
+| [M0 setup record](docs/setup.md) | Selected GCP account/project, prepared identities/secrets and remaining readiness checks. |
 | [PRD](docs/PRD.md) | Approved one-hour scope, with broader requirements and teacher-evaluation goals retained. |
 | [Design brief](docs/DESIGN.md) | Approved visual direction, MVP screen scope and corrections to prototype-only controls/claims. |
 | [Stitch references](docs/stitch/README.md) | Original ZIP, six HTML/screenshot pairs and exported style guide, with preview index. |
