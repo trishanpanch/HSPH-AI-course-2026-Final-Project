@@ -1,0 +1,85 @@
+{
+  "readiness_status": "design_complete",
+  "scope_guardrails": {
+    "forbidden_outputs": [
+      "implementation task graph",
+      "build tasks",
+      "implementation tickets",
+      "GitHub issue export",
+      "coding-agent handoff",
+      "code generation",
+      "test-run results",
+      "pull requests",
+      "deployments",
+      "completed product claims"
+    ],
+    "product_design_pack_only": true
+  },
+  "structured_metadata": [],
+  "pack": {
+    "id": "workflow-pack:61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a"
+  },
+  "review_status": "exported",
+  "artifacts": [
+    {
+      "id": "61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a:frame_opportunity:v3",
+      "stable_id": "ART-001",
+      "key": "frame_opportunity",
+      "type": "markdown",
+      "version": 1,
+      "path": "product-design-pack/frame_opportunity.md",
+      "schema_ref": "frame_opportunity/v1"
+    },
+    {
+      "id": "61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a:validate_learning:v5",
+      "stable_id": "ART-002",
+      "key": "validate_learning",
+      "type": "markdown",
+      "version": 1,
+      "path": "product-design-pack/validate_learning.md",
+      "schema_ref": "validate_learning/v1"
+    },
+    {
+      "id": "61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a:package_decision:v3",
+      "stable_id": "ART-003",
+      "key": "package_decision",
+      "type": "markdown",
+      "version": 1,
+      "path": "product-design-pack/package_decision.md",
+      "schema_ref": "package_decision/v1"
+    }
+  ],
+  "validation": {
+    "status": "invalid",
+    "generated_at": "2026-09-09T17:13:10.609Z",
+    "findings": [
+      {
+        "id": "VAL-FORBIDDEN-DEPLOYMENT",
+        "severity": "blocking",
+        "summary": "The pack contains out-of-scope build handoff content: deployment.",
+        "recommendation": "Keep beta v1 outputs limited to Development Pack files and remove implementation handoff content.",
+        "related_ids": [],
+        "source_artifact_ids": []
+      }
+    ],
+    "blocking": true
+  },
+  "session_id": "local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a",
+  "export_status": "exported",
+  "generated_at": "2026-09-09T17:12:28.699Z",
+  "company_provenance": {
+    "mode": "linked",
+    "snapshot_captured_at": "2026-09-09T16:48:29.080Z",
+    "source_updated_at": "2026-09-08T16:49:26.426Z",
+    "company_id": "pkkXEalU9mml2v5zLM0e",
+    "company_name": "Companion Hub for Learning and Discovery (CHLD)"
+  },
+  "manifest_schema_version": "1.1",
+  "project": {
+    "title": "The idea is to build a simple CHLD Teacher AI Studio for educators who need practical help supporting learners with different learning and developmental needs in the classroom. The Studio would initially have two core tools. The first is Things to Try. A teacher describes a specific classroom difficulty, for example a learner who keeps leaving their seat, becomes upset during transitions, hits another student, struggles to begin independent work, or cannot follow multi-step instructions. The tool helps the teacher move from a broad or judgmental description of the problem toward a more concrete understanding of what is happening, then suggests a small number of practical, low-risk strategies the teacher can try. The goal is not to diagnose the learner or tell the teacher what condition the child may have. It is to help the teacher identify a reasonable next step that can be tried in the classroom, along with what to observe to see whether it helped. The second tool is CHLD Adapt. A teacher uploads or pastes classroom material they already use, such as instructions, a worksheet, activity, or quiz. The teacher then selects what is making the material difficult for the learner. The system creates an adapted version that can be reviewed, printed, or downloaded and given directly to the learner. Initial adaptations may include breaking instructions into steps, simplifying directions, adding visual structure or supports, converting some recall items into choices where appropriate, and reformatting materials to make them easier to use, such as larger text, more spacing, or fewer items at once. The Studio should not require teachers to know how to write AI prompts. The interface should be structured and guided, with simple choices and short questions. The AI intelligence should sit behind the interface. Behind the scenes, the system may use specialized AI roles or agents, such as a child development or learning-support expert, a teaching and assessment expert, an adaptation expert, and a reviewer. These roles would work together to understand the teacher’s concern or material, preserve the intended learning goal, apply appropriate supports, and check that the output is safe and useful. The system should be grounded in a curated knowledge base containing evidence-informed guidance on child development, scaffolding, executive function, classroom participation, accessible learning materials, clear instructions, response demands, and preserving learning objectives. The knowledge base should be easy to update without retraining the AI model. The first version should be deliberately small and easy to use. Ideally, teachers can access it without creating an account. They should be able to open the site, choose either Things to Try or CHLD Adapt, enter or upload what they already have, receive a useful output, review it, and download or print it. The product should be designed as a practical teacher utility rather than a diagnostic or clinical system. It should avoid making assumptions about diagnoses, avoid replacing professional judgment, avoid unnecessary collection of student information, and clearly distinguish between adapting access to a task and changing what the learner is actually being asked to demonstrate. The broader vision is to create a growing studio of small, focused AI tools that reduce teacher workload and help schools put inclusion into practice. The September 2026 version would be a “skateboard” rather than a full platform: it should already solve a real problem from end to end, even if it only has these two core tools at first.",
+    "workspace_id": "EPG0mZsJaf7ZuOqZZ3d5",
+    "id": "61clJsO5Dx5FiASIM8hW"
+  },
+  "quality_score": 10,
+  "product_design_pack_version": "1.0"
+}

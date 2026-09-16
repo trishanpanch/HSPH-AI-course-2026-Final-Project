@@ -1,0 +1,22 @@
+{
+  "schema_version": "v1",
+  "pack_name": "Development Pack",
+  "review_status": "ready_for_review",
+  "quality_score": 10,
+  "stage_artifacts": [
+    "product_design_pack/01_frame_opportunity.md",
+    "product_design_pack/02_validate_learning.md",
+    "product_design_pack/03_package_decision.md",
+    "product_design_pack/README.md",
+    "product_design_pack/pitch_deck.md"
+  ],
+  "scope_guardrails": [
+    "Development Pack only",
+    "No GitHub issues",
+    "No implementation tickets",
+    "No production code",
+    "No product tests",
+    "No pull requests",
+    "No deployment steps"
+  ]
+}

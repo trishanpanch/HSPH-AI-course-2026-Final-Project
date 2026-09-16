@@ -1,0 +1,170 @@
+{
+  "retrieved_at": "2026-09-14T21:02:15.384495+00:00",
+  "backend_project": "vibecoda-499712",
+  "project_id": "61clJsO5Dx5FiASIM8hW",
+  "session_id": "local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a",
+  "pack_id": "workflow-pack:61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a",
+  "source_url": "https://vibecoda.co/admin/submissions/61clJsO5Dx5FiASIM8hW",
+  "pack_status": "exported",
+  "generated_at": 1788973948699,
+  "exported_at": 1788973990609,
+  "validation": {
+    "status": "invalid",
+    "generated_at": "2026-09-09T17:13:10.609Z",
+    "findings": [
+      {
+        "id": "VAL-FORBIDDEN-DEPLOYMENT",
+        "severity": "blocking",
+        "summary": "The pack contains out-of-scope build handoff content: deployment.",
+        "recommendation": "Keep beta v1 outputs limited to Development Pack files and remove implementation handoff content.",
+        "related_ids": [],
+        "source_artifact_ids": []
+      }
+    ],
+    "blocking": true
+  },
+  "cache_differences": [],
+  "files": [
+    {
+      "path": "01_frame_opportunity.md",
+      "sha256": "e1f3e92ccc7c87bb6f7d7a971185ede2ec582708785a61430bd18cd0603a4738",
+      "bytes": 9771,
+      "source_collection": "beta_product_artifacts",
+      "source_id": "61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a:frame_opportunity:v3",
+      "status": "approved"
+    },
+    {
+      "path": "02_validate_learning.md",
+      "sha256": "51aa0109470d79bf3e0d35345bcc47eb567ac3672f43715b042c3c29674ca8ea",
+      "bytes": 15022,
+      "source_collection": "beta_product_artifacts",
+      "source_id": "61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a:validate_learning:v5",
+      "status": "approved"
+    },
+    {
+      "path": "03_package_decision.md",
+      "sha256": "7dbc99e9f5a4f1985d05633ce7cc0152deeb0086cb017230b0c48cf20d60b973",
+      "bytes": 12115,
+      "source_collection": "beta_product_artifacts",
+      "source_id": "61clJsO5Dx5FiASIM8hW:local-product-session-cc37a424-63a8-4adf-9e72-df76c4d2663a:package_decision:v3",
+      "status": "approved"
+    },
+    {
+      "path": "saved_pack_manifest.json",
+      "sha256": "8f462beca1e2823084ceb410a952def10f0b905a5e7ae0477d0e00228cbc24d6",
+      "bytes": 6394
+    },
+    {
+      "path": "saved_pack_manifest.yaml",
+      "sha256": "20b8f2834b777e761780c5cf8a7fc450839a9b3bb084c68c4faed9e666bd26ea",
+      "bytes": 6000
+    },
+    {
+      "path": "reviews/frame_opportunity/REVIEW.md",
+      "sha256": "fc4538f133c392fb51c31ab1066f30ed2445550392208fea995132eeef435018",
+      "bytes": 2524
+    },
+    {
+      "path": "reviews/frame_opportunity/SCORE.json",
+      "sha256": "a137dcd7851e935bbcc16ab48a71ba6780d49b53584a9f119b996e9bbe93a539",
+      "bytes": 485
+    },
+    {
+      "path": "reviews/package_decision/REVIEW.md",
+      "sha256": "bd39135c70c62b6726cbb1f747abd94c072da41ae6c61104e8e5ed10f35ea4f1",
+      "bytes": 2276
+    },
+    {
+      "path": "reviews/package_decision/SCORE.json",
+      "sha256": "d6ca96415db4741308b26b55bbefbb965163df627b1c06a1a510bbc93bf2dda9",
+      "bytes": 397
+    },
+    {
+      "path": "original_generated_readme.md",
+      "sha256": "73c94724ee9eba1fdeffd35af0faf417ac923576ff334a5f0ed01d8bfdf6b4c7",
+      "bytes": 2506,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/README.md"
+    },
+    {
+      "path": "decision_log/frame_opportunity.md",
+      "sha256": "006578c5a50c6d4186c648d3f92fb77557ac8f133c2cd757648c47d0c3533250",
+      "bytes": 2596,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/decision_log/frame_opportunity.md"
+    },
+    {
+      "path": "decision_log.md",
+      "sha256": "4e03586e1630ba3728fe8d4ef263caf9e2447e23271659cfca0f16d37073090f",
+      "bytes": 7683,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/decision_log.md"
+    },
+    {
+      "path": "decision_log/package_decision.md",
+      "sha256": "4e03586e1630ba3728fe8d4ef263caf9e2447e23271659cfca0f16d37073090f",
+      "bytes": 7683,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/decision_log/package_decision.md"
+    },
+    {
+      "path": "decision_log/validate_learning.md",
+      "sha256": "c10a5e92d89caa4a0dfdcecebc165c95b344c7f53d87b87dc74596a3535b22cf",
+      "bytes": 7105,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/decision_log/validate_learning.md"
+    },
+    {
+      "path": "open_questions/frame_opportunity.json",
+      "sha256": "ddfb09141c9c9d0682d7b4bd09a7578d0174e686dc78d66740a8360e20cbe6a2",
+      "bytes": 2384,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/open_questions/frame_opportunity.json"
+    },
+    {
+      "path": "open_questions.json",
+      "sha256": "113b7f5e22fbf6fb1f045a6a4922679a1c8a5a9b80e42973a2cbb73166c8c2ca",
+      "bytes": 6920,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/open_questions.json"
+    },
+    {
+      "path": "open_questions/package_decision.json",
+      "sha256": "113b7f5e22fbf6fb1f045a6a4922679a1c8a5a9b80e42973a2cbb73166c8c2ca",
+      "bytes": 6920,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/open_questions/package_decision.json"
+    },
+    {
+      "path": "open_questions/validate_learning.json",
+      "sha256": "e3c1b303d66abd7b301d0b930487d518563a0a58dbac1171e01902f9c9df8472",
+      "bytes": 6309,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/open_questions/validate_learning.json"
+    },
+    {
+      "path": "original_generated_pitch_deck.md",
+      "sha256": "12ff50c6b55449758d855c6dedbda5204d781091bc32f1008d854cbec8897517",
+      "bytes": 26231,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/pitch_deck.md"
+    },
+    {
+      "path": "product_design_pack_manifest.json",
+      "sha256": "df750248259978275ee76cbbd7897adf3c5bb384496ca9bbccae31c3bedd1fc2",
+      "bytes": 597,
+      "source_collection": "beta_workflow_output_cache",
+      "source_output_name": "product_design_pack/product_design_pack_manifest.json"
+    },
+    {
+      "path": "reviews/validate_learning/REVIEW.md",
+      "sha256": "03c1d2bc7b3f54e929c6bb400e4294ff0665993fc525903797fb2a1daee5200d",
+      "bytes": 2376
+    },
+    {
+      "path": "reviews/validate_learning/SCORE.json",
+      "sha256": "5fc34c3d98fae5cc145377d9b3bbb894a80929f56ffc2ce4808a9ba5ddd0d5e8",
+      "bytes": 511
+    }
+  ]
+}

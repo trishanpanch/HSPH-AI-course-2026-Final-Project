@@ -1,0 +1,76 @@
+{
+  "schema_version": "beta_v1_open_questions_v1",
+  "updated_at_stage": "package_decision",
+  "questions": [
+    {
+      "id": "Q-FRAME-001",
+      "stage_id": "frame_opportunity",
+      "question": "What specific behavioral escalation thresholds must trigger a hard stop in 'Things to Try' to route teachers to institutional safeguarding rather than classroom strategies?",
+      "why_it_matters": "Ensures adherence to non-maleficence and child safety standards under the PEARL-AI ethical framework, preventing inappropriate AI intervention in critical child welfare or medical situations.",
+      "blocking_level": "high",
+      "status": "answered",
+      "answer_summary": "Hard-stop ordinary strategy generation on immediate serious harm risk, weapons, severe injury aggression, self-harm/suicide, suspected abuse/neglect/exploitation, elopement into danger, medical emergencies (unconsciousness, seizure, breathing difficulty), or unmanageable safety risks. Instruct teachers to follow school emergency/safeguarding procedures immediately. Curated rule sets govern hard-stops. For lower-level non-dangerous behaviors (hitting, pushing, seat leaving, refusal), clarify context and timeline before providing strategies without diagnosing.",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-FRAME-002",
+      "stage_id": "frame_opportunity",
+      "question": "How should 'CHLD Adapt' categorize and visually alert teachers when an adaptation modifies the underlying cognitive demand (e.g., recall vs. recognition)?",
+      "why_it_matters": "Protects curricular integrity and ensures teachers retain intentional control over assessment standards and classroom accommodations.",
+      "blocking_level": "medium",
+      "status": "answered",
+      "answer_summary": "Distinguish between two categories for the September pilot: (1) 'ACCESS CHANGE' (font, spacing, chunking, simplified directions preserving academic vocabulary) labeled neutrally as 'Access change: The learning task has been retained', and (2) 'DEMAND-CHANGING ADAPTATION' (recall to multiple choice, essay to selection, word banks for retrieval, concept reduction) with a prominent warning banner explaining the shift and requiring explicit 'Use this version' teacher confirmation before downloading.",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-FRAME-003",
+      "stage_id": "frame_opportunity",
+      "question": "What level of bilingual (English and Filipino/Tagalog) parsing and generation is required for the September 2026 pilot?",
+      "why_it_matters": "Directly impacts the accuracy of worksheet transformation and teacher behavioral intake in Philippine classroom environments.",
+      "blocking_level": "medium",
+      "status": "answered",
+      "answer_summary": "Understand English, Filipino/Tagalog, and mixed Taglish teacher input. Preserve the source material language without unauthorized translation. Generate 'Things to Try' advice in the teacher's primary input language. English UI is acceptable for September. Benchmark tests must include Filipino and mixed examples prior to deployment; if Filipino reliability lags, explicitly disclose English as the validated language.",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-FRAME-004",
+      "stage_id": "frame_opportunity",
+      "question": "How will CHLD guarantee complete client-side or zero-retention privacy for unauthenticated v1 users who might input student PII?",
+      "why_it_matters": "Fulfills CHLD's privacy-first non-surveillance policy and satisfies pediatric data protection requirements.",
+      "blocking_level": "high",
+      "status": "answered",
+      "answer_summary": "Enforce data minimization and zero application-level retention across the processing chain: no user accounts, no student PII fields, clear warning notices, client-side PII regex/scrubbing where feasible, ephemeral in-memory request processing without database persistence, disabled analytics/session replay/logging of inputs, immediate temp file deletion, metadata stripping, and verified zero-retention AI API configurations.",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-TEST-001",
+      "stage_id": "validate_learning",
+      "question": "What standard evaluation rubrics should the expert clinical and educational review panel use during the 50-artifact pre-pilot benchmark?",
+      "why_it_matters": "Provides objective, repeatable scoring criteria for construct preservation, safety triage, and non-diagnostic framing across test iterations.",
+      "blocking_level": "high",
+      "status": "answered",
+      "answer_summary": "The expert panel uses an 8-dimension rubric scored 1 (unacceptable) to 5 (strong): Construct Preservation, Appropriateness of Adaptation, Safety/Escalation, Non-Diagnostic Framing, Practical Usefulness, Clarity/Accessibility, Factual/Instructional Accuracy, and Teacher Control/Transparency. Enforce binary 'critical failure' flags (unsafe advice, missed escalation, diagnostic labels, unflagged construct alteration, answer leaks). Release requirement is an average score >= 4.0/5.0 with 0 critical failures.",
+      "source_artifact": "product_design_pack/02_validate_learning.md"
+    },
+    {
+      "id": "Q-TEST-002",
+      "stage_id": "validate_learning",
+      "question": "How should low-bandwidth or offline printing constraints in Philippine provincial schools be accommodated during the live September 2026 pilot?",
+      "why_it_matters": "Ensures that exported worksheets and strategy cards can be printed or distributed reliably across varying school resource environments.",
+      "blocking_level": "medium",
+      "status": "answered",
+      "answer_summary": "MVP prioritizes low-bandwidth, text-first web pages, minimal animations, compressed uploads, system fonts, and local browser draft caching to prevent text loss during dropouts. Outputs use high-contrast grayscale A4 print layouts with simple icons, native browser print fallback, and downloadable formats that remain fully usable after the teacher goes offline.",
+      "source_artifact": "product_design_pack/02_validate_learning.md"
+    },
+    {
+      "id": "Q-BUILD-001",
+      "stage_id": "package_decision",
+      "question": "What specific B2B/B2G onboarding and institutional data-governance packages will be required when scaling from the unauthenticated September pilot to formal school contracts?",
+      "why_it_matters": "Enables seamless commercial conversion with private school networks and local government units while maintaining strict pediatric data privacy compliance.",
+      "blocking_level": "medium",
+      "status": "open",
+      "answer_summary": "",
+      "source_artifact": "product_design_pack/03_package_decision.md"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "findings": [
+    {
+      "reviewer": "frame_opportunity",
+      "severity": "score_9_of_10",
+      "summary": "The opportunity framing is comprehensive, grounded in Philippine classroom realities, and aligns with pediatric AI ethical guidelines (PEARL-AI). It clearly articulates the dual-tool 'skateboard' scope, boundary conditions between adaptation and clinical diagnosis, and business/adoption assumptions.",
+      "recommendation": "proceed"
+    }
+  ],
+  "blocking": false
+}

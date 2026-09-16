@@ -1,0 +1,272 @@
+# CHLD Adapt — prototype design brief for Google Stitch
+
+**Status:** design proposal for group review, 15 September 2026.  
+**Product owner / original idea:** Victoria Nolasco; class team: Victoria, Trishan Panch and the group.  
+**Requirements:** [PRD.md](PRD.md), exported from the [shared Google Doc](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit).
+
+The PRD defines what must work. This file proposes how it should look and behave so the group can test the experience before implementing it. Colours, typography, screen divisions and example content are design proposals, not findings from teacher testing. If a design conflicts with the PRD, follow the PRD.
+
+## 1. How to use this file
+
+Give Stitch this design brief and the PRD as context, by adding the files where supported or pasting their contents. Start with the prompt in Section 9, then request the remaining screens one at a time using Section 10. Keep the approved first screen as the visual reference and refine a specific screen or state per request.
+
+The desired output is a teacher-facing web prototype. Upload processing, AI generation, editing and PDF export may be simulated at this stage; label the demonstration as a prototype and identify which actions are simulated when presenting it. Screens and clickable links do not establish that the underlying processing works. Implementation remains a separate task in the team's usual coding environment, tracked through its CHLD Adapt GitHub repository, Project and Issues.
+
+Use fictional worksheets and group needs throughout. The main test is whether a teacher understands the complete journey and can review usable adaptations efficiently. Ten minutes for an approved set of up to three worksheets is a test target, not a promise to place in the interface.
+
+## 2. Product and experience
+
+CHLD Adapt helps a primary-school teacher adapt an existing worksheet for up to three groups with different observable needs. The learning goal stays the same; the teacher reviews, corrects and approves each version, then downloads it for printing.
+
+The initial context is Philippine public and private schools. The first intended teacher teaches Grade 2 with about 30 pupils. Teachers use the tool while preparing a lesson; children use the printed worksheets.
+
+Create a calm, practical workspace that feels like preparing teaching materials. Give the current task, source worksheet and next action most of the space. Keep explanations short and available at the point of use. Use ordinary teaching language: “worksheet,” “group,” “what changed” and “review.”
+
+The prototype starts directly with worksheet preparation. Its scope excludes accounts, pupil records, diagnostic labels, dashboards, saved libraries, chat assistants, school integrations and creating worksheets from a goal alone. Use an English interface; preserve the worksheet's original language without a translation control or claims of untested language support.
+
+## 3. Design system
+
+### Visual theme
+
+Warm paper, dark readable text and a restrained crimson accent connect this prototype to the class deck. The workspace should feel composed and welcoming, with generous spacing around decisions and compact supporting information. Avoid decorative illustrations and large promotional sections that distract from preparing a worksheet.
+
+### Colours and roles
+
+| Role | Colour | Use |
+| --- | --- | --- |
+| Page background | Warm paper `#F7F5F0` | Quiet background behind the workspace |
+| Surface | White `#FFFFFF` | Inputs, worksheet pages and review panels |
+| Primary text | Charcoal `#242424` | Headings, labels and body text |
+| Supporting text | Slate `#52525B` | Helper text and secondary details |
+| Primary action | Crimson `#A51C30` | Main button, selected step and links; white button text |
+| Primary hover | Deep crimson `#861627` | Hover/pressed primary action |
+| Control boundary | Stone `#85817A` | Visible input borders and unselected checkboxes |
+| Divider | Pale stone `#DDD8CF` | Decorative separators, not the sole boundary of an input |
+| Approved | Forest `#17603B` on `#EDF7F0` | “Approved” text and check icon |
+| Needs attention | Amber brown `#7A4300` on `#FFF4DE` | Review concerns, with a warning icon and explanation |
+| Failed | Dark red `#9B1C20` on `#FFF0F0` | Recoverable errors with an explicit action |
+| Keyboard focus | Deep blue `#1D4ED8` | A clearly visible focus ring separated from the control |
+
+Status always includes text and an icon; colour alone must not carry meaning. Verify contrast in the generated screens, including hover, focus and disabled states.
+
+### Typography, shape and spacing
+
+- Use **Playfair Display** for the product name and main page heading only. Use **Inter**, with a familiar sans-serif fallback, for controls, supporting headings and body text.
+- Use body text around 16 px, labels at least 14 px and comfortable line spacing. Main headings should remain modest, around 28–32 px on desktop.
+- Buttons and inputs have gently rounded corners, around 8 px; major panels around 12 px. Prefer subtle borders to heavy shadows. Use a soft shadow only to distinguish the printable sheet from its surrounding workspace.
+- Use a consistent spacing rhythm, with roughly 24 px between related sections and 32 px around major panels. Make controls easy to click or tap, approximately 44 px high.
+- Start with a laptop-sized web layout, around 1280 px wide. Use a centred workspace; allow the comparison screen more width. On narrower screens, stack panels and preserve clear reading order. Original/adapted tabs may replace a side-by-side comparison.
+- Use labelled fields, visible keyboard focus and readable error text. Checklist explanations must open by keyboard or tap, rather than depending on hover. Keep action bars from covering the last lines of a worksheet.
+
+### Reusable components
+
+Use one quiet header with “CHLD Adapt” and a small “Class prototype” label. Below it, show the five-step journey: **Worksheet → Groups → Plan → Review → Download**. A compact learning-goal strip stays available after intake. It should show the goal as written and a deliberate “Edit lesson” action.
+
+Use a filled crimson button for the main next action, an outlined button for secondary actions and text links for navigation. Keep group selectors, checklist rows, status badges, warning panels and worksheet previews consistent across screens.
+
+## 4. Screen specifications
+
+### Screen 1 — Your worksheet
+
+**Purpose:** supply an existing worksheet and make sure the tool has read it correctly.
+
+- Heading: **“Adapt a worksheet for your class.”** Supporting line: “Keep the learning goal. Adjust how learners access the work.”
+- Fields: **“Learning goal,” “Grade,” “Approximate age range.”** The goal is written by the teacher.
+- Source choices: **“Paste text”** and **“Upload a file.”** Accept `.docx` and PDFs with selectable text. Explain this beside the upload control.
+- After upload, show **“Check the extracted worksheet”** with editable extracted content. Ask the teacher to confirm it is complete and accurate before proceeding. Keep pasted text editable too.
+- Primary action: **“Continue to groups.”** Require a goal, grade/age information, usable source material and, for an upload, confirmation of the extracted content. Explain missing fields beside them.
+- For an unreadable file: “We couldn't read this worksheet reliably. Paste the text below or choose a Word document or PDF with selectable text.” Preserve the information already entered.
+- Brief session notice: “Work stays available during this session. Download approved worksheets before closing.”
+
+Create both an empty state and a populated source-review state. Use the reading example in Section 7 for the populated version.
+
+### Screen 2 — What does each group need?
+
+**Purpose:** describe difficulties without requiring the teacher to write an AI prompt.
+
+- Start with **Group A**. Offer **“Add another group”** up to three groups; show the limit clearly. Use Group A/B/C throughout, without pupil names or diagnostic categories.
+- Select a group to see its checklist. Keep other groups' selections when switching, with a compact selection count in each group tab.
+- Ask **“What makes this worksheet difficult for this group?”** Helper: “Choose one to three difficulties to focus on.”
+- Display all eleven exact labels in Section 6 under their three headings. Use checkboxes and an accessible “More information” control for each full explanation. Keep the headings visible so the list is easy to scan.
+- When three are selected, explain that a teacher can deselect one to choose another. Do not silently replace a choice.
+- Optional field: **“Anything else we should know about what is difficult?”** Helper: “Describe the worksheet difficulty. Leave out pupil names and personal histories.”
+- Primary action: **“Review adaptation plan.”** Require at least one selected difficulty for each included group. Let the teacher remove an unused group.
+
+Create a one-group state and a three-group state. The learning goal stays visible above the group workspace.
+
+### Screen 3 — Review the plan
+
+**Purpose:** show what will change before generating worksheets.
+
+- Show one panel per group, containing its selected difficulties and a short proposed approach. Link each panel to **“Change needs.”**
+- Example: “Split instructions into steps, keep all questions, and place two questions on each page.”
+- Reinforce the shared learning goal and state that there will be one worksheet per group. Never suggest a separate version for every combination of checklist selections.
+- Primary action: **“Create worksheets.”**
+- In the progress state, each group has its own status: **“Preparing,” “Ready to review,”** or **“Could not create.”** Avoid invented accuracy scores, exact completion percentages or guaranteed waiting times.
+- If one group fails, keep completed worksheets available. Provide **“Retry Group B”** for the failed group without resetting the others or losing inputs. Empty or unusable output is a failure, not a ready worksheet.
+- Action when material is available: **“Review worksheets.”**
+
+Create a plan state and a partial-failure state with Group A ready, Group B failed and Group C ready.
+
+### Screen 4 — Review and approve
+
+**Purpose:** let the teacher inspect the exact material that will be printed.
+
+- Keep the learning goal, group selector and per-group status visible.
+- On desktop, show **“Original worksheet”** and **“Adapted worksheet”** side by side. The original is read-only here; the adapted version is editable. On narrow screens, use clearly labelled tabs.
+- Show **“What changed”** near the adapted worksheet, with a brief list linked to the selected difficulties. Make the group and selected needs available without opening another page.
+- Actions: **“Edit worksheet,” “Regenerate this group,” “Discard this version.”** Changes apply to the selected group. Discarding leaves that group without a downloadable version and allows regeneration.
+- Present a concern where it can be assessed: **“This change may affect the learning goal.”** Explain the particular issue, such as a reference box revealing an answer. Offer correction or an explicit **“I confirm the learning goal is unchanged”** choice. This confirmation resolves that concern; approval of the whole version remains a separate action.
+- Primary action: **“Approve this version.”** Supporting text: “Check the questions, learning goal, answer space and any concerns before approving.” Unresolved concerns block approval.
+- After approval, show **“Approved”** with **“Download PDF”** enabled for that exact version. Offer **“View downloads”** to see the set, including groups still requiring review.
+- If the teacher edits or regenerates an approved worksheet, immediately change its status to **“Needs review”** and explain: “This worksheet has changed. Review and approve it again before downloading.”
+
+Create unapproved, flagged, approved and edited-after-approval states. Avoid “AI verified,” “safe for all learners” or other claims that substitute for the teacher's judgment.
+
+### Screen 5 — Download your worksheets
+
+**Purpose:** print approved variants and see what still needs attention.
+
+- Show one row or panel per group with its current status, an A4 preview and **“Download PDF”** for approved versions only. Each group has a separate PDF.
+- Unapproved groups show **“Review Group B”**; failed groups show a retry action. Do not enable an unapproved download just because other groups are approved.
+- Include **“Back to review.”** Re-downloading a current approved version is supported during the session.
+- Show a clear reminder: “Download your approved worksheets before closing. You can reprint the PDFs later; this session won't be saved.”
+- Keep group needs, teacher review notes and warning explanations in the teacher interface. The pupil worksheet contains the teaching material, clear instructions and suitable response space, without diagnostic labels or internal review controls.
+
+## 5. State rules the prototype must demonstrate
+
+| Event | Visible result | Download rule |
+| --- | --- | --- |
+| A worksheet is generated | Draft / Needs review | Disabled for that version |
+| A concern remains unresolved | Specific concern beside the affected material | Disabled; correction or explicit goal-preservation confirmation is required before approval |
+| Teacher approves the current version | Approved, with a check icon | Enabled for that exact version |
+| Teacher edits or regenerates an approved variant | That group's status becomes Needs review | Disabled until fresh approval; other unchanged groups retain approval |
+| Teacher changes source material or learning goal | All groups visibly need fresh review against the revised lesson | All previous approvals removed; no stale downloads |
+| A group's needs change after generation | Show that the existing version must be refreshed and reviewed for those needs | For this prototype, clear that group's approval and require a refreshed version; this is a conservative design proposal |
+| One group's generation fails | Failed group offers retry; other groups remain intact | Previously approved, unchanged variants remain downloadable |
+| Generation returns blank or unusable material | A recoverable failure message | Never show as approved or ready to download |
+| PDF generation fails | Keep the approved worksheet and offer “Retry download” | Do not show a success message or substitute an older PDF |
+
+Keep a teacher's inputs and current-session work through recoverable errors. Do not use success styling for an unfinished action. Changes to the goal do not create different goals for different groups: the teacher is revising the shared lesson and must review the resulting variants again.
+
+## 6. Exact checklist content
+
+Use the following labels and explanations, supplied by Victoria. The labels are visible; explanations can expand beneath them. Keep all options available even though the teacher selects only one to three per group.
+
+### Reading and concepts
+
+- **Reading the words** — needs support decoding unfamiliar words or reading longer passages.
+- **Understanding the language** — needs simpler vocabulary, shorter sentences, or explanations of unfamiliar terms.
+- **Understanding abstract ideas** — needs concrete examples, pictures, or familiar situations.
+- **Using prerequisite skills or knowledge** — needs a brief review or scaffold for skills the worksheet assumes.
+
+### Instructions and organization
+
+- **Following multistep directions** — needs instructions broken into clear steps, with an example.
+- **Managing the amount of work** — needs fewer items visible at once or work divided into smaller sections over more pages.
+- **Keeping track of information** — needs reminders, reference boxes, or key information placed beside the question.
+- **Getting started and organizing answers** — needs a worked example, sentence starters, or a planning guide.
+
+### Responding and using the page
+
+- **Writing or recording answers** — needs more writing space, less copying, or another way to respond.
+- **Seeing and navigating the page** — needs larger text, clearer spacing, stronger contrast, or less visual clutter.
+- **Staying engaged with the task** — needs shorter sections, clear stopping points, or meaningful choices.
+
+Optional field: **“Anything else we should know about what is difficult?”**
+
+These are observations of difficulty, not guaranteed solutions. For example, simpler language can change a vocabulary assessment, and a worked example can reveal an assessed answer. Preserve questions and required reasoning; dividing work means using more sections or pages, not removing items.
+
+## 7. Fictional content for realistic prototypes
+
+These examples are invented for screen design. They have not been validated with teachers or pupils. Keep a small prototype notice outside the printable worksheet and identify these examples as fictional in the demonstration.
+
+### Reading example — A plant at school
+
+**Grade:** 2. **Approximate age range:** 7–8.  
+**Learning goal:** “Read a short passage and find explicitly stated information to answer who, where, when and what questions.”
+
+**Original worksheet text:**
+
+> Mina carried a small plant to school. She put it beside the window. Each morning, she gave the plant a little water. On Friday, Mina noticed a new leaf.
+>
+> Read the passage. Answer each question.
+>
+> 1. Who carried the plant to school?
+> 2. Where did Mina put the plant?
+> 3. When did she water the plant?
+> 4. What did Mina notice on Friday?
+
+| Group | Selected difficulties | Proposed adaptation to show |
+| --- | --- | --- |
+| Group A | Following multistep directions; Managing the amount of work | Separate instructions into steps. Put two questions on each page and repeat the original passage where needed. Retain all four questions. |
+| Group B | Writing or recording answers; Seeing and navigating the page | Increase text size and spacing; provide generous writing lines. Keep passage and question wording unchanged. |
+| Group C | Keeping track of information; Staying engaged with the task | Keep the complete passage close to each small question section and mark a clear stopping point. Retain all questions and avoid highlighting the answer to each one. |
+
+For the concern state, show a proposed reference box that would directly answer an assessed question. Explain the concern in the teacher panel and demonstrate removing the box before approval. Do not use that unresolved output as the approved example.
+
+### Mathematics example — Adding without regrouping
+
+**Grade:** 2. **Approximate age range:** 7–8.  
+**Learning goal:** “Add a two-digit number and a one-digit number without regrouping, and show how you worked it out.”
+
+**Original worksheet text:**
+
+> Add each pair of numbers. Write the total and show how you worked it out.
+>
+> 1. 12 + 5 = ____
+> 2. 23 + 4 = ____
+> 3. 31 + 6 = ____
+> 4. 42 + 5 = ____
+> 5. 54 + 3 = ____
+> 6. 61 + 8 = ____
+
+Show a variant with two problems per section, larger response areas and separate instruction steps. As a second reviewed variation, a blank tens-and-ones frame can demonstrate a simple printable visual support. Keep all six problems and the requirement to show working. Any instructional example must use different numbers and still be reviewed for whether it changes the intended assessment.
+
+## 8. Printable worksheet design
+
+Use white A4 pages with black or very dark text and practical printer margins, starting around 15–18 mm. Use a familiar sans-serif font such as Arial, starting around 14 pt and increasing when a group's needs call for it. Use clear headings and generous line spacing; validate actual printed pages rather than assuming a screen preview is sufficient.
+
+Keep each question with its answer space and any relevant visual. Break between questions or sections when necessary. Preserve every required question and the space needed to show working. A longer worksheet is acceptable when it improves readability. Use simple line diagrams, blank organisers or visual cues where relevant, with legible labels and no dependence on colour. Do not use custom AI illustrations, decorative backgrounds or pre-filled assessed answers.
+
+The preview and eventual downloaded PDF must contain the same approved material. Application navigation, teacher warnings and adaptation explanations stay outside the printed page.
+
+## 9. First prompt to paste into Stitch
+
+```text
+Design the first screen of CHLD Adapt, a teacher-facing web prototype for adapting existing primary-school worksheets. Follow the attached PRD for scope and DESIGN.md for appearance and behaviour. Begin with Screen 1, “Your worksheet,” including a populated extraction-review state using the fictional Grade 2 reading example.
+
+The teacher supplies the learning goal, grade, age range and an existing worksheet as pasted text, DOCX or a PDF with selectable text. Show the extracted content for correction and confirmation before “Continue to groups.” Existing material is required. Include an empty state and an unreadable-upload state with a text-paste recovery action.
+
+DESIGN SYSTEM (REQUIRED): Desktop-first web workspace, calm and practical. Warm paper #F7F5F0 background, white #FFFFFF surfaces, charcoal #242424 text, slate #52525B supporting text, crimson #A51C30 primary buttons with white text. Visible control borders #85817A. Playfair Display for the product name and main heading; Inter for body text and controls. Body text around 16 px, gently rounded inputs, restrained shadows, generous whitespace and clear keyboard focus. Small “Class prototype” label in the header.
+
+PAGE STRUCTURE: Quiet CHLD Adapt header; five-step progress row (Worksheet, Groups, Plan, Review, Download); page heading; lesson fields; Paste text / Upload a file choices; source-content review; primary Continue action; concise notice that the session is not saved after closing. Keep the task central. Use accessible labels, useful inline errors and a layout that stacks cleanly on narrow screens.
+
+The complete journey will create up to three group worksheets with a shared learning goal, teacher review, separate approval and printable PDFs. Reserve a consistent learning-goal strip and group status components for later screens. Keep this screen focused on intake. Do not add accounts, learner profiles, diagnosis, chat, dashboards, saved libraries or worksheet creation from a goal alone. The content is fictional and the processing may be simulated; do not imply AI or file processing has been implemented merely by designing these screens.
+```
+
+## 10. Follow-up prompts and prototype review
+
+Use each prompt as a separate request after choosing the first screen's visual direction. Supply the relevant sections of this file if Stitch does not have the full brief in context.
+
+1. **Groups:** “Using the first screen's exact design system, create Screen 2 from DESIGN.md. Include one-group and three-group states, all eleven checklist labels under the three specified headings, accessible full explanations, one-to-three selections per group and the exact optional field. Keep the shared learning goal visible. Show what happens at the three-selection limit.”
+2. **Plan and progress:** “Create Screen 3 using the same components. Show one proposed adaptation per group, a Change needs action and Create worksheets. Add a partial-failure state: Groups A and C ready to review, Group B failed with its own retry. Preserve all inputs and completed variants.”
+3. **Review and approval:** “Create Screen 4 with original and editable adapted worksheets side by side, the shared goal, group status, selected needs and What changed. Show an unresolved learning-goal concern, correction or explicit confirmation, separate approval, and an approved version becoming Needs review after editing. Disable PDF download whenever the current version is unapproved. Include a narrow-screen comparison using tabs.”
+4. **Downloads and print:** “Create Screen 5 and the A4 worksheet preview using Section 8. Show separate group PDFs, an approved group's enabled download, another group's Review action and a retry-download error state. Preserve all questions and response space; teacher controls must remain outside the printable page. Include the session-only reminder.”
+5. **Mathematics and connections:** “Use the fictional mathematics example to create a second review/print example without changing the design system. Where supported, connect the screens into the five-step journey with back navigation and the specified approval/failure states. Clearly identify any interactions that are only simulated.”
+
+Before accepting the prototype, walk through reading and mathematics examples and check:
+
+- The teacher can understand the next action without facilitator explanation.
+- All eleven checklist labels and full explanations are present; the optional field uses the agreed wording.
+- There are at most three neutral groups and one variant per group, with the same goal throughout.
+- Source review, correction, comparison, independent retry and approval are visible and usable.
+- A changed worksheet cannot keep a stale approval or download an older approved version.
+- A concern is specific and requires a teacher decision; AI reassurance never replaces review.
+- The original questions, required reasoning and writing space survive the adaptation and print layout.
+- Keyboard focus, text size, contrast, narrow-screen layout and error recovery are readable.
+- The group records what was simulated and what was actually tested. A polished mock-up is not evidence of classroom effectiveness or of meeting the ten-minute target.
+
+Record feedback and decisions alongside the PRD before implementing new behaviour. Keep the two-session build plan in the PRD as the scope boundary.
+
+Prompting reference: [Google Stitch prompting guide](https://stitch.withgoogle.com/docs/learn/prompting/). This brief supplies the screen content and design direction; it does not depend on a particular Stitch integration or model.

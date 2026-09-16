@@ -1,0 +1,46 @@
+{
+  "schema_version": "beta_v1_open_questions_v1",
+  "updated_at_stage": "frame_opportunity",
+  "questions": [
+    {
+      "id": "Q-FRAME-001",
+      "stage_id": "frame_opportunity",
+      "question": "What specific behavioral escalation thresholds must trigger a hard stop in 'Things to Try' to route teachers to institutional safeguarding rather than classroom strategies?",
+      "why_it_matters": "Ensures adherence to non-maleficence and child safety standards under the PEARL-AI ethical framework, preventing inappropriate AI intervention in critical child welfare or medical situations.",
+      "blocking_level": "high",
+      "status": "open",
+      "answer_summary": "",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-FRAME-002",
+      "stage_id": "frame_opportunity",
+      "question": "How should 'CHLD Adapt' categorize and visually alert teachers when an adaptation modifies the underlying cognitive demand (e.g., recall vs. recognition)?",
+      "why_it_matters": "Protects curricular integrity and ensures teachers retain intentional control over assessment standards and classroom accommodations.",
+      "blocking_level": "medium",
+      "status": "open",
+      "answer_summary": "",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-FRAME-003",
+      "stage_id": "frame_opportunity",
+      "question": "What level of bilingual (English and Filipino/Tagalog) parsing and generation is required for the September 2026 pilot?",
+      "why_it_matters": "Directly impacts the accuracy of worksheet transformation and teacher behavioral intake in Philippine classroom environments.",
+      "blocking_level": "medium",
+      "status": "open",
+      "answer_summary": "",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    },
+    {
+      "id": "Q-FRAME-004",
+      "stage_id": "frame_opportunity",
+      "question": "How will CHLD guarantee complete client-side or zero-retention privacy for unauthenticated v1 users who might input student PII?",
+      "why_it_matters": "Fulfills CHLD's privacy-first non-surveillance policy and satisfies pediatric data protection requirements.",
+      "blocking_level": "high",
+      "status": "open",
+      "answer_summary": "",
+      "source_artifact": "product_design_pack/01_frame_opportunity.md"
+    }
+  ]
+}
