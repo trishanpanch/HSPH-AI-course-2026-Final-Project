@@ -2,7 +2,21 @@
 
 **Status:** build proposal, 16 September 2026. This describes software to build; it is not a record of an implemented or tested application.
 
-Read alongside the [PRD](PRD.md) and [design brief](DESIGN.md). The PRD governs scope. This architecture translates it into a small web application the group can build across the two class sessions.
+Read alongside the [PRD](PRD.md), [design brief](DESIGN.md) and [project plan](project-plan.md). The PRD governs scope. The approved first release is the one-hour subset below; the broader architecture remains recorded for subsequent work.
+
+## 0. Approved one-hour implementation profile
+
+Build one pasted-text worksheet journey for one group: confirmed source → live adaptation plan → live editable adaptation → teacher review → approval → exact A4 PDF download. Use the [selected Stitch direction](stitch/README.md) for the interface. M0 preparation precedes the four 15-minute build milestones; stop at 60 minutes and report the last passing milestone.
+
+- **Application:** Next.js/TypeScript, one browser-memory workflow state, one group and all eleven checklist options. No database, accounts or persistent browser storage.
+- **AI:** server-side `POST /api/plan` and `POST /api/adapt`, with `OPENROUTER_MODEL=qwen/qwen3.7-flash`. Validate output and preserve source question references. Missing credentials are a configuration error, not permission to use simulated results. A live probe during M0 must establish actual model availability, response behavior and cost before the clock starts.
+- **Source:** simple text-only worksheets with teacher-confirmed completeness. Retain stable question references through corrections and generation. Reject continuation when essential visual content is missing. Defer all upload readers, `/api/extract-photo`, source-image assets and multi-group handling.
+- **Review/export:** a fixed readable A4 template with adequate answer space. Render the actual PDF preview before approval, retain those exact bytes, and gate download on current approval. Keep revision/request IDs, concern review and all relevant approval resets from Sections 5–6. Defer extra font/layout controls and line-drawing templates.
+- **Deployment:** Cloud Run in `us-central1`, with a project and deployment identity explicitly selected during M0. Do not use an unrelated CLI default. Store the OpenRouter key and class password in Secret Manager; inject them only on the server. Use HTTP Basic authentication over HTTPS for all application and AI routes, with a shared username `class` and the supplied password. No unauthenticated route may trigger a paid call.
+- **Operating limits:** initial $5 OpenRouter key limit; bounded input/output sizes, request timeouts and no unbounded retries. Missing authentication configuration must fail closed. Keep source content, passwords and keys out of logs and client bundles.
+- **Done:** local and deployed reading/mathematics journeys pass, including errors, approval resets, late results, PDF layout and wrong-password checks. Model quality and classroom effectiveness remain unproven beyond recorded examples.
+
+Cloud setup and keys are future M0 work, not changes made by this documentation task. The [project plan](project-plan.md) defines the current acceptance gates. The fuller components and two-session build sequence below apply only as their follow-up issues are scheduled.
 
 ## 1. The approach
 
@@ -10,7 +24,9 @@ Build one **Next.js application using React and TypeScript**, with a teacher wor
 
 This keeps the interface, model calls and document templates in one repository. There is no need for a database, learner accounts, a document library or an agent framework to demonstrate the agreed journey.
 
-The model proposes adaptations and reads worksheet photos. Application code controls the workflow, preserves source references and manages approval. The teacher decides whether the material is suitable.
+The model proposes adaptations; photo reading is subsequent work. Application code controls the workflow, preserves source references and manages approval. The teacher decides whether the material is suitable.
+
+The diagram below shows the broader target. The first release uses pasted text and one group, omitting the JPG path.
 
 ```mermaid
 flowchart TD
@@ -30,7 +46,7 @@ flowchart TD
 
 ## 2. Model choice and cost
 
-**Proposed default: `qwen/qwen3.7-flash` through OpenRouter.** It accepts text and images at a comparable or lower listed token price than the requested DeepSeek V4 Flash. Use the same model for photo extraction, adaptation plans and worksheet generation to keep the first build simple.
+**Proposed default: `qwen/qwen3.7-flash` through OpenRouter.** It accepts text and images at a comparable or lower listed token price than the requested DeepSeek V4 Flash. Use it for adaptation plans and worksheet generation in the MVP; evaluate photo extraction when that follow-up is built.
 
 OpenRouter catalog snapshot, checked **16 September 2026**; USD per million tokens:
 
@@ -43,11 +59,13 @@ OpenRouter catalog snapshot, checked **16 September 2026**; USD per million toke
 
 These are catalog rates, not a fixed quote for every provider. Qwen's input/output rates rise to $0.10/$0.40 at 32,000 prompt tokens and $0.20/$0.80 at 256,000. DeepSeek V4.1 Flash lists scheduled peak rates of $0.30/$1.20. Check routing and image billing before implementation. Sources: [live OpenRouter catalog](https://openrouter.ai/api/v1/models) and [Qwen provider endpoint](https://openrouter.ai/api/v1/models/qwen/qwen3.7-flash/endpoints).
 
-Choose on worksheet quality as well as price. These listings establish capability and pricing, **not accuracy on our worksheets**. Before committing to the default, test a clear printed photo, reading and mathematics adaptations, valid output, response time and recorded cost. If Qwen fails, evaluate the named alternatives and record the decision; do not silently switch to a more expensive model.
+Choose on worksheet quality as well as price. These listings establish capability and pricing, **not accuracy on our worksheets**. Before committing to the default, test reading and mathematics adaptations, valid output, response time and recorded cost. Test clear printed photos before enabling the later photo feature. If Qwen fails, evaluate the named alternatives and record the decision; do not silently switch to a more expensive model.
 
 Keep `OPENROUTER_API_KEY` and `OPENROUTER_MODEL=qwen/qwen3.7-flash` in server environment settings. The model is a configuration choice, so changing it should not require rewriting the screens. Use an explicit model ID rather than an automatic model selector. The team's coding assistant can still be whichever environment and model each person normally uses.
 
 ## 3. Components and responsibilities
+
+The table includes the broader target. Source readers for DOCX/PDF/JPG are **not in the one-hour MVP**; the first release needs pasted-text intake, the state machine, model adapter and PDF renderer only.
 
 | Component | Proposed implementation | Why it is needed |
 | --- | --- | --- |
@@ -61,9 +79,9 @@ Keep `OPENROUTER_API_KEY` and `OPENROUTER_MODEL=qwen/qwen3.7-flash` in server en
 
 These are proposed libraries, not installed dependencies. Official references: [Next.js route handlers](https://nextjs.org/docs/app/getting-started/route-handlers), [Mammoth](https://github.com/mwilliamson/mammoth.js), [PDF.js](https://mozilla.github.io/pdf.js/) and [React PDF](https://react-pdf.org/docs/v4/advanced).
 
-Start with three server routes: `POST /api/plan`, `POST /api/adapt` and, in the second build session, `POST /api/extract-photo`. Each adaptation request concerns one group. DOCX/PDF parsing and PDF rendering can run in the browser; the server does not need to store files or generate downloads.
+Start with `POST /api/plan` and `POST /api/adapt`; add `POST /api/extract-photo` in the photo follow-up. Each adaptation request concerns one group. PDF rendering runs in the browser; later DOCX/PDF parsing can also run there. The server does not need to store files or generate downloads.
 
-## 4. Getting the source right
+## 4. Getting the source right: pasted text now, uploads later
 
 All inputs become the same internal worksheet structure: instructions, passages, stable question IDs, response spaces and any required visual assets. Keep the original source available for comparison. Assign question IDs in application code and preserve them through adaptation.
 
@@ -141,11 +159,13 @@ Keep editable content, source files and PDFs in memory; do not use local storage
 
 Use fictional worksheets and group needs. Send only the context needed for each model call. Keep worksheet text, images, optional notes and API keys out of logs and Git. Record only operational information needed for the demo: model, duration, token usage/cost and success/error category.
 
-Run locally first. For a shared hosted demo, use a Node-capable host with access restricted to the class through hosting controls; the public GitHub repository does not require a public, unlimited AI endpoint. Set a small OpenRouter key budget, server request/output limits and timeouts. If the host cannot restrict access, keep the initial demonstration local until request-rate and spend controls are in place.
+Run locally first, then deploy the tested MVP to Cloud Run. Use the shared-password protection defined in Section 0 across the application and AI routes. Set the $5 OpenRouter key limit, server request/output limits and timeouts before opening class access. Missing password or key configuration must not leave a working, unprotected paid endpoint. GCP project, billing, APIs, deployment permissions and Secret Manager access must be ready in M0.
 
 Use GitHub Issues and a GitHub Project for the work. Keep secrets in local/hosting environment settings and commit only a placeholder `.env.example` when implementation begins. Lock dependency versions once chosen.
 
-## 8. Build order and acceptance checks
+## 8. Broader prototype: original build order and acceptance checks
+
+The first release follows the four timed milestones in [project-plan.md](project-plan.md). The original two-session scope and full acceptance set below remain follow-up requirements, not extra work inside the hour.
 
 **Build session 1 — one complete journey.** Create the workspace, shared state and schemas; support paste, DOCX and selectable-text PDF intake with review; connect planning and one-group generation through OpenRouter; add editing, exact PDF preview, approval and download. Demonstrate a fictional worksheet and recovery from an unavailable or malformed model response.
 
@@ -163,4 +183,4 @@ Before calling the prototype ready for its learning test:
 
 Use focused automated tests for state transitions, response validation and stale results, plus an end-to-end browser check and visual PDF review. Educational suitability still needs Victoria's and the intended teacher's judgment. Record findings and model changes in `docs/evidence-and-decisions.md` when testing begins.
 
-The first implementation task is the single-group journey. Saved accounts, persistent workspaces, integrations and broader automation remain outside this build.
+The first step is M0 setup, followed by the single-group pasted-text journey. Saved accounts, persistent workspaces, integrations and broader automation remain outside this build.

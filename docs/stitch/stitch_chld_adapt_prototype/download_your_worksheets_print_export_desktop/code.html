@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#5f3300",
+          "tertiary-container": "#7f4704",
+          "on-primary-fixed": "#40000a",
+          "on-background": "#1d1b16",
+          "inverse-primary": "#ffb3b3",
+          "on-tertiary-fixed": "#2e1600",
+          "outline": "#8d7070",
+          "on-error-container": "#93000a",
+          "outline-variant": "#e1bebe",
+          "on-secondary-fixed-variant": "#00522f",
+          "on-surface-variant": "#594141",
+          "primary": "#81001d",
+          "surface-container": "#f3ede5",
+          "secondary-fixed": "#aaf3c2",
+          "surface-tint": "#b22738",
+          "on-secondary-container": "#2b714a",
+          "on-tertiary-fixed-variant": "#6c3a00",
+          "tertiary-fixed": "#ffdcc1",
+          "surface-bright": "#fff8f0",
+          "secondary-fixed-dim": "#8fd6a7",
+          "on-secondary": "#ffffff",
+          "surface-container-high": "#ede7df",
+          "on-tertiary": "#ffffff",
+          "surface": "#fff8f0",
+          "on-error": "#ffffff",
+          "surface-container-highest": "#e7e2d9",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#900723",
+          "error-container": "#ffdad6",
+          "on-surface": "#1d1b16",
+          "tertiary-fixed-dim": "#ffb877",
+          "surface-container-low": "#f9f3ea",
+          "on-primary": "#ffffff",
+          "inverse-on-surface": "#f6f0e7",
+          "on-tertiary-container": "#ffbc81",
+          "secondary-container": "#aaf3c2",
+          "secondary": "#246b45",
+          "on-secondary-fixed": "#002110",
+          "primary-container": "#a51c30",
+          "error": "#ba1a1a",
+          "inverse-surface": "#33302b",
+          "primary-fixed": "#ffdad9",
+          "primary-fixed-dim": "#ffb3b3",
+          "on-primary-container": "#ffb8b8",
+          "background": "#fff8f0",
+          "surface-variant": "#e7e2d9",
+          "surface-dim": "#dfd9d1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Playfair Display"
+          ],
+          "display-hero": [
+            "Playfair Display"
+          ],
+          "label-caps": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Playfair Display"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "title-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Playfair Display"
+          ],
+          "headline-md": [
+            "Playfair Display"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-hero": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "title-lg": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      }
+    }
+  }</script></head><body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-surface-container-low"><div class="max-w-[1280px] mx-auto px-margin h-8 flex items-center justify-between text-on-surface-variant font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[15px] text-tertiary">info</span><span>Work stays available during this session. Download approved worksheets before closing.</span></div><div class="flex items-center gap-space-sm font-label-caps text-label-caps uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>Workspace Live</span></div></div></div><div class="h-20 max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><div class="flex items-baseline gap-space-xs"><span class="font-headline-md text-headline-md text-primary tracking-tight">CHLD</span><span class="font-title-lg text-title-lg text-on-surface font-semibold">Adapt</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Class Prototype</span></div></div><nav class="flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="worksheet-source" href="#">1. Worksheet</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="student-groups" href="#">2. Groups</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="lesson-adaptation-plan" href="#">3. Plan</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="differential-review" href="#">4. Review</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a aria-current="page" class="px-space-md py-space-xs rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-sm" data-path="export-download" href="#">5. Download</a></nav><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full max-w-[1280px] mx-auto px-margin pt-28 flex-1"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Lesson Anchor Bar -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-md shadow-sm mb-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">
+<span>Active Lesson Objective Anchor</span>
+<span>•</span>
+<span class="text-secondary font-semibold">Stage 4 Validated</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-medium mt-0.5">
+          Read a short passage and find explicitly stated information to answer who, where, when and what questions.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified</span>
+<span>Grade 3 English Literacy</span>
+</span>
+</div>
+</section>
+<!-- Main Step 5 Header & Editorial Meta Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-lg">
+<div>
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps tracking-widest uppercase font-semibold">Final Step 05</span>
+<span class="text-on-surface-variant font-label-md text-label-md">Atelier Export Studio</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+        Download your worksheets
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+        Ready-to-print differentiated classroom folios. Formatted to high-contrast ISO A4 standard with typographic scaffolding preserved.
+      </p>
+</div>
+<!-- Quick Batch Download Floating Indicator -->
+<div class="flex items-center gap-space-md bg-surface-container rounded-xl p-space-sm px-space-md shadow-sm">
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Export Queue</span>
+<span class="font-title-lg text-title-lg text-primary font-semibold">2 of 3 Approved</span>
+</div>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-sm active:scale-[0.98]" id="batch-download-top" onclick="triggerBatchDownload()">
+<span class="material-symbols-outlined text-[18px]">download_done</span>
+<span>Download Approved (2 ready)</span>
+</button>
+</div>
+</div>
+<!-- Session Guard Banner & Pedagogical Pupil Guarantee -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-space-xl">
+<!-- Ephemeral Notice -->
+<div class="lg:col-span-7 bg-surface-container rounded-xl p-space-md flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center shrink-0 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Session Persistence Alert</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Download your approved worksheets before closing. You can reprint the PDFs later; this classroom adaptation session is not stored once your browser closes.
+        </p>
+</div>
+</div>
+<!-- Pupil Privacy & Clean Sheet Notice -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center shrink-0 text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Pupil Sheet Privacy Standard</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Student printouts strictly omit diagnostic group labels, difficulty tier tags, and teacher adaptation criteria.
+        </p>
+</div>
+</div>
+</div>
+<!-- System Resiliency Retry Toast Banner -->
+<div class="w-full bg-surface-container-high rounded-xl p-space-md mb-space-xl flex items-center justify-between gap-space-md shadow-sm" id="retry-banner">
+<div class="flex items-center gap-space-md">
+<span class="material-symbols-outlined text-[22px] text-tertiary">sync</span>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="font-semibold text-tertiary">PDF generation resiliency:</strong> If any single download was interrupted or blocked by popup guards, click <span class="underline font-medium">Retry download</span> on that card to fetch the verified folio without losing your approved sign-off.
+        </p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded transition-colors" onclick="dismissRetryNotice()" title="Acknowledge">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Differential Worksheet Folios (3 Variants Bento Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-space-xl items-start">
+<!-- CARD 1: GROUP A (APPROVED) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col h-full hover:shadow-md transition-all">
+<!-- Status Badge & Meta Header -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Approved</span>
+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Folio #401-A</span>
+</div>
+<!-- Title & Adaptation Focus -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight mb-space-xs">
+        Group A — Stepped instructions &amp; 2-page division
+      </h2>
+<!-- Target Needs Chips -->
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-md text-label-md text-on-surface-variant">Following multistep directions</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-md text-label-md text-on-surface-variant">Managing amount of work</span>
+</div>
+<!-- A4 Physical Print Preview Mockup -->
+<div class="relative bg-surface-container-low rounded-lg p-space-md mb-space-md aspect-[1/1.3] flex flex-col justify-between overflow-hidden shadow-inner group">
+<!-- Physical Page Stack Visual Indicator -->
+<div class="absolute right-3 top-3 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider shadow-sm z-10">
+          2 Pages A4
+        </div>
+<!-- Rendered A4 Page Surface -->
+<div class="w-full h-full bg-white rounded shadow-sm p-4 flex flex-col justify-between text-on-surface select-none">
+<!-- Page Header Mock -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<div class="h-2 w-28 bg-surface-container-highest rounded"></div>
+<div class="h-2 w-16 bg-surface-container-high rounded"></div>
+</div>
+<!-- Step 1 Division Container -->
+<div class="bg-surface-container-low rounded p-2.5 mb-3">
+<div class="flex items-center gap-1.5 mb-1.5">
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container text-white text-[9px] font-bold flex items-center justify-center">1</span>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">Step 1: Discover Who &amp; Where</span>
+</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant mb-2">Read paragraphs 1 &amp; 2 carefully before picking up your pencil.</p>
+<div class="space-y-1">
+<div class="h-1.5 w-full bg-surface-container-high rounded"></div>
+<div class="h-1.5 w-5/6 bg-surface-container-high rounded"></div>
+</div>
+</div>
+<!-- Questions 1 & 2 with Explicit Progress Checkboxes -->
+<div class="space-y-2">
+<div class="flex items-start gap-2">
+<div class="w-3 h-3 rounded bg-surface-container-high flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[10px] text-on-surface-variant">check</span>
+</div>
+<div class="flex-1">
+<div class="h-2 w-3/4 bg-on-surface/80 rounded mb-1"></div>
+<div class="h-3 w-full bg-surface-container-lowest rounded shadow-[0_0_0_1px_rgba(0,0,0,0.06)]"></div>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<div class="w-3 h-3 rounded bg-surface-container-high flex items-center justify-center mt-0.5"></div>
+<div class="flex-1">
+<div class="h-2 w-2/3 bg-on-surface/80 rounded mb-1"></div>
+<div class="h-3 w-full bg-surface-container-lowest rounded shadow-[0_0_0_1px_rgba(0,0,0,0.06)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Page Footer Indicator -->
+<div class="flex justify-between items-center text-[9px] text-on-surface-variant font-label-caps uppercase pt-2">
+<span>Page 1 of 2 • Continued on Sheet 2</span>
+<span>Checkmark when done [ ]</span>
+</div>
+</div>
+<!-- Hover Quick Zoom Button Overlay -->
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 backdrop-blur-[1px] transition-opacity flex items-center justify-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface text-on-surface font-label-md text-label-md font-semibold shadow-md flex items-center gap-1 hover:bg-surface-container" onclick="previewFolio('Group A')">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+<span>Inspect A4 Folio</span>
+</button>
+</div>
+</div>
+<!-- Action Card Buttons -->
+<div class="mt-auto space-y-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-sm active:scale-[0.98] flex items-center justify-center gap-2" onclick="downloadSinglePDF('Group A', this)">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Download PDF (Group A) — 2 Pages A4</span>
+</button>
+<div class="flex items-center justify-between px-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Size: 420 KB • PDF/X-1a</span>
+<button class="font-label-caps text-label-caps text-tertiary hover:underline flex items-center gap-0.5" onclick="retrySingleDownload('Group A')">
+<span class="material-symbols-outlined text-[12px]">refresh</span>
+<span>Retry download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: GROUP B (NEEDS REVIEW / BLOCKED DRAFT) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col h-full hover:shadow-md transition-all relative">
+<!-- Status Badge & Meta Header -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px] text-tertiary">warning</span>
+<span>Needs review — Flagged concern pending</span>
+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Folio #401-B</span>
+</div>
+<!-- Title & Adaptation Focus -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight mb-space-xs">
+        Group B — Enlarged text &amp; writing lines
+      </h2>
+<!-- Target Needs Chips -->
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-md text-label-md text-on-surface-variant">Writing or recording answers</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-md text-label-md text-on-surface-variant">Seeing and navigating</span>
+</div>
+<!-- A4 Physical Print Preview Mockup with Diagonal Watermark -->
+<div class="relative bg-surface-container-low rounded-lg p-space-md mb-space-md aspect-[1/1.3] flex flex-col justify-between overflow-hidden shadow-inner">
+<!-- Badge -->
+<div class="absolute right-3 top-3 px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-caps text-label-caps uppercase tracking-wider shadow-sm z-20">
+          Sign-off Required
+        </div>
+<!-- Rendered A4 Mockup -->
+<div class="relative w-full h-full bg-white rounded shadow-sm p-4 flex flex-col justify-between text-on-surface select-none opacity-85">
+<!-- Big Diagonal Watermark -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-10 overflow-hidden">
+<span class="font-headline-lg text-headline-lg font-bold text-error/20 uppercase tracking-widest -rotate-45 select-none text-center leading-none">
+              UNAPPROVED<br/>DRAFT
+            </span>
+</div>
+<div>
+<div class="h-3 w-36 bg-surface-container-highest rounded mb-4"></div>
+<!-- Extra large typography mock line -->
+<div class="space-y-2 mb-4">
+<div class="h-2.5 w-full bg-on-surface/70 rounded"></div>
+<div class="h-2.5 w-11/12 bg-on-surface/70 rounded"></div>
+<div class="h-2.5 w-4/5 bg-on-surface/70 rounded"></div>
+</div>
+<!-- Wide ruled writing response guide lines -->
+<div class="space-y-2.5 pt-2">
+<div class="h-0.5 w-full bg-surface-container-highest"></div>
+<div class="h-0.5 w-full bg-surface-container-highest"></div>
+<div class="h-0.5 w-full bg-surface-container-highest"></div>
+<div class="h-0.5 w-full bg-surface-container-highest"></div>
+</div>
+</div>
+<div class="text-[9px] text-tertiary font-label-caps uppercase">
+            Flag: Line spacing exceeds standard A4 margin bounds by 4%
+          </div>
+</div>
+<!-- Action Callout over unapproved sheet -->
+<div class="absolute inset-x-3 bottom-3 z-20 bg-surface/95 backdrop-blur-md p-space-sm rounded-lg shadow-sm flex flex-col gap-1 text-center">
+<span class="font-label-md text-label-md text-tertiary font-semibold">Verification Alert</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant leading-tight">
+            Review the enlarged font wrap in Step 4 before authorizing pupil print generation.
+          </p>
+</div>
+</div>
+<!-- Action Card Buttons -->
+<div class="mt-auto space-y-space-xs">
+<a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container-highest text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-container transition-all flex items-center justify-center gap-2 shadow-sm text-center" data-path="differential-review" href="#">
+<span class="material-symbols-outlined text-[18px] text-primary">rate_review</span>
+<span>Review Group B to approve</span>
+</a>
+<button class="w-full py-2 px-space-md rounded-lg bg-surface-container text-on-surface-variant/40 font-label-md text-label-md font-medium cursor-not-allowed flex items-center justify-center gap-1.5" disabled="">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Download PDF • Locked until approval</span>
+</button>
+</div>
+</div>
+<!-- CARD 3: GROUP C (APPROVED) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col h-full hover:shadow-md transition-all">
+<!-- Status Badge & Meta Header -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Approved</span>
+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Folio #401-C</span>
+</div>
+<!-- Title & Adaptation Focus -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight mb-space-xs">
+        Group C — Adjacent passage &amp; mini-goals
+      </h2>
+<!-- Target Needs Chips -->
+<div class="flex flex-wrap gap-1.5 mb-space-md">
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-md text-label-md text-on-surface-variant">Keeping track of information</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-md text-label-md text-on-surface-variant">Staying engaged</span>
+</div>
+<!-- A4 Physical Print Preview Mockup -->
+<div class="relative bg-surface-container-low rounded-lg p-space-md mb-space-md aspect-[1/1.3] flex flex-col justify-between overflow-hidden shadow-inner group">
+<div class="absolute right-3 top-3 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider shadow-sm z-10">
+          1 Page A4
+        </div>
+<!-- Rendered A4 Mockup -->
+<div class="w-full h-full bg-white rounded shadow-sm p-4 flex flex-col justify-between text-on-surface select-none">
+<div>
+<!-- Header -->
+<div class="h-2 w-24 bg-surface-container-highest rounded mb-3"></div>
+<!-- Two-Column Side-by-Side Chunked Mockup -->
+<div class="grid grid-cols-2 gap-2 mb-3">
+<!-- Left: Adjacent Passage Chunk -->
+<div class="bg-surface-container-lowest p-1.5 rounded shadow-[0_0_0_1px_rgba(0,0,0,0.06)]">
+<div class="h-1.5 w-12 bg-secondary/60 rounded mb-1"></div>
+<div class="space-y-1">
+<div class="h-1 w-full bg-surface-container-high rounded"></div>
+<div class="h-1 w-full bg-surface-container-high rounded"></div>
+<div class="h-1 w-3/4 bg-surface-container-high rounded"></div>
+</div>
+</div>
+<!-- Right: Direct Mini-Goal Question -->
+<div class="bg-surface-container-lowest p-1.5 rounded shadow-[0_0_0_1px_rgba(0,0,0,0.06)]">
+<div class="h-1.5 w-14 bg-primary/60 rounded mb-1"></div>
+<div class="h-2 w-full bg-surface-container-high rounded mb-1"></div>
+<div class="h-3 w-full bg-surface-container-lowest rounded border border-dashed border-outline-variant"></div>
+</div>
+</div>
+<!-- Explicit Stretch Break Prompt Module -->
+<div class="bg-surface-container-high/60 rounded p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">self_improvement</span>
+<div class="flex-1">
+<div class="h-1.5 w-20 bg-tertiary/70 rounded mb-0.5"></div>
+<div class="h-1 w-28 bg-surface-container-highest rounded"></div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<div class="flex justify-between items-center text-[9px] text-on-surface-variant font-label-caps uppercase pt-2">
+<span>Page 1 of 1 • Self-contained Folio</span>
+<span>Mini-Goal 2 Complete [ • ]</span>
+</div>
+</div>
+<!-- Hover Quick Zoom Button Overlay -->
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 backdrop-blur-[1px] transition-opacity flex items-center justify-center">
+<button class="px-space-md py-1.5 rounded-lg bg-surface text-on-surface font-label-md text-label-md font-semibold shadow-md flex items-center gap-1 hover:bg-surface-container" onclick="previewFolio('Group C')">
+<span class="material-symbols-outlined text-[16px]">fullscreen</span>
+<span>Inspect A4 Folio</span>
+</button>
+</div>
+</div>
+<!-- Action Card Buttons -->
+<div class="mt-auto space-y-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-sm active:scale-[0.98] flex items-center justify-center gap-2" onclick="downloadSinglePDF('Group C', this)">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Download PDF (Group C) — 1 Page A4</span>
+</button>
+<div class="flex items-center justify-between px-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Size: 285 KB • PDF/X-1a</span>
+<button class="font-label-caps text-label-caps text-tertiary hover:underline flex items-center gap-0.5" onclick="retrySingleDownload('Group C')">
+<span class="material-symbols-outlined text-[12px]">refresh</span>
+<span>Retry download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Print Configuration Specifications Card -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-lg mb-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pb-space-md mb-space-md border-b border-surface-container-high">
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Atelier Master Print Output Standards</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Embedded print-ready vector geometries for classroom laser and copier machines.</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 rounded bg-surface font-label-md text-label-md text-on-surface font-medium shadow-sm">Duplex Compatible</span>
+<span class="px-space-sm py-1 rounded bg-surface font-label-md text-label-md text-on-surface font-medium shadow-sm">300 DPI Monospace</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">format_size</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Reading Typography</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Lexend &amp; Atkinson Hyperlegible pairings ensure reduced letter-crowding for emergent readers.</p>
+</div>
+</div>
+<div class="flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">straighten</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">18mm Margins</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ensures hole-punching and clipboard clamping never clip text prompts or pupil checkboxes.</p>
+</div>
+</div>
+<div class="flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">contrast</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">Greyscale Fidelity</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Zero critical information is conveyed via color tint alone; fully legible on black &amp; white school copiers.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Step Navigation & Footer Controls -->
+<div class="w-full pt-space-md border-t border-surface-container-highest flex flex-col-reverse sm:flex-row items-center justify-between gap-space-md">
+<!-- Back to Step 4 Review -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-container-high transition-all shadow-sm" data-path="differential-review" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to differential review</span>
+</a>
+<!-- Right Primary Actions: Download All Approved & Finish Session -->
+<div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-space-md">
+<div class="hidden items-center gap-2 text-primary font-label-md text-label-md font-semibold" id="download-progress-indicator">
+<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span>
+<span>Bundling PDFs into ZIP...</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm px-space-xl py-3 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary transition-all shadow-md active:scale-[0.98]" id="batch-download-btn" onclick="triggerBatchDownload()">
+<span class="material-symbols-outlined text-[20px]">folder_zip</span>
+<span>Download all approved (2 ready)</span>
+</button>
+</div>
+</div>
+<!-- Micro-Modal for Fullscreen Folio Inspection -->
+<div class="fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-sm hidden items-center justify-center p-space-md" id="inspection-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-2xl w-full p-space-lg shadow-xl flex flex-col max-h-[90vh]">
+<div class="flex items-center justify-between mb-space-md pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">print</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="modal-folio-title">Pupil Worksheet Folio Inspection</h3>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded" onclick="closeInspectionModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto bg-surface-container-low p-space-md rounded-lg flex flex-col items-center">
+<!-- Mocked Full-Page A4 Sheet Canvas -->
+<div class="w-full max-w-md bg-white rounded shadow p-space-lg text-on-surface space-y-space-md">
+<div class="border-b border-surface-container pb-2 flex justify-between items-baseline">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Reading Comprehension • Unit 4</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pupil Name: _________________</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">The Lighthouse Keeper's Lantern</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Every evening at dusk, Arthur climbed the seventy-two winding spiral stairs to reach the lantern room. The glass panes were swept clean of salt spray so the beacon could shine safely over the rocky shoals.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-label-md text-label-md text-on-surface font-semibold block mb-1">Question 1:</span>
+<p class="font-body-sm text-body-sm text-on-surface">Who climbed the spiral stairs at dusk?</p>
+<div class="h-8 w-full bg-white rounded mt-1.5 border border-surface-container-high"></div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-label-md text-label-md text-on-surface font-semibold block mb-1">Question 2:</span>
+<p class="font-body-sm text-body-sm text-on-surface">Where was the lantern room situated?</p>
+<div class="h-8 w-full bg-white rounded mt-1.5 border border-surface-container-high"></div>
+</div>
+<div class="pt-2 text-center text-[10px] text-on-surface-variant font-label-caps uppercase">
+            — Pupil Sheet Guaranteed Clean of Diagnostic Labels —
+          </div>
+</div>
+</div>
+<div class="mt-space-md flex justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-container-high" onclick="closeInspectionModal()">
+          Close Inspection
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Scripts for Step 5 Workflows -->
+<script>
+    function triggerBatchDownload() {
+      const progress = document.getElementById('download-progress-indicator');
+      const btn = document.getElementById('batch-download-btn');
+      
+      if (progress && btn) {
+        progress.classList.remove('hidden');
+        progress.classList.add('inline-flex');
+        btn.disabled = true;
+        btn.classList.add('opacity-75');
+
+        setTimeout(() => {
+          progress.classList.add('hidden');
+          progress.classList.remove('inline-flex');
+          btn.disabled = false;
+          btn.classList.remove('opacity-75');
+          
+          showToastMessage('Bundle downloaded: 2 PDFs (Group A & Group C) packaged successfully.');
+        }, 1400);
+      }
+    }
+
+    function downloadSinglePDF(groupName, buttonElement) {
+      const originalText = buttonElement.innerHTML;
+      buttonElement.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">sync</span><span>Preparing ${groupName}...</span>`;
+      buttonElement.disabled = true;
+
+      setTimeout(() => {
+        buttonElement.innerHTML = `<span class="material-symbols-outlined text-[18px]">check</span><span>Downloaded (${groupName})</span>`;
+        buttonElement.classList.replace('bg-primary-container', 'bg-secondary');
+        buttonElement.disabled = false;
+
+        setTimeout(() => {
+          buttonElement.innerHTML = originalText;
+          buttonElement.classList.replace('bg-secondary', 'bg-primary-container');
+        }, 3000);
+      }, 1000);
+    }
+
+    function retrySingleDownload(groupName) {
+      showToastMessage(`Retrying verified fetch for ${groupName}... folios stay approved.`);
+    }
+
+    function dismissRetryNotice() {
+      const banner = document.getElementById('retry-banner');
+      if (banner) {
+        banner.style.display = 'none';
+      }
+    }
+
+    function previewFolio(groupName) {
+      const modal = document.getElementById('inspection-modal');
+      const title = document.getElementById('modal-folio-title');
+      if (modal && title) {
+        title.innerText = `Pupil Print Preview — ${groupName}`;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeInspectionModal() {
+      const modal = document.getElementById('inspection-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function showToastMessage(text) {
+      const existing = document.getElementById('ephemeral-toast');
+      if (existing) existing.remove();
+
+      const toast = document.createElement('div');
+      toast.id = 'ephemeral-toast';
+      toast.className = 'fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl font-label-md text-label-md flex items-center gap-2 transition-all';
+      toast.innerHTML = `<span class="material-symbols-outlined text-[18px] text-secondary-fixed">check_circle</span><span>${text}</span>`;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 400);
+      }, 3500);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">lock</span><span>Ephemeral Classroom Session • Unsaved drafts expire upon browser window close</span></div><div class="flex items-center gap-space-lg font-label-md text-label-md"><span class="font-label-caps text-label-caps tracking-wider text-on-surface">© 2025 CHLD Adapt. Precision Pedagogical Atelier.</span></div></div></footer></body></html>

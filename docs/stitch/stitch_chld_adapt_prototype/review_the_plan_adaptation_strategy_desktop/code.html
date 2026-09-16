@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#5f3300",
+          "tertiary-container": "#7f4704",
+          "on-primary-fixed": "#40000a",
+          "on-background": "#1d1b16",
+          "inverse-primary": "#ffb3b3",
+          "on-tertiary-fixed": "#2e1600",
+          "outline": "#8d7070",
+          "on-error-container": "#93000a",
+          "outline-variant": "#e1bebe",
+          "on-secondary-fixed-variant": "#00522f",
+          "on-surface-variant": "#594141",
+          "primary": "#81001d",
+          "surface-container": "#f3ede5",
+          "secondary-fixed": "#aaf3c2",
+          "surface-tint": "#b22738",
+          "on-secondary-container": "#2b714a",
+          "on-tertiary-fixed-variant": "#6c3a00",
+          "tertiary-fixed": "#ffdcc1",
+          "surface-bright": "#fff8f0",
+          "secondary-fixed-dim": "#8fd6a7",
+          "on-secondary": "#ffffff",
+          "surface-container-high": "#ede7df",
+          "on-tertiary": "#ffffff",
+          "surface": "#fff8f0",
+          "on-error": "#ffffff",
+          "surface-container-highest": "#e7e2d9",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#900723",
+          "error-container": "#ffdad6",
+          "on-surface": "#1d1b16",
+          "tertiary-fixed-dim": "#ffb877",
+          "surface-container-low": "#f9f3ea",
+          "on-primary": "#ffffff",
+          "inverse-on-surface": "#f6f0e7",
+          "on-tertiary-container": "#ffbc81",
+          "secondary-container": "#aaf3c2",
+          "secondary": "#246b45",
+          "on-secondary-fixed": "#002110",
+          "primary-container": "#a51c30",
+          "error": "#ba1a1a",
+          "inverse-surface": "#33302b",
+          "primary-fixed": "#ffdad9",
+          "primary-fixed-dim": "#ffb3b3",
+          "on-primary-container": "#ffb8b8",
+          "background": "#fff8f0",
+          "surface-variant": "#e7e2d9",
+          "surface-dim": "#dfd9d1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Playfair Display"
+          ],
+          "display-hero": [
+            "Playfair Display"
+          ],
+          "label-caps": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Playfair Display"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "title-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Playfair Display"
+          ],
+          "headline-md": [
+            "Playfair Display"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-hero": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "title-lg": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      }
+    }
+  }</script></head><body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-surface-container-low"><div class="max-w-[1280px] mx-auto px-margin h-8 flex items-center justify-between text-on-surface-variant font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[15px] text-tertiary">info</span><span>Work stays available during this session. Download approved worksheets before closing.</span></div><div class="flex items-center gap-space-sm font-label-caps text-label-caps uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>Workspace Live</span></div></div></div><div class="h-20 max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><div class="flex items-baseline gap-space-xs"><span class="font-headline-md text-headline-md text-primary tracking-tight">CHLD</span><span class="font-title-lg text-title-lg text-on-surface font-semibold">Adapt</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Class Prototype</span></div></div><nav class="flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="worksheet-source" href="#">1. Worksheet</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="student-groups" href="#">2. Groups</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a aria-current="page" class="px-space-md py-space-xs rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-sm" data-path="lesson-adaptation-plan" href="#">3. Plan</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="differential-review" href="#">4. Review</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="export-download" href="#">5. Download</a></nav><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full max-w-[1280px] mx-auto px-margin pt-28 flex-1"><div class="flex flex-col w-full">
+<div class="w-full bg-surface-container-low rounded-xl p-space-md mb-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start md:items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">anchor</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<span>Pedagogical Lesson Anchor</span>
+<span>•</span>
+<span class="text-tertiary font-semibold">Grade 2 (Ages 7–8)</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-0.5">
+            “Read a short passage and find explicitly stated information to answer who, where, when and what questions.”
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto bg-surface-container-highest px-space-md py-1 rounded-full text-on-surface-variant font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Goal Locked &amp; Constant</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-label-caps text-label-caps uppercase tracking-widest mb-1">
+<span>Step 3 of 5 • Adaptation Strategy</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Review adaptation plan</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-1">
+        Check how the worksheet will be adapted for each group before generating. Each group receives one tailored worksheet; the core learning goal is preserved.
+      </p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-space-xs rounded-lg text-on-surface-variant font-label-md text-label-md self-start md:self-auto">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span>Source check: 4 of 4 original items mapped</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-space-xl">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between transition-all hover:shadow-md relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-0.5">Cohort Alpha</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Group A</h3>
+</div>
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface px-2.5 py-1 rounded-full font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Ready to create</span>
+</span>
+</div>
+<div class="mb-space-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider block mb-1.5">Identified Student Needs</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="bg-surface-container text-on-surface px-2.5 py-1 rounded-md font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">checklist</span>
+              Following multistep directions
+            </span>
+<span class="bg-surface-container text-on-surface px-2.5 py-1 rounded-md font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">density_small</span>
+              Managing the amount of work
+            </span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-1">Targeted Adaptation Plan</span>
+<p class="font-body-md text-body-md text-on-surface">
+            Separate instructions into sequential numbered steps with progress checkboxes. Divide the 4 questions across 2 pages (2 questions per page) with the full original reading passage repeated on each page. Keep all original questions and answer lines.
+          </p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between mt-auto">
+<a class="inline-flex items-center gap-1 text-primary font-label-md text-label-md hover:text-on-primary-fixed-variant transition-colors group" href="#">
+<span>Change needs</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2 Pages • Chunked</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between transition-all hover:shadow-md relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-0.5">Cohort Beta</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Group B</h3>
+</div>
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface px-2.5 py-1 rounded-full font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Ready to create</span>
+</span>
+</div>
+<div class="mb-space-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider block mb-1.5">Identified Student Needs</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="bg-surface-container text-on-surface px-2.5 py-1 rounded-md font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">edit_note</span>
+              Writing or recording answers
+            </span>
+<span class="bg-surface-container text-on-surface px-2.5 py-1 rounded-md font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">visibility</span>
+              Seeing and navigating the page
+            </span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-1">Targeted Adaptation Plan</span>
+<p class="font-body-md text-body-md text-on-surface">
+            Increase font size to 16pt, place each sentence of the passage on its own line with generous line spacing. Expand writing answer lines from 2 lines to 4 lines with guides. Retain exact passage and question wording.
+          </p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between mt-auto">
+<a class="inline-flex items-center gap-1 text-primary font-label-md text-label-md hover:text-on-primary-fixed-variant transition-colors group" href="#">
+<span>Change needs</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<span class="font-label-caps text-label-caps text-on-surface-variant">16pt Large Print • Guided</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between transition-all hover:shadow-md relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary/20"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-0.5">Cohort Gamma</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Group C</h3>
+</div>
+<span class="inline-flex items-center gap-1 bg-surface-container-high text-on-surface px-2.5 py-1 rounded-full font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Ready to create</span>
+</span>
+</div>
+<div class="mb-space-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider block mb-1.5">Identified Student Needs</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="bg-surface-container text-on-surface px-2.5 py-1 rounded-md font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">saved_search</span>
+              Keeping track of information
+            </span>
+<span class="bg-surface-container text-on-surface px-2.5 py-1 rounded-md font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">pace</span>
+              Staying engaged with the task
+            </span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg mb-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider block mb-1">Targeted Adaptation Plan</span>
+<p class="font-body-md text-body-md text-on-surface">
+            Position the reading passage adjacent to each question chunk. Embed mini-goals (“Finish 2 questions”) and include a teacher-directed 3-minute stretch break reminder after item 2. Keep all 4 questions; no answers revealed.
+          </p>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between mt-auto">
+<a class="inline-flex items-center gap-1 text-primary font-label-md text-label-md hover:text-on-primary-fixed-variant transition-colors group" href="#">
+<span>Change needs</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Dual Column • Self-Pacing</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-space-lg mb-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-lg text-title-lg text-on-surface">Photographic &amp; Pedagogical Fidelity Verification</span>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-semibold px-2 py-0.5 rounded uppercase">Passed</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Photo source verified: 4 of 4 text questions and standard layout preserved. No essential diagrams dropped.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>4 Questions Preserved</span>
+</div>
+<span>•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span>Lexile Band Retained</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg mb-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Orchestration Diagnostics • Generation Engine</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Live Generation Progress</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Session Queue ID: #ADPT-8832-G2</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between p-space-md rounded-lg bg-surface-container-low transition-all">
+<div class="flex items-center gap-space-md mb-2 md:mb-0">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-lg text-title-lg text-on-surface">Group A</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(Multistep directions, task volume)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Generated 2 chunked worksheets with checkboxes</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full font-label-md text-label-md bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+            Ready to review
+          </span>
+<button class="font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant px-space-sm py-1" type="button">
+            Preview draft
+          </button>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between p-space-md rounded-lg bg-error-container/30 transition-all">
+<div class="flex items-center gap-space-md mb-2 md:mb-0">
+<div class="w-8 h-8 rounded-full bg-error text-on-error flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-lg text-title-lg text-on-surface">Group B</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(Writing recording, page navigation)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container">Could not create — generation timed out during SVG typesetting</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full font-label-md text-label-md bg-error-container text-on-error-container font-medium">
+            Generation Timed Out
+          </span>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-1.5" id="retry-btn-b" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">sync</span>
+<span>Retry Group B</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between p-space-md rounded-lg bg-surface-container-low transition-all">
+<div class="flex items-center gap-space-md mb-2 md:mb-0">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-primary flex items-center justify-center flex-shrink-0 animate-spin">
+<span class="material-symbols-outlined text-[18px]">progress_activity</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-title-lg text-title-lg text-on-surface">Group C</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(Keeping track, sustained engagement)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Preparing... (formatting dual-column page layout &amp; break block)</p>
+</div>
+</div>
+<div class="flex items-center gap-space-md self-end md:self-auto">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
+            Formatting layout...
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant w-24 text-right">In queue</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex flex-col-reverse sm:flex-row items-center justify-between gap-space-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to groups</span>
+</a>
+<div class="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-tertiary">hourglass_empty</span>
+<span>Group B awaiting retry before full differential review</span>
+</div>
+<button class="w-full sm:w-auto px-space-xl py-3 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:bg-primary transition-all flex items-center justify-center gap-space-xs" id="primary-action-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">auto_fix_high</span>
+<span>Create worksheets</span>
+</button>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const retryBtn = document.getElementById('retry-btn-b');
+      const primaryBtn = document.getElementById('primary-action-btn');
+      
+      if (retryBtn) {
+        retryBtn.addEventListener('click', () => {
+          retryBtn.disabled = true;
+          retryBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Retrying...</span>';
+          
+          setTimeout(() => {
+            const parentRow = retryBtn.closest('.bg-error-container\\/30');
+            if (parentRow) {
+              parentRow.className = 'flex flex-col md:flex-row md:items-center justify-between p-space-md rounded-lg bg-surface-container-low transition-all';
+              parentRow.innerHTML = `
+                <div class="flex items-center gap-space-md mb-2 md:mb-0">
+                  <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0">
+                    <span class="material-symbols-outlined text-[18px]">check</span>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-space-xs">
+                      <span class="font-title-lg text-title-lg text-on-surface">Group B</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">(Writing recording, page navigation)</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Generated 16pt large print sheet with 4 guided lines</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-space-md self-end md:self-auto">
+                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full font-label-md text-label-md bg-secondary-container text-on-secondary-container">
+                    <span class="material-symbols-outlined text-[14px]">done_all</span>
+                    Ready to review
+                  </span>
+                  <button type="button" class="font-label-md text-label-md text-primary hover:text-on-primary-fixed-variant px-space-sm py-1">
+                    Preview draft
+                  </button>
+                </div>
+              `;
+            }
+
+            if (primaryBtn) {
+              primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">rate_review</span><span>Review worksheets</span>';
+            }
+          }, 1400);
+        });
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">lock</span><span>Ephemeral Classroom Session • Unsaved drafts expire upon browser window close</span></div><div class="flex items-center gap-space-lg font-label-md text-label-md"><span class="font-label-caps text-label-caps tracking-wider text-on-surface">© 2025 CHLD Adapt. Precision Pedagogical Atelier.</span></div></div></footer></body></html>

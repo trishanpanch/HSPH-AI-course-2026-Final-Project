@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "surface-dim": "#dfd9d1", "on-surface": "#1d1b16", "outline-variant": "#e1bebe", "inverse-on-surface": "#f6f0e7", "outline": "#8d7070", "secondary-fixed-dim": "#8fd6a7", "primary": "#81001d", "on-primary-container": "#ffb8b8", "primary-fixed": "#ffdad9", "on-secondary": "#ffffff", "on-surface-variant": "#594141", "on-background": "#1d1b16", "error-container": "#ffdad6", "background": "#fff8f0", "tertiary-fixed-dim": "#ffb877", "secondary": "#246b45", "secondary-fixed": "#aaf3c2", "surface-container-high": "#ede7df", "tertiary-fixed": "#ffdcc1", "surface-variant": "#e7e2d9", "surface-container": "#f3ede5", "inverse-primary": "#ffb3b3", "surface-container-low": "#f9f3ea", "on-tertiary-fixed-variant": "#6c3a00", "surface-tint": "#b22738", "error": "#ba1a1a", "tertiary-container": "#7f4704", "on-secondary-fixed": "#002110", "primary-fixed-dim": "#ffb3b3", "on-primary": "#ffffff", "primary-container": "#a51c30", "on-error-container": "#93000a", "surface-container-highest": "#e7e2d9", "secondary-container": "#aaf3c2", "on-primary-fixed-variant": "#900723", "surface": "#fff8f0", "inverse-surface": "#33302b", "surface-bright": "#fff8f0", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#2e1600", "tertiary": "#5f3300", "on-tertiary-container": "#ffbc81", "on-primary-fixed": "#40000a", "on-secondary-fixed-variant": "#00522f", "on-secondary-container": "#2b714a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "margin": "2rem", "space-sm": "0.5rem", "space-xl": "2rem" }, "fontFamily": { "display-hero": [ "Playfair Display" ], "body-sm": [ "Inter" ], "headline-sm": [ "Playfair Display" ], "label-md": [ "Inter" ], "headline-md": [ "Playfair Display" ], "display-hero-mobile": [ "Playfair Display" ], "label-lg": [ "Inter" ], "body-lg": [ "Inter" ], "body-md": [ "Inter" ], "label-caps": [ "Inter" ], "title-lg": [ "Inter" ], "headline-lg": [ "Playfair Display" ] }, "fontSize": { "display-hero": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "fontWeight": "500" } ], "headline-md": [ "22px", { "lineHeight": "30px", "fontWeight": "600" } ], "display-hero-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-lg": [ "14px", { "lineHeight": "20px", "fontWeight": "500" } ], "body-lg": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "label-caps": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "title-lg": [ "18px", { "lineHeight": "26px", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-44 w-full flex flex-col justify-between"><div class="w-full bg-surface-container-high/60"><div class="max-w-7xl mx-auto px-margin h-16 flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-headline-md text-headline-md text-primary tracking-tight font-display-hero">CHLD Adapt</span><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-lowest shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Class prototype</span></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-md text-label-md text-on-surface-variant">Session active · Room 4B</span></div><div class="flex items-center gap-space-sm pl-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></div><div class="w-full bg-surface-container-lowest shadow-[0_1px_3px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin h-20 flex items-center justify-center"><nav class="flex items-center gap-space-xl" data-active-classes="text-on-surface font-semibold"><a aria-current="page" class="flex items-center gap-2.5 transition-colors text-on-surface font-semibold" data-path="worksheet" href="#"><span class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md font-semibold">1</span><span class="font-label-lg text-label-lg">Worksheet</span></a><div class="w-12 h-0.5 bg-surface-variant"></div><a class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="groups" href="#"><span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-medium">2</span><span class="font-label-lg text-label-lg">Groups</span></a><div class="w-12 h-0.5 bg-surface-variant"></div><a class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="plan" href="#"><span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-medium">3</span><span class="font-label-lg text-label-lg">Plan</span></a><div class="w-12 h-0.5 bg-surface-variant"></div><a class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="review" href="#"><span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-medium">4</span><span class="font-label-lg text-label-lg">Review</span></a><div class="w-12 h-0.5 bg-surface-variant"></div><a class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="download" href="#"><span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md font-medium">5</span><span class="font-label-lg text-label-lg">Download</span></a></nav></div></div><div class="w-full bg-surface-container-low"><div class="max-w-7xl mx-auto px-margin h-8 flex items-center justify-between text-on-surface-variant font-label-md text-label-md"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-tertiary-container">info</span><span>Work stays available during this session. Download approved worksheets before closing.</span></div><div class="flex items-center gap-space-sm font-label-caps text-label-caps text-tertiary-container tracking-wider uppercase">Auto-saved 1m ago</div></div></div></div></header><main class="w-full pt-44 bg-surface"><div class="max-w-7xl mx-auto px-margin py-space-xl min-h-[calc(100vh-11rem)]"><div class="flex flex-col w-full">
+<!-- Top Intro & Prototype State Bar -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg mb-space-xl">
+<div class="space-y-1.5">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary font-semibold">Step 1 of 5 · Intake &amp; Extraction</span>
+<span class="text-surface-dim">/</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Classroom Differentiation Workbench</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight">Adapt a worksheet for your class.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Keep the learning goal. Adjust how learners access the work across every ability tier.</p>
+</div>
+<!-- Prototype State Switcher -->
+<div class="bg-surface-container-high/80 p-1 rounded-xl flex items-center gap-1 self-start lg:self-auto shadow-sm">
+<button class="state-tab-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm font-label-md text-label-md font-semibold transition-all" id="btnStatePopulated" onclick="switchState('populated')" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Active Scan</span>
+</button>
+<button class="state-tab-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="btnStateEmpty" onclick="switchState('empty')" type="button">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span>Empty State</span>
+</button>
+<button class="state-tab-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="btnStateWarning" onclick="switchState('warning')" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+<span>Scan Warning</span>
+</button>
+</div>
+</div>
+<!-- Anchor Strip: Lesson Details -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-xl">
+<div class="flex items-center justify-between gap-space-md pb-space-sm mb-space-md border-b border-surface-container-high">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">anchor</span>
+<h2 class="font-title-lg text-title-lg text-on-surface tracking-tight">Lesson Anchor &amp; Curriculum Constraints</h2>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-semibold">Invariant Target Across Groups</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left: Learning Goal -->
+<div class="lg:col-span-8 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg font-semibold text-on-surface flex items-center gap-2" for="learningGoalInput">
+<span>Learning goal</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">Primary benchmark</span>
+</label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Non-negotiable core skill</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low text-on-surface rounded-lg p-3 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all resize-none" id="learningGoalInput" rows="2">Read a short passage and find explicitly stated information to answer who, where, when, and what questions.</textarea>
+</div>
+<div class="flex items-center gap-2 text-secondary font-body-sm text-body-sm pt-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>The learning goal remains the shared anchor across all adapted group tiers.</span>
+</div>
+</div>
+<!-- Right: Grade & Developmental Metadata -->
+<div class="lg:col-span-4 grid grid-cols-2 gap-space-sm bg-surface-container-low p-space-md rounded-lg">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Class Grade</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">Grade 2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primary curriculum</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Learner Cohort</span>
+<span class="font-title-lg text-title-lg text-on-surface font-semibold">7–8 yrs</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Developmental track</span>
+</div>
+<div class="col-span-2 pt-2 border-t border-surface-container-high flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">groups</span>
+<span>Room 4B · 24 students</span>
+</span>
+<button class="font-label-md text-label-md text-primary hover:underline font-semibold" type="button">Edit cohort</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Intake Source Switcher & Formats -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex p-1 bg-surface-container-high/70 rounded-lg">
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-surface-container-lowest text-on-surface font-label-lg text-label-lg font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">upload_file</span>
+<span>Upload source file</span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">content_paste</span>
+<span>Paste plain text</span>
+</button>
+</div>
+<div class="hidden sm:flex items-center gap-2 pl-space-sm text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container text-on-surface">Supported</span>
+<span>.docx, PDF (selectable), or JPG/PNG scan</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">lightbulb</span>
+<span>For photos: capture one flat, evenly lit page with all questions in frame.</span>
+</div>
+</div>
+<!-- State 1: Scan Warning Alert (Conditional Display via prototype buttons) -->
+<div class="hidden mb-space-lg bg-surface-container-high rounded-xl p-space-md shadow-sm" id="scanWarningAlert">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">Low-confidence OCR scan detected on lines 14–18</h3>
+<span class="font-label-caps text-label-caps uppercase tracking-wider px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Confidence 68%</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Some handwritten margin notes and skewed printed lines near Question 4 could not be resolved reliably. Review the right column directly or paste clean text.
+        </p>
+<div class="flex items-center gap-space-md mt-3">
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-medium hover:bg-primary-container transition-colors" type="button">
+            Upload clearer image
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium hover:bg-surface transition-colors" type="button">
+            Switch to Paste Text
+          </button>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md underline ml-auto" onclick="dismissWarning()" type="button">
+            Dismiss and edit manually
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- State 2: Empty State (Shown when Empty State button selected) -->
+<div class="hidden flex-col items-center justify-center py-20 px-space-lg bg-surface-container-lowest rounded-xl shadow-sm mb-space-xl text-center" id="emptyStateView">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-primary text-[36px]">document_scanner</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface tracking-tight mb-1">No worksheet scanned yet</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-space-lg">
+      Drop your master classroom sheet, assignment prompt, or test page here to automatically extract comprehension components.
+    </p>
+<div class="flex flex-col sm:flex-row items-center gap-space-md">
+<label class="cursor-pointer px-6 py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold flex items-center gap-2 shadow-md transition-all">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span>Choose file to scan</span>
+<input class="hidden" onchange="switchState('populated')" type="file"/>
+</label>
+<button class="px-5 py-3 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg font-medium hover:bg-surface-variant transition-colors" onclick="switchState('populated')" type="button">
+        Load sample worksheet ("A plant at school")
+      </button>
+</div>
+<div class="flex items-center gap-space-xl mt-space-xl pt-space-lg border-t border-surface-container text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span> Automatic question numbering</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span> Passage vs. question isolation</span>
+<span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span> Immediate inline editing</span>
+</div>
+</div>
+<!-- State 3: Active Populated Workspace (Default) -->
+<div class="flex flex-col gap-space-xl" id="populatedStateView">
+<!-- Header of Workspace -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Check the extracted worksheet</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Compare the source document with the extracted text. You can edit the text directly before generating adaptations.</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-md text-label-md font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>4 questions recognized</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+<span>Accuracy: 99.4%</span>
+</span>
+</div>
+</div>
+<!-- Side-by-Side 50/50 Desktop Inspection Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-stretch">
+<!-- Left Pane: Source Document Inspection -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">image</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Source: worksheet_scan_p1.jpg</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase">Single sheet</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Rotate document" type="button">
+<span class="material-symbols-outlined text-[18px]">rotate_right</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" title="Zoom preview" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+<span>Inspect scan</span>
+</button>
+</div>
+</div>
+<!-- Realistic A4 Physical Worksheet Canvas Preview -->
+<div class="flex-1 bg-surface-container p-space-md rounded-lg flex flex-col items-center justify-start overflow-hidden">
+<div class="w-full max-w-md bg-surface-container-lowest shadow-md rounded p-6 text-on-surface font-body-md flex flex-col gap-4 relative">
+<!-- Simulated Stamp / Academic Header -->
+<div class="flex justify-between items-start pb-3 border-b border-surface-container-high">
+<div class="space-y-0.5">
+<div class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase font-semibold">Oakridge Elementary School</div>
+<div class="font-label-caps text-label-caps text-primary font-semibold">READING COMPREHENSION • GRADE 2 • CORE TIER</div>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">NAME: __________________</span>
+</div>
+</div>
+<!-- Worksheet Title -->
+<div class="text-center my-1">
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-headline-md tracking-tight italic">A plant at school</h3>
+<p class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant mt-0.5">Unit 3 · Living Things</p>
+</div>
+<!-- Story Passage Box -->
+<div class="bg-surface-container-low p-4 rounded text-on-surface leading-relaxed font-serif">
+              Mina carried a small plant to school. She put it beside the window. Each morning, she gave the plant a little water. On Friday, Mina noticed a new leaf.
+            </div>
+<!-- Questions Area -->
+<div class="space-y-3 pt-1">
+<div class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider">
+                Read the passage. Answer each question in full sentences:
+              </div>
+<ol class="space-y-3 list-decimal list-inside font-body-sm text-body-sm text-on-surface">
+<li class="pl-1">
+<span class="font-medium text-on-surface">Who carried the plant to school?</span>
+<div class="h-5 border-b border-dotted border-surface-variant mt-1"></div>
+</li>
+<li class="pl-1">
+<span class="font-medium text-on-surface">Where did Mina put the plant?</span>
+<div class="h-5 border-b border-dotted border-surface-variant mt-1"></div>
+</li>
+<li class="pl-1">
+<span class="font-medium text-on-surface">When did she water the plant?</span>
+<div class="h-5 border-b border-dotted border-surface-variant mt-1"></div>
+</li>
+<li class="pl-1">
+<span class="font-medium text-on-surface">What did Mina notice on Friday?</span>
+<div class="h-5 border-b border-dotted border-surface-variant mt-1"></div>
+</li>
+</ol>
+</div>
+<!-- Footnote / Sheet ID -->
+<div class="pt-4 mt-2 border-t border-surface-container-high flex justify-between items-center text-[10px] text-on-surface-variant">
+<span>Ref: RC-G2-088</span>
+<span>Primary Core Literacy Folio</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Captured via Camera (300 DPI equivalent)</span>
+<button class="text-primary hover:underline font-label-md text-label-md font-medium" type="button">Replace source image</button>
+</div>
+</div>
+<!-- Right Pane: Editable Extracted Text Workspace -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg flex flex-col shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">edit_note</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Editable Extracted Text</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-on-secondary-container font-label-caps text-label-caps uppercase font-semibold">Ready for generation</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" onclick="resetExtraction()" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset to extraction</span>
+</button>
+</div>
+<!-- Segmented Editable Blocks -->
+<div class="flex-1 flex flex-col gap-space-md">
+<!-- Extracted Title & Instructions -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant font-semibold flex items-center justify-between">
+<span>Extracted Title &amp; Rubric</span>
+<span class="text-secondary font-medium">Verified</span>
+</label>
+<input class="w-full bg-surface-container-low text-on-surface font-title-lg text-title-lg font-semibold px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all" id="extractedTitle" type="text" value="A plant at school"/>
+</div>
+<!-- Extracted Passage Editor -->
+<div class="space-y-1">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant font-semibold flex items-center justify-between">
+<span>Reading Passage</span>
+<span class="font-label-caps lowercase text-on-surface-variant">28 words · Lexile ~420L</span>
+</label>
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md p-3 rounded-lg leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all resize-none" id="extractedPassage" rows="3">Mina carried a small plant to school. She put it beside the window. Each morning, she gave the plant a little water. On Friday, Mina noticed a new leaf.</textarea>
+</div>
+<!-- Extracted Questions Editor -->
+<div class="space-y-2 flex-1 flex flex-col">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant font-semibold">Questions (4 detected)</label>
+<button class="text-primary hover:underline font-label-md text-label-md font-medium flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Add question</span>
+</button>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-lg focus-within:ring-2 focus-within:ring-primary focus-within:bg-surface-container-lowest transition-all">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold flex-shrink-0">1</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="Who carried the plant to school?"/>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-0.5 rounded flex-shrink-0">who</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-lg focus-within:ring-2 focus-within:ring-primary focus-within:bg-surface-container-lowest transition-all">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold flex-shrink-0">2</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="Where did Mina put the plant?"/>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-0.5 rounded flex-shrink-0">where</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-lg focus-within:ring-2 focus-within:ring-primary focus-within:bg-surface-container-lowest transition-all">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold flex-shrink-0">3</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="When did she water the plant?"/>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-0.5 rounded flex-shrink-0">when</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-2.5 rounded-lg focus-within:ring-2 focus-within:ring-primary focus-within:bg-surface-container-lowest transition-all">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-semibold flex-shrink-0">4</span>
+<input class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none" type="text" value="What did Mina notice on Friday?"/>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-0.5 rounded flex-shrink-0">what</span>
+</div>
+</div>
+</div>
+<!-- Essential Diagrams Notice Callout -->
+<div class="mt-auto bg-surface-container-high/60 rounded-lg p-3.5 flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] flex-shrink-0 mt-0.5">info</span>
+<div class="text-on-surface-variant font-body-sm text-body-sm leading-snug">
+<span class="font-semibold text-on-surface">Notice on essential diagrams:</span> If your original sheet relies on visual diagrams, graphs, or line art, text extraction cannot synthesize them. A legible source document is preserved alongside the text in all student variants.
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Confirmation Checkbox & Verification Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<label class="flex items-start gap-3 cursor-pointer select-none">
+<div class="relative flex items-center pt-0.5">
+<input checked="" class="w-5 h-5 rounded text-primary focus:ring-primary accent-primary cursor-pointer" id="confirmCheckbox" type="checkbox"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface block">
+            I confirm the extracted text is complete and accurately reflects the source worksheet.
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            All 4 targeted questions align with reading standards for Grade 2. You will configure tiers in Step 2.
+          </span>
+</div>
+</label>
+<div class="flex items-center gap-2 self-end md:self-auto">
+<span class="font-label-caps text-label-caps text-secondary font-semibold uppercase tracking-wider flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Ready to partition
+        </span>
+</div>
+</div>
+<!-- Bottom Action Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md border-t border-surface-container-high mb-space-xl">
+<div class="flex items-center gap-space-md">
+<button class="text-on-surface-variant hover:text-primary font-label-lg text-label-lg font-medium transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+<span>Clear &amp; start over</span>
+</button>
+<span class="text-surface-dim">|</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save session draft</span>
+</button>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<button class="px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg font-medium transition-colors" onclick="switchState('empty')" type="button">
+          Upload different file
+        </button>
+<button class="px-6 py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold shadow-md active:scale-95 transition-all flex items-center gap-2" id="btnContinue" type="button">
+<span>Continue to groups</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchState(state) {
+    const populatedView = document.getElementById('populatedStateView');
+    const emptyView = document.getElementById('emptyStateView');
+    const warningAlert = document.getElementById('scanWarningAlert');
+
+    // Button highlighting
+    const tabs = document.querySelectorAll('.state-tab-btn');
+    tabs.forEach(btn => {
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+      btn.classList.add('text-on-surface-variant');
+    });
+
+    if (state === 'populated') {
+      populatedView.classList.remove('hidden');
+      populatedView.classList.add('flex');
+      emptyView.classList.add('hidden');
+      warningAlert.classList.add('hidden');
+      const b = document.getElementById('btnStatePopulated');
+      b.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+      b.classList.remove('text-on-surface-variant');
+    } else if (state === 'empty') {
+      populatedView.classList.add('hidden');
+      emptyView.classList.remove('hidden');
+      emptyView.classList.add('flex');
+      warningAlert.classList.add('hidden');
+      const b = document.getElementById('btnStateEmpty');
+      b.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+      b.classList.remove('text-on-surface-variant');
+    } else if (state === 'warning') {
+      populatedView.classList.remove('hidden');
+      populatedView.classList.add('flex');
+      emptyView.classList.add('hidden');
+      warningAlert.classList.remove('hidden');
+      const b = document.getElementById('btnStateWarning');
+      b.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'shadow-sm');
+      b.classList.remove('text-on-surface-variant');
+    }
+  }
+
+  function dismissWarning() {
+    document.getElementById('scanWarningAlert').classList.add('hidden');
+  }
+
+  function resetExtraction() {
+    document.getElementById('extractedTitle').value = 'A plant at school';
+    document.getElementById('extractedPassage').value = 'Mina carried a small plant to school. She put it beside the window. Each morning, she gave the plant a little water. On Friday, Mina noticed a new leaf.';
+  }
+
+  // Interactive checkbox handling for Next button
+  const confirmCb = document.getElementById('confirmCheckbox');
+  const btnNext = document.getElementById('btnContinue');
+  if (confirmCb && btnNext) {
+    confirmCb.addEventListener('change', (e) => {
+      if (!e.target.checked) {
+        btnNext.classList.add('opacity-50', 'pointer-events-none');
+      } else {
+        btnNext.classList.remove('opacity-50', 'pointer-events-none');
+      }
+    });
+  }
+</script></div></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface">CHLD Adapt</span><span>— Primary Pedagogical Differentiation Workbench</span></div><div class="flex items-center gap-space-lg"><span class="font-label-md text-label-md text-on-surface-variant">Strictly offline-ready session buffer</span><span class="font-label-md text-label-md text-on-surface-variant">© 2025 CHLD Framework</span></div></div></footer></body></html>

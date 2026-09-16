@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#5f3300",
+          "tertiary-container": "#7f4704",
+          "on-primary-fixed": "#40000a",
+          "on-background": "#1d1b16",
+          "inverse-primary": "#ffb3b3",
+          "on-tertiary-fixed": "#2e1600",
+          "outline": "#8d7070",
+          "on-error-container": "#93000a",
+          "outline-variant": "#e1bebe",
+          "on-secondary-fixed-variant": "#00522f",
+          "on-surface-variant": "#594141",
+          "primary": "#81001d",
+          "surface-container": "#f3ede5",
+          "secondary-fixed": "#aaf3c2",
+          "surface-tint": "#b22738",
+          "on-secondary-container": "#2b714a",
+          "on-tertiary-fixed-variant": "#6c3a00",
+          "tertiary-fixed": "#ffdcc1",
+          "surface-bright": "#fff8f0",
+          "secondary-fixed-dim": "#8fd6a7",
+          "on-secondary": "#ffffff",
+          "surface-container-high": "#ede7df",
+          "on-tertiary": "#ffffff",
+          "surface": "#fff8f0",
+          "on-error": "#ffffff",
+          "surface-container-highest": "#e7e2d9",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#900723",
+          "error-container": "#ffdad6",
+          "on-surface": "#1d1b16",
+          "tertiary-fixed-dim": "#ffb877",
+          "surface-container-low": "#f9f3ea",
+          "on-primary": "#ffffff",
+          "inverse-on-surface": "#f6f0e7",
+          "on-tertiary-container": "#ffbc81",
+          "secondary-container": "#aaf3c2",
+          "secondary": "#246b45",
+          "on-secondary-fixed": "#002110",
+          "primary-container": "#a51c30",
+          "error": "#ba1a1a",
+          "inverse-surface": "#33302b",
+          "primary-fixed": "#ffdad9",
+          "primary-fixed-dim": "#ffb3b3",
+          "on-primary-container": "#ffb8b8",
+          "background": "#fff8f0",
+          "surface-variant": "#e7e2d9",
+          "surface-dim": "#dfd9d1"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "margin": "2rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Playfair Display"
+          ],
+          "display-hero": [
+            "Playfair Display"
+          ],
+          "label-caps": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Playfair Display"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "title-lg": [
+            "Inter"
+          ],
+          "body-md": [
+            "Inter"
+          ],
+          "display-hero-mobile": [
+            "Playfair Display"
+          ],
+          "headline-md": [
+            "Playfair Display"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "500"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-hero": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-caps": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.06em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "title-lg": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero-mobile": [
+            "30px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      }
+    }
+  }</script></head><body class="bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-surface-container-low"><div class="max-w-[1280px] mx-auto px-margin h-8 flex items-center justify-between text-on-surface-variant font-label-md text-label-md"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[15px] text-tertiary">info</span><span>Work stays available during this session. Download approved worksheets before closing.</span></div><div class="flex items-center gap-space-sm font-label-caps text-label-caps uppercase tracking-wider"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>Workspace Live</span></div></div></div><div class="h-20 max-w-[1280px] mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-md"><div class="flex items-baseline gap-space-xs"><span class="font-headline-md text-headline-md text-primary tracking-tight">CHLD</span><span class="font-title-lg text-title-lg text-on-surface font-semibold">Adapt</span></div><div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">Class Prototype</span></div></div><nav class="flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="worksheet-source" href="#">1. Worksheet</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="student-groups" href="#">2. Groups</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="lesson-adaptation-plan" href="#">3. Plan</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a aria-current="page" class="px-space-md py-space-xs rounded-lg transition-all bg-primary-container text-on-primary font-semibold shadow-sm" data-path="differential-review" href="#">4. Review</a><span class="text-outline-variant font-body-sm text-body-sm select-none">→</span><a class="px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="export-download" href="#">5. Download</a></nav><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full max-w-[1280px] mx-auto px-margin pt-28 flex-1"><div class="flex flex-col w-full pb-16">
+<!-- Step 4 Pedagogical Overview & Lesson Anchor Banner -->
+<section class="mb-space-lg flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low px-space-lg py-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<span>Pedagogical Target • Grade 2 Literacy</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline"></span>
+<span>RL.2.1 Textual Evidence</span>
+</div>
+<div class="flex items-baseline gap-space-xs truncate">
+<span class="font-label-lg text-label-lg font-semibold text-primary uppercase text-[12px] tracking-wide shrink-0">Anchor Goal:</span>
+<p class="font-title-lg text-title-lg text-on-surface truncate">
+              Read a short passage and find explicitly stated information to answer who, where, when and what questions.
+            </p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="font-label-md text-label-md text-on-surface-variant">Classroom Session ID:</span>
+<code class="px-space-sm py-0.5 rounded bg-surface-container font-mono text-[12px] text-tertiary font-semibold">G2-LIT-084</code>
+</div>
+</div>
+</section>
+<!-- Interactive Group Selection & State Bar -->
+<section class="mb-space-md flex flex-col gap-space-xs">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary font-bold block mb-1">Step 4 of 5 • Differential Verification</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold">Review and approve variants</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Inspect the exact material that will be printed. Verify questions, reading passage, and layout for <strong class="text-on-surface font-semibold">Group B</strong>.
+        </p>
+</div>
+<!-- Live Group Switcher Tabs -->
+<div class="inline-flex p-1 rounded-xl bg-surface-container-high gap-1 shadow-sm shrink-0" role="tablist">
+<!-- Group A Tab -->
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span class="font-label-md text-label-md font-medium">Group A</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface text-[10px] font-label-caps uppercase tracking-wider text-tertiary">Review</span>
+</button>
+<!-- Group B Tab (Active) -->
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-semibold shadow-sm text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container animate-pulse">flag</span>
+<span class="font-label-md text-label-md">Group B</span>
+<span class="px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-[10px] font-label-caps uppercase tracking-wider text-on-tertiary-fixed font-bold">Flagged</span>
+</button>
+<!-- Group C Tab -->
+<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all text-left" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-md text-label-md font-medium">Group C</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-[10px] font-label-caps uppercase tracking-wider text-on-secondary-container font-semibold">Approved</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Side-by-Side Comparison Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT PANEL: Original Worksheet (Read-only, 5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px]">history_edu</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">Original Worksheet</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+          Source Reference (Unmodified)
+        </span>
+</div>
+<!-- Physical Paper Artifact (Original Scan / Facsimile) -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-xl shadow-sm overflow-hidden min-h-[640px] flex flex-col justify-between">
+<div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-surface-container/60 to-transparent pointer-events-none"></div>
+<div>
+<!-- Paper Header (Grade 2 Classroom style) -->
+<div class="pb-space-md mb-space-lg">
+<div class="flex justify-between items-baseline mb-space-sm text-on-surface-variant font-mono text-[11px]">
+<span>Name: ______________________</span>
+<span>Date: ____________</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight text-center mt-space-sm">A Plant at School</h2>
+<div class="flex items-center justify-center gap-space-sm mt-1 text-on-surface-variant font-label-md text-label-md">
+<span>Grade 2 Reading Comprehension</span>
+<span>•</span>
+<span>Lexile: 380L (28 words)</span>
+</div>
+</div>
+<!-- Original Text Body -->
+<div class="p-space-md rounded-lg bg-surface-container-low mb-space-lg text-on-surface font-body-md text-body-md leading-relaxed text-justify">
+            Maya brought a small green plant to school on Monday. She placed it by the sunny window in room 4. Each morning, Maya gave the plant water with a yellow cup. Soon, three white flowers bloomed.
+          </div>
+<!-- Original Questions List -->
+<div class="space-y-space-md font-body-sm text-body-sm text-on-surface">
+<div>
+<p class="font-semibold text-on-surface mb-1">1. Who brought the plant to school?</p>
+<div class="h-5 bg-surface-container-high/40 rounded-sm w-full"></div>
+</div>
+<div>
+<p class="font-semibold text-on-surface mb-1">2. Where did Maya put the plant?</p>
+<div class="h-5 bg-surface-container-high/40 rounded-sm w-full"></div>
+</div>
+<div>
+<p class="font-semibold text-on-surface mb-1">3. When did she water the plant?</p>
+<div class="h-5 bg-surface-container-high/40 rounded-sm w-full"></div>
+</div>
+<div>
+<p class="font-semibold text-on-surface mb-1">4. What bloomed on the plant?</p>
+<div class="h-5 bg-surface-container-high/40 rounded-sm w-full"></div>
+</div>
+</div>
+</div>
+<!-- Facsimile Footer Stamp -->
+<div class="pt-space-lg mt-space-lg flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps uppercase text-[10px] tracking-wider">
+<span>Standard Curriculum Sheet 12-A</span>
+<span>4 Questions • 100% Target Met</span>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Adapted Worksheet & Evaluation (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<!-- Action & Meta Strip above Adapted Card -->
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">difference</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary font-bold">Adapted Material • Group B (Tier 2 Focus)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[15px]">edit_note</span> Edit Text
+          </button>
+<button class="inline-flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[15px]">refresh</span> Regenerate
+          </button>
+<button class="inline-flex items-center p-1 rounded bg-surface-container text-outline hover:text-error hover:bg-error-container transition-colors" title="Discard this version" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- What Changed Floating Summary Tag -->
+<div class="bg-surface-container-high px-space-md py-space-xs rounded-lg flex items-center justify-between gap-space-md text-on-surface-variant font-label-md text-label-md shadow-xs">
+<div class="flex items-center gap-space-xs truncate">
+<span class="material-symbols-outlined text-secondary text-[16px]">tune</span>
+<span class="font-semibold text-on-surface">Applied Transformations:</span>
+<span class="truncate">Larger text (16pt) • Sentence breaks • Ruled guideline bars • 4/4 questions intact</span>
+</div>
+<span class="text-secondary font-semibold whitespace-nowrap text-label-caps uppercase tracking-wider">Aesthetic Balanced</span>
+</div>
+<!-- CRUCIAL PRD REQUIREMENT: Specific Assessment Concern Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md overflow-hidden transition-all duration-300" id="assessment-warning-card">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-sm mb-1">
+<span class="font-label-caps text-label-caps uppercase tracking-wider font-bold text-tertiary-container">Target Validity Warning</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[10px] uppercase font-bold">Blocks Approval</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+<strong class="font-semibold text-tertiary">This change may affect the learning goal:</strong> The proposed reference box on question 3 explicitly highlights <span class="px-1.5 py-0.5 rounded bg-tertiary-fixed font-semibold text-on-tertiary-fixed">"Each morning"</span>, directly solving <span class="italic">"When did she water the plant?"</span> without student retrieval.
+            </p>
+<!-- Resolution Action Row -->
+<div class="mt-space-md pt-space-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<button class="inline-flex items-center justify-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold text-left" id="btn-remove-helper" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+<span>Remove reference helper box</span>
+</button>
+<!-- Explicit Teacher Override Checkbox -->
+<label class="inline-flex items-center gap-space-sm cursor-pointer select-none group">
+<input class="w-4 h-4 rounded text-primary-container accent-primary-container cursor-pointer focus:ring-0" id="confirm-goal-unchanged" type="checkbox"/>
+<span class="font-label-md text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">
+                  I confirm the learning goal remains valid
+                </span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Physical Paper Artifact (Adapted Printable Preview) -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-xl shadow-md min-h-[640px] flex flex-col justify-between">
+<!-- Document Print Watermark/Ruler Header -->
+<div>
+<div class="pb-space-md mb-space-lg flex justify-between items-end">
+<div>
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-primary-container font-semibold">Tier 2 Format • Accessible Print Layout</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">A Plant at School</h2>
+</div>
+<div class="text-right font-mono text-[12px] text-on-surface-variant">
+<div>Name: <span class="inline-block w-32 bg-surface-container-high h-[1px]"></span></div>
+<div class="mt-1">Date: <span class="inline-block w-24 bg-surface-container-high h-[1px]"></span></div>
+</div>
+</div>
+<!-- Adapted Passage Layout: 16pt, 1 sentence per line, generous tracking -->
+<div class="space-y-3 p-space-md rounded-xl bg-surface-container-low mb-space-lg font-body-lg text-body-lg text-on-surface leading-loose">
+<p class="flex items-baseline gap-2">
+<span class="w-2 h-2 rounded-full bg-primary/40 shrink-0"></span>
+<span>Maya brought a small green plant to school on Monday.</span>
+</p>
+<p class="flex items-baseline gap-2">
+<span class="w-2 h-2 rounded-full bg-primary/40 shrink-0"></span>
+<span>She placed it by the sunny window in Room 4.</span>
+</p>
+<p class="flex items-baseline gap-2 transition-all p-1 rounded" id="preview-passage-line-3">
+<span class="w-2 h-2 rounded-full bg-primary/40 shrink-0"></span>
+<span><mark class="bg-tertiary-fixed text-on-tertiary-fixed px-1 rounded transition-colors" id="passage-highlight">Each morning</mark>, Maya gave the plant water with a yellow cup.</span>
+</p>
+<p class="flex items-baseline gap-2">
+<span class="w-2 h-2 rounded-full bg-primary/40 shrink-0"></span>
+<span>Soon, three white flowers bloomed.</span>
+</p>
+</div>
+<!-- Adapted Questions with Ruled Lines & Scaffold Helper -->
+<div class="space-y-space-lg font-body-md text-body-md text-on-surface">
+<!-- Question 1 -->
+<div>
+<p class="font-semibold text-on-surface mb-2 flex items-center gap-2">
+<span class="font-mono text-[12px] text-on-surface-variant">01</span>
+<span>Who brought the plant to school?</span>
+</p>
+<!-- Primary Guideline answer lines -->
+<div class="space-y-3 pl-6">
+<div class="w-full h-8 rounded bg-surface-container-high/30 flex items-center px-3">
+<div class="w-full h-[1px] bg-outline-variant/50"></div>
+</div>
+</div>
+</div>
+<!-- Question 2 -->
+<div>
+<p class="font-semibold text-on-surface mb-2 flex items-center gap-2">
+<span class="font-mono text-[12px] text-on-surface-variant">02</span>
+<span>Where did Maya put the plant?</span>
+</p>
+<div class="space-y-3 pl-6">
+<div class="w-full h-8 rounded bg-surface-container-high/30 flex items-center px-3">
+<div class="w-full h-[1px] bg-outline-variant/50"></div>
+</div>
+</div>
+</div>
+<!-- Question 3 (Flagged Helper Item) -->
+<div class="transition-all" id="question-3-container">
+<div class="flex items-center justify-between mb-2">
+<p class="font-semibold text-on-surface flex items-center gap-2">
+<span class="font-mono text-[12px] text-on-surface-variant">03</span>
+<span>When did she water the plant?</span>
+</p>
+<span class="text-[11px] font-label-caps uppercase px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold" id="flag-pill">
+                  Proposed Scaffold
+                </span>
+</div>
+<!-- Scaffold Reference Helper Box (Flagged) -->
+<div class="ml-6 mb-3 p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between gap-space-sm text-[12px] transition-all" id="scaffold-helper-box">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lightbulb</span>
+<span>Clue box: Look for <em>"Each morning"</em> in sentence 3.</span>
+</div>
+<button class="text-[11px] font-semibold text-error hover:underline" id="btn-inline-remove" type="button">Remove</button>
+</div>
+<div class="space-y-3 pl-6">
+<div class="w-full h-8 rounded bg-surface-container-high/30 flex items-center px-3">
+<div class="w-full h-[1px] bg-outline-variant/50"></div>
+</div>
+</div>
+</div>
+<!-- Question 4 -->
+<div>
+<p class="font-semibold text-on-surface mb-2 flex items-center gap-2">
+<span class="font-mono text-[12px] text-on-surface-variant">04</span>
+<span>What bloomed on the plant?</span>
+</p>
+<div class="space-y-3 pl-6">
+<div class="w-full h-8 rounded bg-surface-container-high/30 flex items-center px-3">
+<div class="w-full h-[1px] bg-outline-variant/50"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Printable sheet bottom footer indicator -->
+<div class="pt-space-lg mt-space-lg flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps uppercase text-[10px] tracking-wider">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">print</span>
+            Letter • Portrait • High-Contrast Type
+          </span>
+<span>Draft Version 2.1 • CHLD Atelier Engine</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Persistent Bottom Approval & Navigation Action Bar -->
+<section class="mt-space-xl pt-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Back Navigation -->
+<a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-[18px]">drive_file_rename_outline</span>
+<span>Back to plan</span>
+</a>
+<!-- PRD Caveat & State Notice -->
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md text-center">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span>Editing an approved worksheet returns its status to <strong class="text-on-surface">Needs review</strong>.</span>
+</div>
+<!-- Right Action CTA Cluster -->
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<!-- View Downloads Status Trigger -->
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg font-medium shadow-sm hover:bg-surface-container-high transition-all flex items-center gap-space-xs" type="button">
+<span>View downloads</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold text-label-caps text-[10px]">1 of 3 approved</span>
+</button>
+<!-- Primary Crimson Approval Button -->
+<button class="px-space-lg py-space-xs rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold shadow-sm transition-all duration-200 opacity-50 cursor-not-allowed flex items-center gap-space-xs hover:bg-primary" disabled="" id="btn-approve-group" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span id="approve-label">Approve Group B version</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Logic for Approval Gatekeeper & Resolution -->
+<script>
+    (function() {
+      const confirmCheck = document.getElementById('confirm-goal-unchanged');
+      const approveBtn = document.getElementById('btn-approve-group');
+      const approveLabel = document.getElementById('approve-label');
+      const removeBtn = document.getElementById('btn-remove-helper');
+      const inlineRemoveBtn = document.getElementById('btn-inline-remove');
+      const warningCard = document.getElementById('assessment-warning-card');
+      const scaffoldBox = document.getElementById('scaffold-helper-box');
+      const flagPill = document.getElementById('flag-pill');
+      const highlight = document.getElementById('passage-highlight');
+
+      let resolvedViaRemoval = false;
+
+      function updateApprovalState() {
+        if (resolvedViaRemoval || (confirmCheck && confirmCheck.checked)) {
+          approveBtn.disabled = false;
+          approveBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          approveBtn.classList.add('hover:shadow-md');
+          if (resolvedViaRemoval) {
+            approveLabel.textContent = 'Approve Group B (Scaffold Removed)';
+          } else {
+            approveLabel.textContent = 'Approve Group B with Override';
+          }
+        } else {
+          approveBtn.disabled = true;
+          approveBtn.classList.add('opacity-50', 'cursor-not-allowed');
+          approveBtn.classList.remove('hover:shadow-md');
+          approveLabel.textContent = 'Approve Group B version';
+        }
+      }
+
+      function handleScaffoldRemoval() {
+        resolvedViaRemoval = true;
+        
+        // Hide scaffold box in preview
+        if (scaffoldBox) scaffoldBox.style.display = 'none';
+        if (flagPill) flagPill.style.display = 'none';
+        
+        // Remove highlighting in reading passage
+        if (highlight) {
+          highlight.classList.remove('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+          highlight.classList.add('bg-transparent', 'text-inherit');
+        }
+
+        // Morph warning card into resolved confirmation badge
+        if (warningCard) {
+          warningCard.className = "bg-secondary-container/40 rounded-xl p-space-md transition-all shadow-xs";
+          warningCard.innerHTML = `
+            <div class="flex items-center justify-between gap-space-md">
+              <div class="flex items-center gap-space-sm">
+                <span class="material-symbols-outlined text-secondary text-[22px]">check_circle</span>
+                <span class="font-label-md text-label-md font-semibold text-on-surface">Pedagogical integrity restored: Helper clue removed from question 3.</span>
+              </div>
+              <span class="font-label-caps text-label-caps uppercase px-2 py-0.5 rounded bg-secondary text-on-secondary font-bold text-[10px]">Resolved</span>
+            </div>
+          `;
+        }
+
+        updateApprovalState();
+      }
+
+      if (confirmCheck) {
+        confirmCheck.addEventListener('change', updateApprovalState);
+      }
+
+      if (removeBtn) {
+        removeBtn.addEventListener('click', handleScaffoldRemoval);
+      }
+
+      if (inlineRemoveBtn) {
+        inlineRemoveBtn.addEventListener('click', handleScaffoldRemoval);
+      }
+
+      if (approveBtn) {
+        approveBtn.addEventListener('click', function() {
+          if (this.disabled) return;
+          this.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Saving Approval...</span>';
+          setTimeout(() => {
+            this.className = "px-space-lg py-space-xs rounded-lg bg-secondary text-on-secondary font-label-lg text-label-lg font-semibold shadow-sm flex items-center gap-space-xs";
+            this.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span><span>Group B Approved</span>';
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(0,0,0,0.02)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">lock</span><span>Ephemeral Classroom Session • Unsaved drafts expire upon browser window close</span></div><div class="flex items-center gap-space-lg font-label-md text-label-md"><span class="font-label-caps text-label-caps tracking-wider text-on-surface">© 2025 CHLD Adapt. Precision Pedagogical Atelier.</span></div></div></footer></body></html>

@@ -2,9 +2,31 @@
 
 **Draft for group review**
 
-> Markdown snapshot revised: 16 September 2026. Source: [shared group-review PRD](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit). Updated for Victoria’s feedback on photo input, worksheet readability, line drawings and engagement. Basic single-page JPG/JPEG support is included following the group’s scope decision.
+> Markdown revised: 16 September 2026. The broader requirements originate in the [shared group-review PRD](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit), including Victoria’s feedback on photo input, worksheet readability, line drawings and engagement. The one-hour MVP below is a subsequent, approved repository addendum; this task does not update the Google Doc. JPG/JPEG support remains planned for the broader prototype, after this first release.
 >
-> Companion: [DESIGN.md](DESIGN.md) translates this PRD into prototype screens and design guidance. The PRD governs product scope; visual choices in the design brief are proposals for testing.
+> Companions: [DESIGN.md](DESIGN.md) adopts the selected Stitch visual direction; [architecture.md](architecture.md) describes the proposed implementation; [project-plan.md](project-plan.md) links the delivery milestones. The PRD governs product scope.
+
+## 0. Approved one-hour MVP scope
+
+**First release:** paste one simple text-only worksheet → configure one neutral group → review a live AI adaptation plan → generate and edit → approve → download the reviewed A4 PDF. Deploy a shareable class demo protected by one shared password. Preserve the shared learning goal and teacher judgment throughout.
+
+This release is a subset of the broader requirements retained in Sections 1–5 and the appendix. Where they describe uploads, three groups or richer print controls, those are subsequent work rather than acceptance requirements for the first hour.
+
+| Included in the hour | Subsequent work |
+| --- | --- |
+| Pasted source, learning goal, grade/age and source confirmation | DOCX, selectable-text PDF and JPG/JPEG intake |
+| One group; all eleven checklist labels/explanations; 1–3 selections and optional context | Three independently generated groups |
+| Live plan and adaptation, editable result, change summary and teacher review of concerns | Essential-diagram extraction and preservation for uploaded material |
+| Fixed readable A4 layout, actual PDF preview, explicit approval and matching download | Additional print controls, handwriting-style fonts and reviewed line drawings |
+| Approval resets, stale-response protection, recoverable errors and session-only state | Full checklist scenario coverage and intended-teacher evaluation |
+
+Require the teacher to confirm that the pasted source is complete and no essential diagram, table or visual has been omitted. If the worksheet depends on such material, use a different text-only worksheet for this release; an acknowledgement cannot waive missing content. Do not expose working upload or extra-group controls in the MVP.
+
+The selected [Stitch references](stitch/README.md) guide appearance, not product claims or additional functionality. The live model is configured through OpenRouter; missing credentials must produce a clear configuration error, never silently substitute a sample result. No accounts, persistent storage or custom illustrations are included.
+
+**Build clock:** complete M0 cloud/model/password prerequisites first. M1–M4 each have a 15-minute planning allowance, totaling 60 minutes. Stop at 60 minutes and record the last passing milestone and outstanding issues. This is a timebox, not a delivery guarantee. Test fixtures can support development but do not pass live-AI or deployed-demo acceptance checks.
+
+Use the [project plan](project-plan.md) for the current build sequence. The earlier two-session plan below remains a reference for completing the broader scope. Neither a successful demo nor the one-hour timebox establishes classroom effectiveness; the separate ten-minute teacher-use target remains untested.
 
 ## 1. Understand: user, problem and purpose
 
@@ -152,7 +174,9 @@ Outside this version: diagnosis, pupil accounts, individual learner histories, d
 
 Use an English interface and preserve the source material’s language without automatic translation. Record the languages actually tested; do not infer Filipino or Taglish reliability from English results.
 
-## 4. Build: two class sessions
+## 4. Broader prototype: original two-session build plan
+
+The first release follows Section 0 and the linked GitHub milestones. The sequence below records the broader planned scope after that release.
 
 Use the team’s usual coding environment and model. Store code and documents in a separate CHLD Adapt GitHub repository, with GitHub Projects and Issues as the authoritative backlog.
 
@@ -172,7 +196,9 @@ Each feature Issue records its purpose, requirement, expected behavior, dependen
 
 The PRD belongs in docs/PRD.md. Keep evidence and decisions in docs/evidence-and-decisions.md, and link the GitHub backlog from docs/project-plan.md. Implementation and model choices belong in the subsequent technical design.
 
-## 5. Test, measure and decide
+## 5. Broader prototype: test, measure and decide
+
+The one-hour release has the narrower checks in [project-plan.md](project-plan.md). Retain the full scenarios below for follow-up work and the intended-teacher learning test.
 
 Primary learning question: Can the intended teacher turn an existing worksheet into an approved, useful set of adaptations for a lesson within ten minutes?
 

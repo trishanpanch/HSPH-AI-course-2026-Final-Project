@@ -1,23 +1,47 @@
 # CHLD Adapt — prototype design brief for Google Stitch
 
-**Status:** design proposal for group review, revised 16 September 2026.
+**Status:** Stitch visual direction approved; implementation guidance revised 16 September 2026. The one-hour MVP scope below is approved. The application is not built yet.
 
 **Product owner / original idea:** Victoria Nolasco; class team: Victoria, Trishan Panch and the group.  
-**Requirements:** [PRD.md](PRD.md), exported from the [shared Google Doc](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit).
+**Requirements:** [PRD.md](PRD.md), derived from the [shared Google Doc](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit) with the later approved one-hour repository addendum. The Google Doc has not been updated with that addendum.
 
-The PRD defines what must work. This file proposes how it should look and behave so the group can test the experience before implementing it. Colours, typography, screen divisions and example content are design proposals, not findings from teacher testing. If a design conflicts with the PRD, follow the PRD.
+The PRD defines what must work. The [selected Stitch export](stitch/README.md) supplies the approved visual direction. This brief translates that direction into the current release, correcting prototype copy and controls that conflict with the PRD. Approval of the appearance is not evidence of teacher testing or implemented behavior.
+
+## Approved one-hour MVP screen scope
+
+Keep the warm paper surfaces, crimson actions, Playfair Display headings, Inter interface text and side-by-side source/adaptation review. Use the desktop intake and review screenshots as the principal layout references; the other exported screens guide the remaining steps. Preserve all original exports as references rather than editing them to represent implementation progress.
+
+| Step | One-hour release | Later release |
+| --- | --- | --- |
+| Worksheet | Paste a simple text-only worksheet; goal, grade/age; editable source; confirm complete content and no omitted essential visual | DOCX/PDF/JPG intake, extracted-content and image review |
+| Groups | Group A only; all eleven labels/explanations; select 1–3 needs and optional context | Add/switch Groups B and C |
+| Plan | Show a live AI plan for that group before generation | Multi-group plans and progress |
+| Review | Original and editable adaptation; goal, change summary, concern decisions; actual A4 PDF preview and explicit approval | Source-image comparison and additional print/visual controls |
+| Download | One approved current PDF, with approval reset after relevant changes | Multiple independent group PDFs |
+
+Hide upload, extra-group and batch-download controls in the MVP. Missing essential visual content blocks use of that source; choose a complete text-only worksheet. A shared browser password prompt protects the hosted class demo; do not add an account or learner-profile interface. Follow [project-plan.md](project-plan.md) for milestone checks and the one-hour timebox.
+
+### Corrections when implementing the selected screens
+
+- Remove invented accuracy percentages, “100% target met,” “verified” educational guarantees, print certifications and unsupported offline claims.
+- Replace autosave, “Save session draft” and saved-class indicators with the session-only notice. Only downloaded approved PDFs persist for the teacher.
+- Use neutral Group A/B/C labels, with only A active in the MVP; remove ability tiers, diagnostic suggestions and pupil counts/profiles implied by decorative examples.
+- Remove PNG and other upload promises from the MVP. The later approved photo format is one JPG/JPEG printed page; scanned PDFs remain excluded.
+- Use A4 consistently; remove Letter, PDF/X certification, invented DPI/file sizes and ZIP/batch-export promises.
+- Replace “atelier,” “folio,” “target validity” and similar prototype jargon with worksheet, review, concern and download. Retain the visual composition without carrying over unsupported product claims.
+- Derive loading, approval, question counts and errors from actual state. Development fixtures must be labeled; the deployed MVP requires live OpenRouter behavior and real PDF output.
 
 ## 1. How to use this file
 
-Give Stitch this design brief and the PRD as context, by adding the files where supported or pasting their contents. Start with the prompt in Section 9, then request the remaining screens one at a time using Section 10. Keep the approved first screen as the visual reference and refine a specific screen or state per request.
+Use the selected [screen index](stitch/README.md), this brief and the PRD as implementation context. Reuse the approved direction rather than generating a new look. The prompts in Sections 9–10 are retained for later full-prototype refinement; apply the MVP screen scope above whenever working on the first release.
 
-The desired output is a teacher-facing web prototype. Upload processing, AI generation, editing and PDF export may be simulated at this stage; label the demonstration as a prototype and identify which actions are simulated when presenting it. Screens and clickable links do not establish that the underlying processing works. Implementation remains a separate task in the team's usual coding environment, tracked through its CHLD Adapt GitHub repository, Project and Issues.
+The static Stitch exports contain simulated interactions and are visual references. The implementation must use live AI and actual PDF output to pass MVP acceptance. Screens and clickable links do not establish that the processing works. Build in the team's usual coding environment and track work through the linked GitHub Project and Issues.
 
 Use fictional worksheets and group needs throughout. The main test is whether a teacher understands the complete journey and can review usable adaptations efficiently. Ten minutes for an approved set of up to three worksheets is a test target, not a promise to place in the interface. Victoria reported that the intended first teacher wants the option to upload a JPG/photo of a simple printed worksheet; this is a prototype input need, not evidence that photo extraction works reliably in classrooms.
 
 ## 2. Product and experience
 
-CHLD Adapt helps a primary-school teacher adapt an existing worksheet for up to three groups with different observable needs. The learning goal stays the same; the teacher reviews, corrects and approves each version, then downloads it for printing.
+CHLD Adapt helps a primary-school teacher adapt an existing worksheet for learners with different observable needs. The MVP handles one group; up to three groups remain planned. The learning goal stays the same; the teacher reviews, corrects and approves each version, then downloads it for printing.
 
 The initial context is Philippine public and private schools. The first intended teacher teaches Grade 2 with about 30 pupils. Teachers use the tool while preparing a lesson; children use the printed worksheets.
 
@@ -35,12 +59,13 @@ Warm paper, dark readable text and a restrained crimson accent connect this prot
 
 | Role | Colour | Use |
 | --- | --- | --- |
-| Page background | Warm paper `#F7F5F0` | Quiet background behind the workspace |
+| Page background | Warm paper `#FFF8F0` | Approved export's background behind the workspace |
 | Surface | White `#FFFFFF` | Inputs, worksheet pages and review panels |
-| Primary text | Charcoal `#242424` | Headings, labels and body text |
-| Supporting text | Slate `#52525B` | Helper text and secondary details |
-| Primary action | Crimson `#A51C30` | Main button, selected step and links; white button text |
-| Primary hover | Deep crimson `#861627` | Hover/pressed primary action |
+| Primary text | Warm charcoal `#1D1B16` | Headings, labels and body text |
+| Supporting text | Warm slate `#594141` | Helper text and secondary details |
+| Primary action | Deep crimson `#81001D` | Main button and active controls; white button text |
+| Accent | Crimson `#A51C30` | Progress accents and secondary crimson emphasis |
+| Primary hover | Dark crimson `#690017` | Darker hover proposal; check contrast in implementation |
 | Control boundary | Stone `#85817A` | Visible input borders and unselected checkboxes |
 | Divider | Pale stone `#DDD8CF` | Decorative separators, not the sole boundary of an input |
 | Approved | Forest `#17603B` on `#EDF7F0` | “Approved” text and check icon |
@@ -48,12 +73,12 @@ Warm paper, dark readable text and a restrained crimson accent connect this prot
 | Failed | Dark red `#9B1C20` on `#FFF0F0` | Recoverable errors with an explicit action |
 | Keyboard focus | Deep blue `#1D4ED8` | A clearly visible focus ring separated from the control |
 
-Status always includes text and an icon; colour alone must not carry meaning. Verify contrast in the generated screens, including hover, focus and disabled states.
+The palette above adopts the actual exported screen colors. The archived style guide has older prose colors alongside newer tokens; use this table when they differ. Retain the accessible status/focus treatments and verify contrast, including hover, focus and disabled states. Status always includes text and an icon; colour alone must not carry meaning.
 
 ### Typography, shape and spacing
 
-- Use **Playfair Display** for the product name and main page heading only. Use **Inter**, with a familiar sans-serif fallback, for controls, supporting headings and body text. For the student-facing printable worksheet only, allow an optional readable handwriting-style font when it improves legibility for the selected group; do not use it for application controls or dense teacher instructions.
-- Use body text around 16 px, labels at least 14 px and comfortable line spacing. Main headings should remain modest, around 28–32 px on desktop.
+- Use **Playfair Display** for the product name and editorial headings, following the selected screens. Use **Inter**, with a familiar sans-serif fallback, for controls, supporting headings and body text. Keep the pupil PDF in a fixed readable font for the MVP; optional handwriting-style type is follow-up work, confined to printable worksheets.
+- Use body text around 16 px, labels at least 14 px and comfortable line spacing. Main headings can use the approved 40 px desktop / 30 px narrow-screen scale; supporting headings remain smaller.
 - Buttons and inputs have gently rounded corners, around 8 px; major panels around 12 px. Prefer subtle borders to heavy shadows. Use a soft shadow only to distinguish the printable sheet from its surrounding workspace.
 - Use a consistent spacing rhythm, with roughly 24 px between related sections and 32 px around major panels. Make controls easy to click or tap, approximately 44 px high.
 - Start with a laptop-sized web layout, around 1280 px wide. Use a centred workspace; allow the comparison screen more width. On narrower screens, stack panels and preserve clear reading order. Original/adapted tabs may replace a side-by-side comparison.
@@ -65,9 +90,13 @@ Use one quiet header with “CHLD Adapt” and a small “Class prototype” lab
 
 Use a filled crimson button for the main next action, an outlined button for secondary actions and text links for navigation. Keep group selectors, checklist rows, status badges, warning panels and worksheet previews consistent across screens.
 
-## 4. Screen specifications
+## 4. Broader screen specifications
+
+The approved MVP table above limits the first release. The detailed upload and multi-group states below remain the broader design reference; do not expose them as working features during the one-hour build.
 
 ### Screen 1 — Your worksheet
+
+For the one-hour MVP, show only Paste text and its editable source review. The upload controls and recovery states below are follow-up specifications.
 
 **Purpose:** supply an existing worksheet and make sure the tool has read it correctly.
 
@@ -228,27 +257,29 @@ Show a variant with two problems per section, larger response areas, separate in
 
 ## 8. Printable worksheet design
 
+For the MVP, implement the fixed readable A4 template, answer space and exact PDF review/download behavior. Optional font, drawing and extended print controls below belong to follow-up work.
+
 Use white A4 pages with black or very dark text and practical printer margins, starting around 15–18 mm. Use a familiar sans-serif font such as Arial, starting around 14 pt and increasing when a group's needs call for it. A readable handwriting-style font may be offered for the student-facing worksheet when appropriate. Use clear headings, larger text where needed, individual sentences or extra line breaks where helpful, and generous line spacing; preserve wording, questions and required reasoning. Validate actual printed pages rather than assuming a screen preview is sufficient.
 
 Keep each question with its answer space and any relevant visual. Break between questions or sections when necessary. Preserve every required question and the space needed to show working. A longer worksheet is acceptable when it improves readability. Use simple non-distracting line drawings, line diagrams, blank organisers or visual cues where relevant, with legible labels and no dependence on colour. The teacher must review any drawing or visual support. Do not use custom AI illustrations, decorative backgrounds or pre-filled assessed answers.
 
 The preview and eventual downloaded PDF must contain the same approved material. Application navigation, teacher warnings and adaptation explanations stay outside the printed page.
 
-## 9. First prompt to paste into Stitch
+## 9. Retained full-prototype prompt for Stitch
 
 ```text
 Design the first screen of CHLD Adapt, a teacher-facing web prototype for adapting existing primary-school worksheets. Follow the attached PRD for scope and DESIGN.md for appearance and behaviour. Begin with Screen 1, “Your worksheet,” including a populated extraction-review state using the fictional Grade 2 reading example.
 
 The teacher supplies the learning goal, grade, age range and an existing worksheet as pasted text, DOCX, a PDF with selectable text, or one JPG/JPEG image of a printed worksheet page. Show the source image beside editable extracted content for photo uploads, and require correction and confirmation before “Continue to groups.” Existing material is required. Include an empty state and an unreadable-upload/photo state with retry upload and text-paste recovery actions, preserving lesson inputs. Missing essential diagram content requires a readable replacement source; do not allow confirmation to bypass it. Do not show custom camera capture, multi-image assembly, scanned-PDF support or handwriting recognition.
 
-DESIGN SYSTEM (REQUIRED): Desktop-first web workspace, calm and practical. Warm paper #F7F5F0 background, white #FFFFFF surfaces, charcoal #242424 text, slate #52525B supporting text, crimson #A51C30 primary buttons with white text. Visible control borders #85817A. Playfair Display for the product name and main heading; Inter for body text and controls. Body text around 16 px, gently rounded inputs, restrained shadows, generous whitespace and clear keyboard focus. Small “Class prototype” label in the header.
+DESIGN SYSTEM (REQUIRED): Follow the approved Stitch references: desktop-first web workspace, calm and practical. Warm paper #FFF8F0 background, white #FFFFFF surfaces, warm charcoal #1D1B16 text, warm slate #594141 supporting text, deep crimson #81001D primary buttons with white text and #A51C30 accents. Visible control borders #85817A. Playfair Display for the product name and editorial headings; Inter for body text and controls. Body text around 16 px, gently rounded inputs, restrained shadows, generous whitespace and clear keyboard focus. Small “Class prototype” label in the header. For the one-hour MVP, apply the screen-scope table at the start of DESIGN.md: pasted text and one group only.
 
 PAGE STRUCTURE: Quiet CHLD Adapt header; five-step progress row (Worksheet, Groups, Plan, Review, Download); page heading; lesson fields; Paste text / Upload a file choices; source-content review with source image comparison when relevant; primary Continue action; concise notice that the session is not saved after closing. Keep the task central. Use accessible labels, useful inline errors and a layout that stacks cleanly on narrow screens.
 
 The complete journey will create up to three group worksheets with a shared learning goal, teacher review, separate approval and printable PDFs. Reserve a consistent learning-goal strip and group status components for later screens. Keep this screen focused on intake. Do not add accounts, learner profiles, diagnosis, chat, dashboards, saved libraries or worksheet creation from a goal alone. The content is fictional and the processing may be simulated; do not imply AI or file processing has been implemented merely by designing these screens.
 ```
 
-## 10. Follow-up prompts and prototype review
+## 10. Full-prototype follow-up prompts and review
 
 Use each prompt as a separate request after choosing the first screen's visual direction. Supply the relevant sections of this file if Stitch does not have the full brief in context.
 
@@ -273,6 +304,6 @@ Before accepting the prototype, walk through reading and mathematics examples an
 - Keyboard focus, text size, contrast, narrow-screen layout and error recovery are readable.
 - The group records what was simulated and what was actually tested. A polished mock-up, including a simulated photo-extraction flow, is not evidence of classroom effectiveness, reliable OCR or of meeting the ten-minute target.
 
-Record feedback and decisions alongside the PRD before implementing new behaviour. Keep the two-session build plan in the PRD as the scope boundary.
+Record feedback and decisions alongside the PRD before implementing new behaviour. The approved one-hour scope and linked milestones govern the first release; the original two-session scope remains subsequent work.
 
 Prompting reference: [Google Stitch prompting guide](https://stitch.withgoogle.com/docs/learn/prompting/). This brief supplies the screen content and design direction; it does not depend on a particular Stitch integration or model.
