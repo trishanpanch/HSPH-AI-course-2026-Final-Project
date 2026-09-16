@@ -1,6 +1,7 @@
 # CHLD Adapt — prototype design brief for Google Stitch
 
-**Status:** design proposal for group review, 15 September 2026.  
+**Status:** design proposal for group review, revised 16 September 2026.
+
 **Product owner / original idea:** Victoria Nolasco; class team: Victoria, Trishan Panch and the group.  
 **Requirements:** [PRD.md](PRD.md), exported from the [shared Google Doc](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit).
 
@@ -12,7 +13,7 @@ Give Stitch this design brief and the PRD as context, by adding the files where 
 
 The desired output is a teacher-facing web prototype. Upload processing, AI generation, editing and PDF export may be simulated at this stage; label the demonstration as a prototype and identify which actions are simulated when presenting it. Screens and clickable links do not establish that the underlying processing works. Implementation remains a separate task in the team's usual coding environment, tracked through its CHLD Adapt GitHub repository, Project and Issues.
 
-Use fictional worksheets and group needs throughout. The main test is whether a teacher understands the complete journey and can review usable adaptations efficiently. Ten minutes for an approved set of up to three worksheets is a test target, not a promise to place in the interface.
+Use fictional worksheets and group needs throughout. The main test is whether a teacher understands the complete journey and can review usable adaptations efficiently. Ten minutes for an approved set of up to three worksheets is a test target, not a promise to place in the interface. Victoria reported that the intended first teacher wants the option to upload a JPG/photo of a simple printed worksheet; this is a prototype input need, not evidence that photo extraction works reliably in classrooms.
 
 ## 2. Product and experience
 
@@ -22,7 +23,7 @@ The initial context is Philippine public and private schools. The first intended
 
 Create a calm, practical workspace that feels like preparing teaching materials. Give the current task, source worksheet and next action most of the space. Keep explanations short and available at the point of use. Use ordinary teaching language: “worksheet,” “group,” “what changed” and “review.”
 
-The prototype starts directly with worksheet preparation. Its scope excludes accounts, pupil records, diagnostic labels, dashboards, saved libraries, chat assistants, school integrations and creating worksheets from a goal alone. Use an English interface; preserve the worksheet's original language without a translation control or claims of untested language support.
+The prototype starts directly with worksheet preparation. Its scope excludes accounts, pupil records, diagnostic labels, dashboards, saved libraries, chat assistants, school integrations, custom camera capture, multi-image assembly, scanned-PDF recognition, handwriting recognition and creating worksheets from a goal alone. Use an English interface; preserve the worksheet's original language without a translation control or claims of untested language support.
 
 ## 3. Design system
 
@@ -51,12 +52,12 @@ Status always includes text and an icon; colour alone must not carry meaning. Ve
 
 ### Typography, shape and spacing
 
-- Use **Playfair Display** for the product name and main page heading only. Use **Inter**, with a familiar sans-serif fallback, for controls, supporting headings and body text.
+- Use **Playfair Display** for the product name and main page heading only. Use **Inter**, with a familiar sans-serif fallback, for controls, supporting headings and body text. For the student-facing printable worksheet only, allow an optional readable handwriting-style font when it improves legibility for the selected group; do not use it for application controls or dense teacher instructions.
 - Use body text around 16 px, labels at least 14 px and comfortable line spacing. Main headings should remain modest, around 28–32 px on desktop.
 - Buttons and inputs have gently rounded corners, around 8 px; major panels around 12 px. Prefer subtle borders to heavy shadows. Use a soft shadow only to distinguish the printable sheet from its surrounding workspace.
 - Use a consistent spacing rhythm, with roughly 24 px between related sections and 32 px around major panels. Make controls easy to click or tap, approximately 44 px high.
 - Start with a laptop-sized web layout, around 1280 px wide. Use a centred workspace; allow the comparison screen more width. On narrower screens, stack panels and preserve clear reading order. Original/adapted tabs may replace a side-by-side comparison.
-- Use labelled fields, visible keyboard focus and readable error text. Checklist explanations must open by keyboard or tap, rather than depending on hover. Keep action bars from covering the last lines of a worksheet.
+- Use labelled fields, visible keyboard focus and readable error text. Checklist explanations must open by keyboard or tap, rather than depending on hover. Keep action bars from covering the last lines of a worksheet. For student worksheets, support larger text, one sentence per line where useful, and extra line breaks that preserve the original wording and required reasoning.
 
 ### Reusable components
 
@@ -72,10 +73,11 @@ Use a filled crimson button for the main next action, an outlined button for sec
 
 - Heading: **“Adapt a worksheet for your class.”** Supporting line: “Keep the learning goal. Adjust how learners access the work.”
 - Fields: **“Learning goal,” “Grade,” “Approximate age range.”** The goal is written by the teacher.
-- Source choices: **“Paste text”** and **“Upload a file.”** Accept `.docx` and PDFs with selectable text. Explain this beside the upload control.
-- After upload, show **“Check the extracted worksheet”** with editable extracted content. Ask the teacher to confirm it is complete and accurate before proceeding. Keep pasted text editable too.
+- Source choices: **“Paste text”** and **“Upload a file.”** Accept `.docx`, PDFs with selectable text and one `.jpg`/`.jpeg` image of a printed worksheet page. Helper: “For a photo, upload one clear printed page with all questions visible.” Blurry, cropped or otherwise unreadable photos need correction or a replacement source; do not promise reliable extraction before it has been tested.
+- After upload, show **“Check the extracted worksheet”** with editable extracted content. For a JPG/JPEG, show the source image beside the editable extracted content so the teacher can compare them. Ask the teacher to confirm the extraction is complete and accurate before proceeding. Keep pasted text editable too.
 - Primary action: **“Continue to groups.”** Require a goal, grade/age information, usable source material and, for an upload, confirmation of the extracted content. Explain missing fields beside them.
-- For an unreadable file: “We couldn't read this worksheet reliably. Paste the text below or choose a Word document or PDF with selectable text.” Preserve the information already entered.
+- For an unreadable file or unclear photo: “We couldn't read this worksheet reliably. Try a clearer single-page JPG/JPEG, paste the text below, or choose a Word document or PDF with selectable text.” Preserve the information already entered and offer retry upload or paste-text fallback.
+- If the source worksheet contains an essential diagram, table or visual that extraction cannot represent faithfully, require a readable replacement source before continuing. A text description or confirmation must not stand in for a diagram needed to answer the questions.
 - Brief session notice: “Work stays available during this session. Download approved worksheets before closing.”
 
 Create both an empty state and a populated source-review state. Use the reading example in Section 7 for the populated version.
@@ -98,8 +100,8 @@ Create a one-group state and a three-group state. The learning goal stays visibl
 
 **Purpose:** show what will change before generating worksheets.
 
-- Show one panel per group, containing its selected difficulties and a short proposed approach. Link each panel to **“Change needs.”**
-- Example: “Split instructions into steps, keep all questions, and place two questions on each page.”
+- Show one panel per group, containing its selected difficulties and a short proposed approach. Link each panel to **“Change needs.”** When a source image includes essential diagrams or layout information, explain how the plan preserves that content. If required source content is still missing, return to the source check before generation; an added line drawing must not invent missing information.
+- Example: “Split instructions into steps, keep all questions, add visible progress checkboxes, and place two questions on each page.”
 - Reinforce the shared learning goal and state that there will be one worksheet per group. Never suggest a separate version for every combination of checklist selections.
 - Primary action: **“Create worksheets.”**
 - In the progress state, each group has its own status: **“Preparing,” “Ready to review,”** or **“Could not create.”** Avoid invented accuracy scores, exact completion percentages or guaranteed waiting times.
@@ -116,7 +118,7 @@ Create a plan state and a partial-failure state with Group A ready, Group B fail
 - On desktop, show **“Original worksheet”** and **“Adapted worksheet”** side by side. The original is read-only here; the adapted version is editable. On narrow screens, use clearly labelled tabs.
 - Show **“What changed”** near the adapted worksheet, with a brief list linked to the selected difficulties. Make the group and selected needs available without opening another page.
 - Actions: **“Edit worksheet,” “Regenerate this group,” “Discard this version.”** Changes apply to the selected group. Discarding leaves that group without a downloadable version and allows regeneration.
-- Present a concern where it can be assessed: **“This change may affect the learning goal.”** Explain the particular issue, such as a reference box revealing an answer. Offer correction or an explicit **“I confirm the learning goal is unchanged”** choice. This confirmation resolves that concern; approval of the whole version remains a separate action.
+- Present a concern where it can be assessed: **“This change may affect the learning goal.”** Explain the particular issue, such as a reference box revealing an answer or an alternate response format changing the assessed skill. Offer correction or an explicit **“I confirm the learning goal is unchanged”** choice. This confirmation resolves that concern; approval of the whole version remains a separate action. If an essential source diagram or question is missing, return to source correction instead: confirmation cannot waive source completeness.
 - Primary action: **“Approve this version.”** Supporting text: “Check the questions, learning goal, answer space and any concerns before approving.” Unresolved concerns block approval.
 - After approval, show **“Approved”** with **“Download PDF”** enabled for that exact version. Offer **“View downloads”** to see the set, including groups still requiring review.
 - If the teacher edits or regenerates an approved worksheet, immediately change its status to **“Needs review”** and explain: “This worksheet has changed. Review and approve it again before downloading.”
@@ -144,6 +146,7 @@ Create unapproved, flagged, approved and edited-after-approval states. Avoid “
 | Teacher changes source material or learning goal | All groups visibly need fresh review against the revised lesson | All previous approvals removed; no stale downloads |
 | A group's needs change after generation | Show that the existing version must be refreshed and reviewed for those needs | For this prototype, clear that group's approval and require a refreshed version; this is a conservative design proposal |
 | One group's generation fails | Failed group offers retry; other groups remain intact | Previously approved, unchanged variants remain downloadable |
+| Photo extraction is unclear or drops essential content | Keep lesson fields, show the source image beside editable extraction, and offer correction, retry upload or text paste; missing essential diagram content requires a readable replacement source | Continue is blocked until the source is complete and confirmed; worksheet download still requires approval of the resulting variant |
 | Generation returns blank or unusable material | A recoverable failure message | Never show as approved or ready to download |
 | PDF generation fails | Keep the approved worksheet and offer “Retry download” | Do not show a success message or substitute an older PDF |
 
@@ -171,11 +174,11 @@ Use the following labels and explanations, supplied by Victoria. The labels are 
 
 - **Writing or recording answers** — needs more writing space, less copying, or another way to respond.
 - **Seeing and navigating the page** — needs larger text, clearer spacing, stronger contrast, or less visual clutter.
-- **Staying engaged with the task** — needs shorter sections, clear stopping points, or meaningful choices.
+- **Staying engaged with the task** — Needs shorter sections, clear mini-goals, or familiar topics.
 
 Optional field: **“Anything else we should know about what is difficult?”**
 
-These are observations of difficulty, not guaranteed solutions. For example, simpler language can change a vocabulary assessment, and a worked example can reveal an assessed answer. Preserve questions and required reasoning; dividing work means using more sections or pages, not removing items.
+These are observations of difficulty, not guaranteed solutions. For example, simpler language can change a vocabulary assessment, a worked example can reveal an assessed answer, and an alternate response format can change what is being assessed. Preserve questions and required reasoning; dividing work means using more sections or pages, not removing items. Engagement supports may include shorter sections, clear mini-goals, visible progress checkboxes and a teacher-directed break note such as “Finish these three items, then take a 5-minute break to stand and stretch.” Familiar topics and alternate response formats are allowed only when the original questions, required reasoning and learning goal are preserved, including any writing or drawing skill being assessed.
 
 ## 7. Fictional content for realistic prototypes
 
@@ -200,8 +203,8 @@ These examples are invented for screen design. They have not been validated with
 | Group | Selected difficulties | Proposed adaptation to show |
 | --- | --- | --- |
 | Group A | Following multistep directions; Managing the amount of work | Separate instructions into steps. Put two questions on each page and repeat the original passage where needed. Retain all four questions. |
-| Group B | Writing or recording answers; Seeing and navigating the page | Increase text size and spacing; provide generous writing lines. Keep passage and question wording unchanged. |
-| Group C | Keeping track of information; Staying engaged with the task | Keep the complete passage close to each small question section and mark a clear stopping point. Retain all questions and avoid highlighting the answer to each one. |
+| Group B | Writing or recording answers; Seeing and navigating the page | Increase text size and spacing, put each sentence on its own line and provide generous writing lines. Preview a readable handwriting-style font if useful for this group. Keep passage and question wording unchanged. |
+| Group C | Keeping track of information; Staying engaged with the task | Keep the complete passage close to each small question section, add visible progress checkboxes and use clear mini-goals such as “finish 2 questions.” Retain all questions and avoid highlighting the answer to each one. |
 
 For the concern state, show a proposed reference box that would directly answer an assessed question. Explain the concern in the teacher panel and demonstrate removing the box before approval. Do not use that unresolved output as the approved example.
 
@@ -221,13 +224,13 @@ For the concern state, show a proposed reference box that would directly answer 
 > 5. 54 + 3 = ____
 > 6. 61 + 8 = ____
 
-Show a variant with two problems per section, larger response areas and separate instruction steps. As a second reviewed variation, a blank tens-and-ones frame can demonstrate a simple printable visual support. Keep all six problems and the requirement to show working. Any instructional example must use different numbers and still be reviewed for whether it changes the intended assessment.
+Show a variant with two problems per section, larger response areas, separate instruction steps and optional progress checkboxes. As a second reviewed variation, a blank tens-and-ones frame or simple non-distracting line drawing can demonstrate printable visual support. Keep all six problems and the requirement to show working. Any instructional example must use different numbers and still be reviewed for whether it changes the intended assessment. If an alternate response format is offered, it must preserve the requirement to add and show the method.
 
 ## 8. Printable worksheet design
 
-Use white A4 pages with black or very dark text and practical printer margins, starting around 15–18 mm. Use a familiar sans-serif font such as Arial, starting around 14 pt and increasing when a group's needs call for it. Use clear headings and generous line spacing; validate actual printed pages rather than assuming a screen preview is sufficient.
+Use white A4 pages with black or very dark text and practical printer margins, starting around 15–18 mm. Use a familiar sans-serif font such as Arial, starting around 14 pt and increasing when a group's needs call for it. A readable handwriting-style font may be offered for the student-facing worksheet when appropriate. Use clear headings, larger text where needed, individual sentences or extra line breaks where helpful, and generous line spacing; preserve wording, questions and required reasoning. Validate actual printed pages rather than assuming a screen preview is sufficient.
 
-Keep each question with its answer space and any relevant visual. Break between questions or sections when necessary. Preserve every required question and the space needed to show working. A longer worksheet is acceptable when it improves readability. Use simple line diagrams, blank organisers or visual cues where relevant, with legible labels and no dependence on colour. Do not use custom AI illustrations, decorative backgrounds or pre-filled assessed answers.
+Keep each question with its answer space and any relevant visual. Break between questions or sections when necessary. Preserve every required question and the space needed to show working. A longer worksheet is acceptable when it improves readability. Use simple non-distracting line drawings, line diagrams, blank organisers or visual cues where relevant, with legible labels and no dependence on colour. The teacher must review any drawing or visual support. Do not use custom AI illustrations, decorative backgrounds or pre-filled assessed answers.
 
 The preview and eventual downloaded PDF must contain the same approved material. Application navigation, teacher warnings and adaptation explanations stay outside the printed page.
 
@@ -236,11 +239,11 @@ The preview and eventual downloaded PDF must contain the same approved material.
 ```text
 Design the first screen of CHLD Adapt, a teacher-facing web prototype for adapting existing primary-school worksheets. Follow the attached PRD for scope and DESIGN.md for appearance and behaviour. Begin with Screen 1, “Your worksheet,” including a populated extraction-review state using the fictional Grade 2 reading example.
 
-The teacher supplies the learning goal, grade, age range and an existing worksheet as pasted text, DOCX or a PDF with selectable text. Show the extracted content for correction and confirmation before “Continue to groups.” Existing material is required. Include an empty state and an unreadable-upload state with a text-paste recovery action.
+The teacher supplies the learning goal, grade, age range and an existing worksheet as pasted text, DOCX, a PDF with selectable text, or one JPG/JPEG image of a printed worksheet page. Show the source image beside editable extracted content for photo uploads, and require correction and confirmation before “Continue to groups.” Existing material is required. Include an empty state and an unreadable-upload/photo state with retry upload and text-paste recovery actions, preserving lesson inputs. Missing essential diagram content requires a readable replacement source; do not allow confirmation to bypass it. Do not show custom camera capture, multi-image assembly, scanned-PDF support or handwriting recognition.
 
 DESIGN SYSTEM (REQUIRED): Desktop-first web workspace, calm and practical. Warm paper #F7F5F0 background, white #FFFFFF surfaces, charcoal #242424 text, slate #52525B supporting text, crimson #A51C30 primary buttons with white text. Visible control borders #85817A. Playfair Display for the product name and main heading; Inter for body text and controls. Body text around 16 px, gently rounded inputs, restrained shadows, generous whitespace and clear keyboard focus. Small “Class prototype” label in the header.
 
-PAGE STRUCTURE: Quiet CHLD Adapt header; five-step progress row (Worksheet, Groups, Plan, Review, Download); page heading; lesson fields; Paste text / Upload a file choices; source-content review; primary Continue action; concise notice that the session is not saved after closing. Keep the task central. Use accessible labels, useful inline errors and a layout that stacks cleanly on narrow screens.
+PAGE STRUCTURE: Quiet CHLD Adapt header; five-step progress row (Worksheet, Groups, Plan, Review, Download); page heading; lesson fields; Paste text / Upload a file choices; source-content review with source image comparison when relevant; primary Continue action; concise notice that the session is not saved after closing. Keep the task central. Use accessible labels, useful inline errors and a layout that stacks cleanly on narrow screens.
 
 The complete journey will create up to three group worksheets with a shared learning goal, teacher review, separate approval and printable PDFs. Reserve a consistent learning-goal strip and group status components for later screens. Keep this screen focused on intake. Do not add accounts, learner profiles, diagnosis, chat, dashboards, saved libraries or worksheet creation from a goal alone. The content is fictional and the processing may be simulated; do not imply AI or file processing has been implemented merely by designing these screens.
 ```
@@ -249,10 +252,10 @@ The complete journey will create up to three group worksheets with a shared lear
 
 Use each prompt as a separate request after choosing the first screen's visual direction. Supply the relevant sections of this file if Stitch does not have the full brief in context.
 
-1. **Groups:** “Using the first screen's exact design system, create Screen 2 from DESIGN.md. Include one-group and three-group states, all eleven checklist labels under the three specified headings, accessible full explanations, one-to-three selections per group and the exact optional field. Keep the shared learning goal visible. Show what happens at the three-selection limit.”
-2. **Plan and progress:** “Create Screen 3 using the same components. Show one proposed adaptation per group, a Change needs action and Create worksheets. Add a partial-failure state: Groups A and C ready to review, Group B failed with its own retry. Preserve all inputs and completed variants.”
-3. **Review and approval:** “Create Screen 4 with original and editable adapted worksheets side by side, the shared goal, group status, selected needs and What changed. Show an unresolved learning-goal concern, correction or explicit confirmation, separate approval, and an approved version becoming Needs review after editing. Disable PDF download whenever the current version is unapproved. Include a narrow-screen comparison using tabs.”
-4. **Downloads and print:** “Create Screen 5 and the A4 worksheet preview using Section 8. Show separate group PDFs, an approved group's enabled download, another group's Review action and a retry-download error state. Preserve all questions and response space; teacher controls must remain outside the printable page. Include the session-only reminder.”
+1. **Groups:** “Using the first screen's exact design system, create Screen 2 from DESIGN.md. Include one-group and three-group states, all eleven checklist labels under the three specified headings, accessible full explanations, one-to-three selections per group and the exact optional field. Keep the shared learning goal visible. Show what happens at the three-selection limit. Use the revised engagement wording: ‘Needs shorter sections, clear mini-goals, or familiar topics.’”
+2. **Plan and progress:** “Create Screen 3 using the same components. Show one proposed adaptation per group, a Change needs action and Create worksheets. Include engagement supports such as shorter sections, clear mini-goals, visible progress checkboxes and teacher-directed break notes where appropriate. Add a partial-failure state: Groups A and C ready to review, Group B failed with its own retry. Preserve all inputs and completed variants. If the source came from a photo, show how essential diagrams or layout details are preserved. Return to source correction before generation if essential content is missing.”
+3. **Review and approval:** “Create Screen 4 with original and editable adapted worksheets side by side, the shared goal, group status, selected needs and What changed. Show an unresolved learning-goal concern, correction or explicit confirmation, separate approval, and an approved version becoming Needs review after editing. Include a concern where an alternate response format could change the assessed skill. Missing essential source content requires correction rather than confirmation. Disable PDF download whenever the current version is unapproved. Include a narrow-screen comparison using tabs.”
+4. **Downloads and print:** “Create Screen 5 and the A4 worksheet preview using Section 8. Show separate group PDFs, an approved group's enabled download, another group's Review action and a retry-download error state. Preserve all questions and response space; teacher controls must remain outside the printable page. Include larger text, sentence breaks, optional readable handwriting-style worksheet font and simple teacher-reviewed line drawings where useful. Include the session-only reminder.”
 5. **Mathematics and connections:** “Use the fictional mathematics example to create a second review/print example without changing the design system. Where supported, connect the screens into the five-step journey with back navigation and the specified approval/failure states. Clearly identify any interactions that are only simulated.”
 
 Before accepting the prototype, walk through reading and mathematics examples and check:
@@ -260,12 +263,15 @@ Before accepting the prototype, walk through reading and mathematics examples an
 - The teacher can understand the next action without facilitator explanation.
 - All eleven checklist labels and full explanations are present; the optional field uses the agreed wording.
 - There are at most three neutral groups and one variant per group, with the same goal throughout.
-- Source review, correction, comparison, independent retry and approval are visible and usable.
+- Source review, correction, source-image comparison for JPG/JPEG, independent retry and approval are visible and usable.
+- A readable JPG/JPEG page retains all questions, numbers, instructions and required diagrams after teacher correction and confirmation. Exercise an incorrectly extracted number or question and confirm it can be corrected before continuing.
+- Blurry or cropped photos show actionable recovery and preserve lesson inputs. Missing essential diagram content blocks continuation until a readable replacement source is supplied; a confirmation click cannot bypass this.
 - A changed worksheet cannot keep a stale approval or download an older approved version.
 - A concern is specific and requires a teacher decision; AI reassurance never replaces review.
-- The original questions, required reasoning and writing space survive the adaptation and print layout.
+- The original questions, required reasoning, essential diagrams, writing space and readable print layout survive the adaptation. Larger text, line breaks, optional handwriting-style worksheet font and simple line drawings help access without changing the assessment.
+- Mini-goals, completion checkboxes and teacher-directed break instructions retain all required items. Test an alternate response format both when the goal is content and when writing or drawing is itself assessed; the latter must be corrected or rejected if it changes the skill.
 - Keyboard focus, text size, contrast, narrow-screen layout and error recovery are readable.
-- The group records what was simulated and what was actually tested. A polished mock-up is not evidence of classroom effectiveness or of meeting the ten-minute target.
+- The group records what was simulated and what was actually tested. A polished mock-up, including a simulated photo-extraction flow, is not evidence of classroom effectiveness, reliable OCR or of meeting the ten-minute target.
 
 Record feedback and decisions alongside the PRD before implementing new behaviour. Keep the two-session build plan in the PRD as the scope boundary.
 

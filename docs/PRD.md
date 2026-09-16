@@ -2,7 +2,7 @@
 
 **Draft for group review**
 
-> Markdown snapshot: 15 September 2026. Source: [shared group-review PRD](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit). This file preserves the document’s current requirements, metrics and build plan. No comments or suggested edits were present when exported.
+> Markdown snapshot revised: 16 September 2026. Source: [shared group-review PRD](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit). Updated for Victoria’s feedback on photo input, worksheet readability, line drawings and engagement. Basic single-page JPG/JPEG support is included following the group’s scope decision.
 >
 > Companion: [DESIGN.md](DESIGN.md) translates this PRD into prototype screens and design guidance. The PRD governs product scope; visual choices in the design brief are proposals for testing.
 
@@ -22,7 +22,7 @@ Teachers currently need to adapt materials for different learners alongside thei
 
 ### Evidence status
 
-- Victoria’s account of teachers’ needs, her earlier design work and the intended first teacher are user reports. Supporting research records and direct observations of that teacher were not supplied.
+- Victoria’s account of teachers’ needs, her earlier design work and the intended first teacher are user reports. She reports that the intended teacher reviewed the proposal and requested photo upload for printed worksheets. Supporting research records and direct classroom observations were not supplied; this feedback is not evidence of tested classroom performance.
 
 - The scope decisions below reflect the group’s discussion and subsequent clarifications.
 
@@ -40,11 +40,15 @@ The teacher enters:
 
 - Grade and approximate age range.
 
-- Existing material through pasted text, a Word .docx file or a PDF with selectable text.
+- Existing material through pasted text, a Word .docx file, a PDF with selectable text, or one JPG/JPEG image of a printed worksheet page.
 
 Existing material is required. Creating a worksheet from the learning goal alone is outside this version.
 
-For uploads, show the extracted content for the teacher to check and correct before proceeding. Scanned documents and complex layouts that cannot be read reliably receive a clear explanation and a pasted-text fallback.
+For uploads, show the extracted content for the teacher to check and correct, and require confirmation that it is complete and accurate before proceeding.
+
+For JPG/JPEG input, accept one clear image of one printed worksheet page through the existing file-upload flow. Show the source image alongside the editable extracted content so the teacher can check questions, numbers, instructions and any essential diagram.
+
+If an image is blurry, cropped, unreadable or incompletely extracted, preserve the lesson inputs and offer another upload or pasted text. Do not silently omit essential diagram content: require a readable replacement source if that content cannot be represented faithfully. Scanned PDFs, multi-image assembly, handwriting recognition and a custom camera interface are outside this version.
 
 ### B. Describe up to three need groups
 
@@ -92,7 +96,11 @@ Every variant includes:
 
 The teacher can compare each variant with the original, make corrections and approve that specific version.
 
-Provide a separate printable PDF for each approved variant. Use clear, high-contrast A4 layouts with adequate writing space. Simple printable visual cues or diagrams are included where useful and subject to teacher review.
+Provide a separate printable PDF for each approved variant. Use clear, high-contrast A4 layouts with adequate writing space.
+
+Readability adaptations may include larger text, a readable handwriting-style font where appropriate, individual sentences on separate lines, and additional line or paragraph spacing. Preserve wording and the assessed skills when making these presentation changes; the teacher checks that the result is readable for the intended group.
+
+Include simple, non-distracting line drawings, visual cues or diagrams where useful, subject to teacher review. These supports must not supply an assessed answer or change the learning goal. Custom AI illustrations remain outside scope.
 
 Approved PDFs can be downloaded again during the session and reused afterward by reprinting. Editable sessions do not persist after the tool is closed.
 
@@ -110,7 +118,7 @@ The checklist describes difficulties, not automatic transformation rules. In par
 
 - Managing workload means dividing work into sections or pages, rather than silently deleting required items.
 
-- Alternative response formats must retain the skill being assessed.
+- Alternative response formats must retain the skill being assessed. For engagement, the teacher may use shorter sections, clear mini-goals, completion checkboxes, familiar topics and clear endpoints with teacher-directed breaks. Changing a topic or response format is appropriate only when the original questions, required reasoning and learning goal are preserved; it must not bypass a writing or drawing skill that is itself being assessed.
 
 An automated check may identify a concern, but it must not present its own reassurance as proof of educational suitability.
 
@@ -132,7 +140,7 @@ An automated check may identify a concern, but it must not present its own reass
 
 - Missing inputs receive specific, actionable guidance.
 
-- Failed file extraction preserves the available input and offers text paste.
+- Failed or incomplete file extraction preserves the lesson fields and available input, and offers another upload or text paste. For a worksheet photo, the teacher must confirm the corrected extraction before continuing. Missing essential diagram content requires a readable replacement source rather than silently proceeding without it.
 
 - Failed generation preserves the source, group settings and other completed variants.
 
@@ -140,7 +148,7 @@ An automated check may identify a concern, but it must not present its own reass
 
 - A blank or unusable model response never appears as an approved worksheet.
 
-Outside this version: diagnosis, pupil accounts, individual learner histories, deliberately modified learning goals, student-facing digital activities, saved libraries, school-system integrations, scanned-image recognition and custom AI illustrations.
+Outside this version: diagnosis, pupil accounts, individual learner histories, deliberately modified learning goals, student-facing digital activities, saved libraries, school-system integrations, multi-image assembly, scanned PDFs, handwriting recognition, a custom camera interface and custom AI illustrations. Single-page JPG/JPEG extraction with teacher confirmation is included.
 
 Use an English interface and preserve the source material’s language without automatic translation. Record the languages actually tested; do not infer Filipino or Taglish reliability from English results.
 
@@ -150,13 +158,13 @@ Use the team’s usual coding environment and model. Store code and documents in
 
 ### Build session 1: complete one journey
 
-Implement source intake and extraction review, the learning goal, one need group, a proposed adaptation, an editable variant, approval and PDF download.
+Implement pasted-text, Word .docx and selectable-text PDF intake and extraction review, the learning goal, one need group, a proposed adaptation, an editable variant, approval and PDF download.
 
 Finish with one working journey using a fictional worksheet, including recovery from a failed generation.
 
 ### Build session 2: complete the agreed scope
 
-Extend the journey to three groups and independent variants. Add the checklist explanations, optional context field, simple visual support and approval reset behavior.
+Extend the journey to three groups and independent variants. Add single-page JPG/JPEG intake with source-image comparison, extraction confirmation and recovery. Complete the checklist explanations, optional context field, readability adaptations, simple line drawings, engagement supports and approval reset behavior.
 
 Test both reading and mathematics, repair the failures that affect the journey, and prepare the pitch and demonstration.
 
@@ -187,15 +195,21 @@ The 100% completion target is a test target, not a claim of guaranteed performan
 
 - Every checklist option represented across the test examples.
 
-- A support request that could reveal an answer or change the assessed skill.
+- A support request that could reveal an answer or change the assessed skill, including a proposed alternate response format when writing or drawing is itself the learning goal.
 
 - Missing material, unreadable uploads and unavailable generation.
+
+- A clear JPG/JPEG worksheet photo: extracted questions, numbers, instructions and required diagrams match the source after teacher correction and confirmation.
+
+- Blurry or cropped photos, incorrect extraction and missing diagram content: actionable recovery preserves lesson inputs and prevents continuation with incomplete material.
 
 - Teacher correction, regeneration and approval of different variants.
 
 - Editing an approved variant, then confirming fresh approval is required.
 
-- Printed/PDF layout inspection for clipping, page breaks, writing space and visual accuracy.
+- Printed/PDF layout inspection for clipping, page breaks, writing space and visual accuracy, including larger text, a readable handwriting-style font, sentence-per-line layouts and simple line drawings.
+
+- Engagement supports: clear mini-goals, completion checkboxes and teacher-directed break instructions retain all required items and do not change the assessed skill.
 
 ### Next decision
 
@@ -213,7 +227,7 @@ The 100% completion target is a test target, not a claim of guaranteed performan
 
 Original prompt: “What makes this worksheet difficult for your learner?”
 
-The wording below is supplied by Victoria. The prototype groups these items as described in Section 2 and asks about a need group rather than collecting individual pupil records.
+The wording below is supplied by Victoria, including her revised engagement description and examples from group review. The prototype groups these items as described in Section 2 and asks about a need group rather than collecting individual pupil records.
 
 ### Reading the words
 
@@ -257,7 +271,18 @@ needs a brief review or scaffold for skills the worksheet assumes.
 
 ### Staying engaged with the task
 
-needs shorter sections, clear stopping points, or meaningful choices.
+Needs shorter sections, clear mini-goals, or familiar topics.
+
+Worksheet adaptations that may help include:
+
+- Short sections: divide a long worksheet into manageable chunks while retaining all required items.
+
+- Visible progress: add checkboxes for completed sections.
+
+- Clear endpoints: teacher-directed instructions such as “Finish these three items, then take a 5-minute break to stand and stretch.”
+
+- Familiar topics: use familiar contexts only where the original questions, required reasoning and learning goal remain intact.
+
+- Varied activities: alternate response formats, such as writing instead of drawing, only when the goal is the content rather than the response skill and the learning goal is preserved.
 
 Optional field: “Anything else we should know about what is difficult?”
-
