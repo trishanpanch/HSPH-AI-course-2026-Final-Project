@@ -10,15 +10,16 @@ Original idea: **Victoria Nolasco**. Class project team: **Victoria, Trishan Pan
 | --- | --- |
 | [PRD](docs/PRD.md) | Current group-review requirements, boundaries, success measures and two-session build plan. |
 | [Design brief](docs/DESIGN.md) | Proposed screens, visual system, fictional examples and prompts for prototyping in Google Stitch. |
+| [Architecture](docs/architecture.md) | Proposed web application, OpenRouter model choice, source processing, teacher approval and PDF generation. |
 | [Pitch Deck v1](docs/Pitch-Deck-v1.html) | Original CHLD Adapt HTML pitch deck. Download the file and open it in a browser to present it. |
 | [Vibecoda build pack](docs/Build-Pack/source-pack/README.md) | Original planning reports, decisions, open questions, reviews and provenance, with the earlier class facilitator materials. |
 
-The **PRD governs the current product scope**. The design brief proposes an interface for that scope. The deck and build pack are earlier reference materials and may contain broader ideas or assumptions superseded by the group's discussion. Generated claims in the original pack are not evidence of completed software, classroom outcomes or validated demand.
+The **PRD governs the current product scope**. The design brief proposes an interface for that scope; the architecture proposes how to build it. The deck and build pack are earlier reference materials and may contain broader ideas or assumptions superseded by the group's discussion. Generated claims in the original pack are not evidence of completed software, classroom outcomes or validated demand.
 
 ## Getting started
 
-1. Read the PRD, then the design brief.
-2. For a Stitch prototype, provide both Markdown files as context and start with Section 9 of the design brief.
+1. Read the PRD, then the design brief and architecture.
+2. For a Stitch prototype, provide the PRD and design brief as context and start with Section 9 of the design brief.
 3. Use the team's usual coding environment and model for implementation. Store code here and manage feature work through GitHub Issues and a GitHub Project, following the PRD's build plan.
 
 This repository currently contains project documentation and a pitch deck. The prototype and its classroom usefulness remain to be built and tested. Use fictional teaching materials and need groups.
