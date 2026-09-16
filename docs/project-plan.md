@@ -1,6 +1,6 @@
-# CHLD Adapt — one-hour MVP project plan
+# CHLD Adapt — class MVP project plan
 
-**Approved plan, 16 September 2026.** This repository currently contains documentation and visual references. The application, live model integration and cloud deployment remain to be built and tested.
+**Approved plan, 16 September 2026.** The current build is a 45-minute hard-deadline run, started at 16:35:12 UTC and ending at 17:20:12 UTC. The earlier four-by-15-minute, 60-minute budget is historical and superseded for this run. The first Cloud Run deployment verified M0; the corrected revision deployment and full hosted smoke remain pending.
 
 **[Open the public GitHub Project](https://github.com/users/trishanpanch/projects/10)** · [Repository issues](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues) · [Milestones](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/milestones)
 
@@ -8,17 +8,17 @@
 
 A teacher pastes one simple text-only worksheet, confirms its contents and learning goal, selects one to three difficulties for one group, reviews a live AI adaptation plan, generates and edits the worksheet, resolves any concerns, reviews the actual A4 PDF and approves that exact version for download. The demonstration runs on GCP and requires a shared class password.
 
-Use the [PRD's one-hour scope](PRD.md#0-approved-one-hour-mvp-scope), [approved design brief](DESIGN.md), [Stitch screen references](stitch/README.md) and [architecture](architecture.md). Preserve the selected appearance while correcting prototype-only claims and controls. The archived HTML is reference material, not evidence of working AI or export.
+Use the [PRD's class-demo scope](PRD.md#0-approved-class-demo-mvp-scope), [approved design brief](DESIGN.md), [Stitch screen references](stitch/README.md) and [architecture](architecture.md). Preserve the selected appearance while correcting prototype-only claims and controls. The archived HTML is reference material, not evidence of working AI or export.
 
-## Before the clock starts
+## Current build status
 
-**Selected target:** `vibecoda-499712` in the LUNR Studio organization, using `trishan@lunr.studio` in `us-central1`. See the [M0 setup record](setup.md) for verified infrastructure, secret locations and outstanding checks. M0 is in Ready at the owner's request and remains open; the clock has not started.
+**Selected target:** `vibecoda-499712` in the LUNR Studio organization, using `trishan@lunr.studio` in `us-central1`. See the [M0 setup record](setup.md) for verified infrastructure, secret locations and runtime evidence. The active build clock is running from 16:35:12 UTC to 17:20:12 UTC.
 
-Complete **M0** first. The owner needs to select the GCP project/deployment identity and supply the OpenRouter key and class password securely. Prepare billing, APIs, permissions and Secret Manager, verify a live model probe, and set the initial $5 OpenRouter key limit. Keep secret values out of this public project and repository. Use explicit project/account arguments rather than an unrelated CLI default.
+The owner has selected the GCP project/deployment identity, and both CHLD secrets are stored as version 1 with runtime reader policies verified. On 16 September 2026, the owner waived the planned $5 OpenRouter key limit for the class demo; the key currently has no per-key cap. Keep secret values out of this public project and repository. Use explicit project/account arguments rather than an unrelated CLI default.
 
-The default deployment region is `us-central1`; the model is `qwen/qwen3.7-flash`. Confirm actual availability and response behavior in M0. A change of model must be recorded. Missing credentials must show an honest configuration error rather than a simulated result.
+The default deployment region is `us-central1`. `qwen/qwen3.7-flash` repeatedly returned 429 responses and exhausted 384 reasoning tokens during live probing, so the configured replacement is `google/gemini-2.5-flash-lite`. The small fallback live probe returned valid JSON in 671 ms at recorded cost `$0.00000795` through `google-ai-studio/flex`; that probe is not a guarantee of full-app quality, route provider or pricing. Missing credentials must show an honest configuration error rather than a simulated result.
 
-This preparation is outside the one-hour implementation timebox. Creating this backlog does not mean M0 has passed.
+Local source now exists as a Next 16 / React / TypeScript app with Basic Auth-protected UI/API routes, browser-session drafts and actual PDF generation. The current board has #1 and #2 Done; #3, #4 and #5 are In Progress. The current local check set includes 12 unit tests and 6 browser tests. A first Cloud Run deployment verified runtime injection; the corrected revision deployment and full hosted smoke still need completion.
 
 ## Build sequence and testable milestones
 
@@ -26,15 +26,17 @@ Use the linked issues as the authoritative work queue. Each issue includes imple
 
 | Milestone and issue | Allowance | What the teacher can do / pass condition |
 | --- | --- | --- |
-| **M0 — Ready to build:** [#1 Prepare prerequisites](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/1) | Before the clock | Cloud target, permissions, two secrets, key limit and live model probe verified |
-| **M1 — Prepare a worksheet:** [#2 Interface and intake](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/2) | 15 minutes | Enter and correct source/goal/grade/age, confirm completeness, choose 1–3 of all eleven needs for Group A and navigate without losing work |
-| **M2 — Generate an adaptation:** [#3 Live plan and generation](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/3) | 15 minutes | Review a plan, generate a live editable reading/math adaptation and recover from a failure; late results do not overwrite newer work |
-| **M3 — Approve and download:** [#4 Exact A4 PDF](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/4) | 15 minutes | Resolve concerns, review the actual PDF, approve and download those exact bytes; relevant edits revoke approval |
-| **M4 — Share the working demo:** [#5 Cloud Run and smoke test](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/5) | 15 minutes | Complete both example journeys on the password-protected deployed app, with correct PDFs and no exposed key |
+| **M0 — Ready to build:** [#1 Prepare prerequisites](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/1) | Done at 17:01:04 UTC | Cloud target, permissions, two version 1 secrets, owner-approved key-cap exception, fallback probe and Cloud Run runtime injection verified |
+| **M1 — Prepare a worksheet:** [#2 Interface and intake](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/2) | Done | Enter and correct source/goal/grade/age, confirm completeness, choose 1–3 of all eleven needs for Group A and navigate without losing work; browser state and 390 px viewport checks passed |
+| **M2 — Generate an adaptation:** [#3 Live plan and generation](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/3) | In Progress | Review a plan, generate a live editable reading/math adaptation and recover from a failure; late results do not overwrite newer work |
+| **M3 — Approve and download:** [#4 Exact A4 PDF](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/4) | Current build | Resolve concerns, review the actual PDF, approve and download those exact bytes; relevant edits revoke approval |
+| **M4 — Share the working demo:** [#5 Cloud Run and smoke test](https://github.com/trishanpanch/HSPH-AI-course-2026-Final-Project/issues/5) | Current build | Complete both example journeys on the password-protected deployed app, with correct PDFs and no exposed key |
 
-Dependencies: **M0 → M1 → M2 → M3 → M4**. M4 also explicitly depends on M0's deployment readiness. Each milestone owns one implementation issue. The four 15-minute allowances total **60 minutes**; they are planning budgets, not a guarantee.
+Dependencies: **M0 → M1 → M2 → M3 → M4**. M4 also explicitly depends on M0's deployment readiness. Each milestone owns one implementation issue. The old four-by-15-minute allowance totaled 60 minutes, but the current run uses the 45-minute hard deadline above.
 
-Start the clock after M0 passes. Stop implementation at 60 minutes and record elapsed time, the last passing milestone and the unfinished issue numbers. Leave incomplete issues open. Do not replace missing behavior with an unlabeled simulation to meet the deadline.
+Stop implementation at 17:20:12 UTC and record elapsed time, the last passing milestone and the unfinished issue numbers. Leave incomplete issues open. Do not replace missing behavior with an unlabeled simulation to meet the deadline.
+
+M2 evidence so far: a live math run found a numeric-change bug. Runtime numeric guards now reject changed numbers, and plan cautions are separated from student-facing instructions. The original failing case and a fresh live case both passed local retest, with evidence recorded in `metadata/output/live-local-maths-retest.json`.
 
 Use the team's usual coding environment and coding assistant. Keep app code in this repository. Use **Todo → Ready → In Progress → Done**; Ready marks selected work, while Done means its checks passed and evidence is linked. A screenshot of a screen is not sufficient evidence that the model or PDF path works. Explain completed behavior in plain language so Victoria and the group can review it.
 
@@ -47,11 +49,11 @@ Use the team's usual coding environment and coding assistant. Keep app code in t
 - Application state owns approval. Model responses never approve a worksheet. Source/goal, needs/plan, content or print changes invalidate the relevant approval; ignore obsolete async results.
 - Use a fixed readable A4 template with answer space and actual PDF preview. Keep the reviewed PDF bytes and permit current-approved downloads only. Extra typography controls and line drawings follow later.
 - Deploy to Cloud Run with server-only Secret Manager values. HTTP Basic authentication uses username `class` and the shared password over HTTPS; protect all UI and AI routes. A content-free health check, if required, must not call AI. Missing authentication configuration fails closed.
-- Preserve the $5 OpenRouter key limit and practical input/output/time limits. Never put keys, passwords, uploaded content or optional notes in public evidence or logs.
+- Keep practical input/output/time limits. The owner waived the $5 per-key cap for this class demo; revisit it before wider use. Never put keys, passwords, uploaded content or optional notes in public evidence or logs.
 
 ## Work after the hour
 
-These five issues are in the same Project with the **follow-up** label and no one-hour milestone. They preserve the broader PRD rather than expanding the first release.
+These five issues are in the same Project with the **follow-up** label and no current-build milestone. They preserve the broader PRD rather than expanding the first release.
 
 | Issue | Later capability | Dependency |
 | --- | --- | --- |
@@ -63,7 +65,7 @@ These five issues are in the same Project with the **follow-up** label and no on
 
 ## Evidence required for completion
 
-For the one-hour MVP, use fictional reading and mathematics fixtures. Record actual live-model behavior and label injected failures or development fixtures separately. Each milestone's issue carries its own checklist; the minimum final evidence is:
+For the class-demo MVP, use fictional reading and mathematics fixtures. Record actual live-model behavior and label injected failures or development fixtures separately. Each milestone's issue carries its own checklist; the minimum final evidence is:
 
 - Focused state/response tests for missing or malformed output, late results, approval resets and stale PDF prevention.
 - A browser journey from source through live plan/adaptation to approved download, plus a recoverable generation failure.

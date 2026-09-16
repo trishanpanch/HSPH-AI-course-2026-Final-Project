@@ -1,0 +1,11 @@
+.git
+node_modules
+.next
+docs
+openspec
+tests
+output
+.env
+.env.*
+!.env.example
+*.tsbuildinfo

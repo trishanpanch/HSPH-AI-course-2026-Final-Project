@@ -3,3 +3,10 @@ __MACOSX/
 .env
 .env.*
 !.env.example
+node_modules/
+.next/
+coverage/
+*.tsbuildinfo
+output/
+test-results/
+playwright-report/

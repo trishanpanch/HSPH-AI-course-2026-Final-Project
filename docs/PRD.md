@@ -2,11 +2,11 @@
 
 **Draft for group review**
 
-> Markdown revised: 16 September 2026. The broader requirements originate in the [shared group-review PRD](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit), including Victoria’s feedback on photo input, worksheet readability, line drawings and engagement. The one-hour MVP below is a subsequent, approved repository addendum; this task does not update the Google Doc. JPG/JPEG support remains planned for the broader prototype, after this first release.
+> Markdown revised: 16 September 2026. The broader requirements originate in the [shared group-review PRD](https://docs.google.com/document/d/1pvBxuCi-qup03f2KGhPv91BnLudAvdFDAvfbOgjGQZY/edit), including Victoria’s feedback on photo input, worksheet readability, line drawings and engagement. The class-demo MVP below is a subsequent, approved repository addendum; this task does not update the Google Doc. JPG/JPEG support remains planned for the broader prototype, after this first release.
 >
 > Companions: [DESIGN.md](DESIGN.md) adopts the selected Stitch visual direction; [architecture.md](architecture.md) describes the proposed implementation; [project-plan.md](project-plan.md) links the delivery milestones. The PRD governs product scope.
 
-## 0. Approved one-hour MVP scope
+## 0. Approved class-demo MVP scope
 
 **First release:** paste one simple text-only worksheet → configure one neutral group → review a live AI adaptation plan → generate and edit → approve → download the reviewed A4 PDF. Deploy a shareable class demo protected by one shared password. Preserve the shared learning goal and teacher judgment throughout.
 
@@ -22,11 +22,11 @@ This release is a subset of the broader requirements retained in Sections 1–5 
 
 Require the teacher to confirm that the pasted source is complete and no essential diagram, table or visual has been omitted. If the worksheet depends on such material, use a different text-only worksheet for this release; an acknowledgement cannot waive missing content. Do not expose working upload or extra-group controls in the MVP.
 
-The selected [Stitch references](stitch/README.md) guide appearance, not product claims or additional functionality. The live model is configured through OpenRouter; missing credentials must produce a clear configuration error, never silently substitute a sample result. No accounts, persistent storage or custom illustrations are included.
+The selected [Stitch references](stitch/README.md) guide appearance, not product claims or additional functionality. The live model is configured through OpenRouter; missing credentials must produce a clear configuration error, never silently substitute a sample result. The current configured model is `google/gemini-2.5-flash-lite`, selected after the original Qwen candidate repeatedly failed live probing; model choice remains an implementation configuration, not a product claim. No accounts, persistent storage or custom illustrations are included.
 
-**Build clock:** complete M0 cloud/model/password prerequisites first. M1–M4 each have a 15-minute planning allowance, totaling 60 minutes. Stop at 60 minutes and record the last passing milestone and outstanding issues. This is a timebox, not a delivery guarantee. Test fixtures can support development but do not pass live-AI or deployed-demo acceptance checks.
+**Build clock:** the current implementation run started at 16:35:12 UTC on 16 September 2026 and has a hard deadline of 17:20:12 UTC. The earlier 60-minute milestone budget is retained only as historical planning context and is superseded for this run. Stop at the hard deadline and record the last passing milestone and outstanding issues. This is a timebox, not a delivery guarantee. Test fixtures can support development but do not pass live-AI or deployed-demo acceptance checks.
 
-Use the [project plan](project-plan.md) for the current build sequence. The earlier two-session plan below remains a reference for completing the broader scope. Neither a successful demo nor the one-hour timebox establishes classroom effectiveness; the separate ten-minute teacher-use target remains untested.
+Use the [project plan](project-plan.md) for the current build sequence. The earlier two-session plan below remains a reference for completing the broader scope. Neither a successful demo nor the hard-deadline timebox establishes classroom effectiveness; the separate ten-minute teacher-use target remains untested.
 
 ## 1. Understand: user, problem and purpose
 
@@ -198,7 +198,7 @@ The PRD belongs in docs/PRD.md. Keep evidence and decisions in docs/evidence-and
 
 ## 5. Broader prototype: test, measure and decide
 
-The one-hour release has the narrower checks in [project-plan.md](project-plan.md). Retain the full scenarios below for follow-up work and the intended-teacher learning test.
+The class-demo release has the narrower checks in [project-plan.md](project-plan.md). Retain the full scenarios below for follow-up work and the intended-teacher learning test.
 
 Primary learning question: Can the intended teacher turn an existing worksheet into an approved, useful set of adaptations for a lesson within ten minutes?
 

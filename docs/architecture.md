@@ -2,21 +2,21 @@
 
 **Status:** build proposal, 16 September 2026. This describes software to build; it is not a record of an implemented or tested application.
 
-Read alongside the [PRD](PRD.md), [design brief](DESIGN.md) and [project plan](project-plan.md). The PRD governs scope. The approved first release is the one-hour subset below; the broader architecture remains recorded for subsequent work.
+Read alongside the [PRD](PRD.md), [design brief](DESIGN.md) and [project plan](project-plan.md). The PRD governs scope. The approved first release is the narrow class-demo subset below; the broader architecture remains recorded for subsequent work.
 
-## 0. Approved one-hour implementation profile
+## 0. Approved class-demo implementation profile
 
-Build one pasted-text worksheet journey for one group: confirmed source → live adaptation plan → live editable adaptation → teacher review → approval → exact A4 PDF download. Use the [selected Stitch direction](stitch/README.md) for the interface. M0 preparation precedes the four 15-minute build milestones; stop at 60 minutes and report the last passing milestone.
+Build one pasted-text worksheet journey for one group: confirmed source → live adaptation plan → live editable adaptation → teacher review → approval → exact A4 PDF download. Use the [selected Stitch direction](stitch/README.md) for the interface. The active implementation run started at 16:35:12 UTC and has a hard stop at 17:20:12 UTC; the earlier 60-minute planning budget is historical and superseded for this run.
 
 - **Application:** Next.js/TypeScript, one browser-memory workflow state, one group and all eleven checklist options. No database, accounts or persistent browser storage.
-- **AI:** server-side `POST /api/plan` and `POST /api/adapt`, with `OPENROUTER_MODEL=qwen/qwen3.7-flash`. Validate output and preserve source question references. Missing credentials are a configuration error, not permission to use simulated results. A live probe during M0 must establish actual model availability, response behavior and cost before the clock starts.
+- **AI:** server-side `POST /api/plan` and `POST /api/adapt`, configured with `OPENROUTER_MODEL=google/gemini-2.5-flash-lite` after `qwen/qwen3.7-flash` repeatedly returned 429 responses and exhausted 384 reasoning tokens. Validate output and preserve source question references. Missing credentials are a configuration error, not permission to use simulated results. The small fallback probe returned valid JSON; it is not a full application quality, routing or pricing guarantee.
 - **Source:** simple text-only worksheets with teacher-confirmed completeness. Retain stable question references through corrections and generation. Reject continuation when essential visual content is missing. Defer all upload readers, `/api/extract-photo`, source-image assets and multi-group handling.
 - **Review/export:** a fixed readable A4 template with adequate answer space. Render the actual PDF preview before approval, retain those exact bytes, and gate download on current approval. Keep revision/request IDs, concern review and all relevant approval resets from Sections 5–6. Defer extra font/layout controls and line-drawing templates.
 - **Deployment:** Cloud Run in `us-central1`, using the owner-selected project `vibecoda-499712` and account `trishan@lunr.studio`. Use the dedicated CHLD build/runtime identities in the [M0 setup record](setup.md); do not rely on the global CLI default. Store the OpenRouter key and class password in Secret Manager; inject them only on the server. Use HTTP Basic authentication over HTTPS for all application and AI routes, with a shared username `class` and the stored password. No unauthenticated route may trigger a paid call.
-- **Operating limits:** initial $5 OpenRouter key limit; bounded input/output sizes, request timeouts and no unbounded retries. Missing authentication configuration must fail closed. Keep source content, passwords and keys out of logs and client bundles.
+- **Operating limits:** bounded input/output sizes, request timeouts and no unbounded retries. The owner waived the planned $5 OpenRouter key limit for this class demo on 16 September 2026; [the setup record](setup.md) confirms that no per-key cap is configured. Revisit the cap before wider use. Missing authentication configuration must fail closed. Keep source content, passwords and keys out of logs and client bundles.
 - **Done:** local and deployed reading/mathematics journeys pass, including errors, approval resets, late results, PDF layout and wrong-password checks. Model quality and classroom effectiveness remain unproven beyond recorded examples.
 
-The [M0 setup record](setup.md) tracks prepared infrastructure and outstanding credential checks; no application is deployed yet. The [project plan](project-plan.md) defines the current acceptance gates. The fuller components and two-session build sequence below apply only as their follow-up issues are scheduled.
+The [M0 setup record](setup.md) tracks prepared infrastructure and outstanding Cloud Run runtime-injection verification; no application is deployed yet. The [project plan](project-plan.md) defines the current acceptance gates. The fuller components and two-session build sequence below apply only as their follow-up issues are scheduled.
 
 ## 1. The approach
 
@@ -46,26 +46,26 @@ flowchart TD
 
 ## 2. Model choice and cost
 
-**Proposed default: `qwen/qwen3.7-flash` through OpenRouter.** It accepts text and images at a comparable or lower listed token price than the requested DeepSeek V4 Flash. Use it for adaptation plans and worksheet generation in the MVP; evaluate photo extraction when that follow-up is built.
+**Configured class-demo model: `google/gemini-2.5-flash-lite` through OpenRouter.** The original proposed default, `qwen/qwen3.7-flash`, remained a good catalog candidate but repeatedly returned 429 responses and exhausted 384 reasoning tokens during live probing. Gemini Flash Lite is the authorized fallback for adaptation plans and worksheet generation in this demo; evaluate photo extraction when that follow-up is built.
 
 OpenRouter catalog snapshot, checked **16 September 2026**; USD per million tokens:
 
 | Model ID | Text/image input | Input | Output | Role |
 | --- | --- | ---: | ---: | --- |
 | `deepseek/deepseek-v4-flash` | Text only | ~$0.089 | ~$0.177 | Requested model; cannot directly read photos |
-| `qwen/qwen3.7-flash` | Both | $0.03 | $0.13 | Proposed default |
+| `qwen/qwen3.7-flash` | Both | $0.03 | $0.13 | Original candidate; failed live probing for this run |
 | `deepseek/deepseek-v4.1-flash` | Both | $0.15 | $0.60 | DeepSeek alternative at a higher price |
-| `google/gemini-2.5-flash-lite` | Both | $0.10 | $0.40 | Alternative to evaluate if needed |
+| `google/gemini-2.5-flash-lite` | Both | $0.10 | $0.40 | Configured fallback for this run |
 
 These are catalog rates, not a fixed quote for every provider. Qwen's input/output rates rise to $0.10/$0.40 at 32,000 prompt tokens and $0.20/$0.80 at 256,000. DeepSeek V4.1 Flash lists scheduled peak rates of $0.30/$1.20. Check routing and image billing before implementation. Sources: [live OpenRouter catalog](https://openrouter.ai/api/v1/models) and [Qwen provider endpoint](https://openrouter.ai/api/v1/models/qwen/qwen3.7-flash/endpoints).
 
-Choose on worksheet quality as well as price. These listings establish capability and pricing, **not accuracy on our worksheets**. Before committing to the default, test reading and mathematics adaptations, valid output, response time and recorded cost. Test clear printed photos before enabling the later photo feature. If Qwen fails, evaluate the named alternatives and record the decision; do not silently switch to a more expensive model.
+Choose on worksheet quality as well as price. These listings establish capability and pricing, **not accuracy on our worksheets**. The recorded fallback probe for Gemini Flash Lite returned valid JSON in 671 ms with cost `$0.00000795` through `google-ai-studio/flex` at `$0.05` input / `$0.20` output per million tokens. The deployed app may route through a different provider or price, so do not present the probe as a pricing guarantee. Test reading and mathematics adaptations, valid output, response time and recorded cost. Test clear printed photos before enabling the later photo feature. If the configured model changes again, record the decision; do not silently switch to a more expensive model.
 
-Keep `OPENROUTER_API_KEY` and `OPENROUTER_MODEL=qwen/qwen3.7-flash` in server environment settings. The model is a configuration choice, so changing it should not require rewriting the screens. Use an explicit model ID rather than an automatic model selector. The team's coding assistant can still be whichever environment and model each person normally uses.
+Keep `OPENROUTER_API_KEY` and `OPENROUTER_MODEL=google/gemini-2.5-flash-lite` in server environment settings. The model is a configuration choice, so changing it should not require rewriting the screens. Use an explicit model ID rather than an automatic model selector. The team's coding assistant can still be whichever environment and model each person normally uses.
 
 ## 3. Components and responsibilities
 
-The table includes the broader target. Source readers for DOCX/PDF/JPG are **not in the one-hour MVP**; the first release needs pasted-text intake, the state machine, model adapter and PDF renderer only.
+The table includes the broader target. Source readers for DOCX/PDF/JPG are **not in the class-demo MVP**; the first release needs pasted-text intake, the state machine, model adapter and PDF renderer only.
 
 | Component | Proposed implementation | Why it is needed |
 | --- | --- | --- |
@@ -159,7 +159,7 @@ Keep editable content, source files and PDFs in memory; do not use local storage
 
 Use fictional worksheets and group needs. Send only the context needed for each model call. Keep worksheet text, images, optional notes and API keys out of logs and Git. Record only operational information needed for the demo: model, duration, token usage/cost and success/error category.
 
-Run locally first, then deploy the tested MVP to Cloud Run. Use the shared-password protection defined in Section 0 across the application and AI routes. Set the $5 OpenRouter key limit, server request/output limits and timeouts before opening class access. Missing password or key configuration must not leave a working, unprotected paid endpoint. GCP project, billing, APIs, deployment permissions and Secret Manager access must be ready in M0.
+Run locally first, then deploy the tested MVP to Cloud Run. Use the shared-password protection defined in Section 0 across the application and AI routes. Set server request/output limits and timeouts before opening class access. The owner-approved class-demo exception to the $5 key cap is recorded in [setup.md](setup.md); it does not remove the application limits. Missing password or key configuration must not leave a working, unprotected paid endpoint. GCP project, billing, APIs, deployment permissions and Secret Manager access must be ready in M0.
 
 Use GitHub Issues and a GitHub Project for the work. Keep secrets in local/hosting environment settings and commit only a placeholder `.env.example` when implementation begins. Lock dependency versions once chosen.
 
